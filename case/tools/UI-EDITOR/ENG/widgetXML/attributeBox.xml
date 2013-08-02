@@ -1,0 +1,15 @@
+﻿<widget name="attributeBox" type="widget" adapter="AttributeBoxAdapter"
+			icon="widgets/attributeBox.gif" >
+			
+     <categories>
+     <category name = "basic"/>
+     </categories>
+
+	<properties>
+		<property name="x" type="U32" value="" category="basic" editable="true" relative ="Left" desc="x coordinate of the left-top corner of the widget" />
+		<property name="y" type="U32" value="" category="basic" editable="true" relative ="Top" desc="y coordinate of the left-top corner of the widget" />
+		<property name="width" type="U32" value="200" category="basic" editable="true" desc="width of the widget" />
+		<property name="height" type="U32" value="50" category="basic" editable="true" desc="height of the widget"/>
+	</properties>
+		
+</widget>

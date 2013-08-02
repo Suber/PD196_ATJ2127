@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="config" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="config.sty" />
+    <property name="prj_res_head_file" value="config_res.h" />
+    <property name="prj_res_str_dir" value="config\" />
+    <property name="prj_sty_file" value="config.sty" />
+    <property name="prj_sty_head_file" value="config_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="12" />
+        <property name="Font_large" value="13" />
+        <scene>
+            <property name="name" value="POWER_ON" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup0" />
+                <property name="id" value="0" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_POWER_ON" />
+                    <property name="id" value="1" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\power_on_1.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\power_on_2.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\power_on_3.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\power_on_4.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="4" value=".\power_on_5.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="5" value=".\power_on_6.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="6" value=".\power_on_7.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="7" value=".\power_on_8.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="8" value=".\power_on_9.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="9" value=".\power_on_10.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="10" value=".\power_on_11.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="11" value=".\power_on_12.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="12" value=".\power_on_13.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="POWER_OFF" />
+            <property name="id" value="1" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup1" />
+                <property name="id" value="1" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_POWER_OFF" />
+                    <property name="id" value="2" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\power_off_1.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="SCENE_CHARGING" />
+            <property name="id" value="2" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup2" />
+                <property name="id" value="2" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_CFG_CHARGING" />
+                    <property name="id" value="3" />
+                    <property name="x" value="119" />
+                    <property name="y" value="70" />
+                    <property name="width" value="50" />
+                    <property name="height" value="34" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\cfg_charge_0.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\cfg_charge_1.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\cfg_charge_2.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\cfg_charge_3.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="4" value=".\cfg_charge_4.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="BACKGROUND" />
+            <property name="id" value="3" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup3" />
+                <property name="id" value="3" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_CFG_BACKGROUND" />
+                    <property name="id" value="4" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\cfg_background.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\cfg_background.bmp" />
+        <picture value=".\cfg_charge_0.bmp" />
+        <picture value=".\cfg_charge_1.bmp" />
+        <picture value=".\cfg_charge_2.bmp" />
+        <picture value=".\cfg_charge_3.bmp" />
+        <picture value=".\cfg_charge_4.bmp" />
+        <picture value=".\power_off_1.bmp" />
+        <picture value=".\power_on_1.bmp" />
+        <picture value=".\power_on_10.bmp" />
+        <picture value=".\power_on_11.bmp" />
+        <picture value=".\power_on_12.bmp" />
+        <picture value=".\power_on_13.bmp" />
+        <picture value=".\power_on_2.bmp" />
+        <picture value=".\power_on_3.bmp" />
+        <picture value=".\power_on_4.bmp" />
+        <picture value=".\power_on_5.bmp" />
+        <picture value=".\power_on_6.bmp" />
+        <picture value=".\power_on_7.bmp" />
+        <picture value=".\power_on_8.bmp" />
+        <picture value=".\power_on_9.bmp" />
+        <txt value="" />
+    </resource>
+</ui-rad>

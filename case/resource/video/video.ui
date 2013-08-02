@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="video" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="video.sty" />
+    <property name="prj_res_head_file" value="video_res.h" />
+    <property name="prj_res_str_dir" value="video\" />
+    <property name="prj_sty_file" value="video.sty" />
+    <property name="prj_sty_head_file" value="video_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <property name="prj_ver" value="V100" />
+    <style>
+        <property name="name" value="VIDEO_STYLE" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="12" />
+        <property name="Font_large" value="13" />
+        <scene>
+            <property name="name" value="VIDEO_SCENE_PLAY" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup01" />
+                <property name="id" value="1" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="$(screenWidth)" />
+                <property name="height" value="$(screenHeight)" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_VIDEO_PLAYICON_PICBOX" />
+                    <property name="id" value="6" />
+                    <property name="x" value="84" />
+                    <property name="y" value="123" />
+                    <property name="width" value="13" />
+                    <property name="height" value="14" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\video_state_play.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\video_state_pause.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\video_state_fastforward.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\video_state_fastbackward.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_VIDOE_FULLSCREEN_REGION" />
+                    <property name="id" value="10" />
+                    <property name="x" value="81" />
+                    <property name="y" value="49" />
+                    <property name="width" value="160" />
+                    <property name="height" value="128" />
+                    <property name="textX" value="-1" />
+                    <property name="textY" value="-39" />
+                    <property name="textWidth" value="160" />
+                    <property name="textHeight" value="128" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16711680" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_VIDEO_PROGRESS_REGION" />
+                    <property name="id" value="11" />
+                    <property name="x" value="108" />
+                    <property name="y" value="49" />
+                    <property name="width" value="160" />
+                    <property name="height" value="77" />
+                    <property name="textX" value="-28" />
+                    <property name="textY" value="-19" />
+                    <property name="textWidth" value="160" />
+                    <property name="textHeight" value="77" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16711680" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_VIDEO_VOLUME_REGION" />
+                    <property name="id" value="12" />
+                    <property name="x" value="99" />
+                    <property name="y" value="55" />
+                    <property name="width" value="160" />
+                    <property name="height" value="97" />
+                    <property name="textX" value="-19" />
+                    <property name="textY" value="-45" />
+                    <property name="textWidth" value="160" />
+                    <property name="textHeight" value="97" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16711680" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="STY_VIDEO_FASTFLAG_PICBOX" />
+                    <property name="id" value="13" />
+                    <property name="x" value="91" />
+                    <property name="y" value="107" />
+                    <property name="width" value="18" />
+                    <property name="height" value="8" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\video_speed_0.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\video_speed_1.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\video_speed_2.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\video_speed_3.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_VIDEO_FILENAME_TEXTBOX" />
+                    <property name="id" value="14" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="120" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="20" />
+                    <property name="textY" value="0" />
+                    <property name="textWidth" value="120" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="20" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16711680" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\p_video_vol_bg.bmp" />
+        <picture value=".\p_video_vol_cur_tag.bmp" />
+        <picture value=".\p_video_vol_down_tag.bmp" />
+        <picture value=".\p_video_vol_forbidden.bmp" />
+        <picture value=".\p_video_vol_limit.bmp" />
+        <picture value=".\p_video_vol_up_tag.bmp" />
+        <picture value=".\video_bar_down.bmp" />
+        <picture value=".\video_bar_up.bmp" />
+        <picture value=".\video_filename_bg.bmp" />
+        <picture value=".\video_num0.bmp" />
+        <picture value=".\video_num1.bmp" />
+        <picture value=".\video_num2.bmp" />
+        <picture value=".\video_num3.bmp" />
+        <picture value=".\video_num4.bmp" />
+        <picture value=".\video_num5.bmp" />
+        <picture value=".\video_num6.bmp" />
+        <picture value=".\video_num7.bmp" />
+        <picture value=".\video_num8.bmp" />
+        <picture value=".\video_num9.bmp" />
+        <picture value=".\video_numcolon.bmp" />
+        <picture value=".\video_pro_bg.bmp" />
+        <picture value=".\video_speed_0.bmp" />
+        <picture value=".\video_speed_1.bmp" />
+        <picture value=".\video_speed_2.bmp" />
+        <picture value=".\video_speed_3.bmp" />
+        <picture value=".\video_state_fastbackward.bmp" />
+        <picture value=".\video_state_fastforward.bmp" />
+        <picture value=".\video_state_pause.bmp" />
+        <picture value=".\video_state_play.bmp" />
+        <txt value=".\video.xls" />
+        <string value="null" />
+        <string value="s_delete_video" />
+        <string value="s_no_video_file" />
+        <string value="s_repeat_mode" />
+        <string value="s_repeat_normal" />
+        <string value="s_repeat_one" />
+        <string value="s_repeat_all" />
+        <string value="s_noplay_menu" />
+        <string value="s_playing_menu" />
+        <string value="s_lastplay_menu" />
+        <string value="s_card_menu" />
+    </resource>
+</ui-rad>

@@ -1,0 +1,68 @@
+﻿<widget name="numbox" type="widget" adapter="ANumBoxAdapter"
+			icon="widgets/numBox.png" >
+
+     <categories>
+     <category name = "basic"/>
+     <category name = "picture"/>
+     </categories>
+     
+	<properties>
+	   <property name="x" type="U16" value=""  editable="true"  relative ="Left" desc="控制項左上角x座標"/>
+	   <property name="y" type="U16" value=""  editable="true"  relative = "Top" desc="控制項左上角y座標"/>
+        <property name="width" type="U16" value="101"  editable="true" desc="控制項寬度"/>
+        <property name="height" type="U16" value="18"  editable="true" desc="控制項高度"/>
+        <property name="numX" type="U16" value="0" category="basic" editable="true"  relative ="Left" desc="數位區域左上角x座標"/>
+        <property name="numY" type="U16" value="0" category="basic" editable="true"  relative = "Top" desc="數位區域左上角y座標"/>
+        <property name="numWidth" type="U16" value="101" category="basic" editable="true" desc="數位區域寬度"/>
+        <property name="numHeight" type="U16" value="18" category="basic" editable="true" desc="數位區域高度"/>
+	   <property name="visible" type="boolean" value="1" category="basic" editable="true" desc="控制項是否顯示"/>
+		
+	   <property name="useBgPic" type="boolean" displayName="是否使用背景圖" category="basic" value="1" editable="true" desc="是否使用背景圖"/>
+	   <property name="bgPic" type="Picture" value="" category="basic" editable="true" storeType="1" desc="背景圖片"/>
+	   <property name="bgPicX" type="U16" value="0" editable="true" category="basic" relative ="Left" desc="背景圖片左上角x座標"/>
+	   <property name="bgPicY" type="U16" value="0" editable="true" category="basic" relative ="Top" desc="背景圖片左上角y座標"/>		
+	   <property name="bgPicWidth" type="U16" visible="false" value="0" editable="false" desc="背景圖寬"/>
+	   <property name="bgPicHeight" type="U16" visible="false" value="0" editable="false" desc="背景圖高"/>
+
+		<!--<property name="x0" type="U16" editable="true" />
+		<property name="y0" type="U16" editable="true" />  -->
+        <property name="DisplayMode" type="Enum" editable="false" value="1" category="basic" enumKeys="字串,數位圖片" enumValues="0,1" desc="顯示模式"/>
+        <property name="Composition" type="Enum" editable="false" value="0" category="basic" enumKeys="顯示1個數位,由2個數位組成" enumValues="0,1" desc="組成方式"/>
+	   <property name="number1" type="S32" value="1234567890" category="basic" editable="true" desc="數值"/>
+	   <property name="digits1" type="U16" value="10" category="basic" editable="true" desc="數字1的數值位元數。當為0時，表示顯示該數位的實際位元數"/>
+	   <property name="number2" type="S32" value="1234567890" category="basic" editable="true" desc="數值" show="Composition > 0"/>
+	   <property name="digits2" type="U16" value="10" category="basic" editable="true" desc="數字2的數值位元數。當為0時，表示顯示該數位的實際位元數" show="Composition > 0"/>
+        <property name="stringColor" type="Color" value="0" category="basic" editable="true" desc="數位和分隔符號的顏色，僅在字串模式有效" show="DisplayMode = 0"/>
+        <property name="stringBkColor" type="Color" value="16777215" category="basic" editable="true" desc="數字和分隔符號的背景顏色，僅在字串模式有效"  show="DisplayMode = 0"/>
+        <property name="FontSize" displayName="字體大小" type="Enum" editable="false" category="basic" value="1" enumKeys="小字體,中字體,大字體" enumValues="0,1,2" default="0" desc="字體大小"  show="DisplayMode = 0"/>
+
+           
+	   <property name="align" type="Enum" editable="false" value="left to right" category="basic" enumKeys="左對齊,居中,右對齊" enumValues="0,1,2" desc="對齊方式"/>
+			
+	   <property name="showPartition" displayName="是否顯示分隔符號" value="1" type="boolean" category="basic" editable="true" desc="是否顯示分隔符號"/>
+        <property name="partitionPic" displayName="分隔符號圖片" value="$widgets\numbox\p_def_numbox_dot.bmp" type="Picture" category="Picture" editable="false" desc="分隔符號圖片"  show="DisplayMode = 1"/>  
+	   <property name="DecimalDigits" displayName="小數位數" value="2" type="U16" category="basic" editable="true" desc="小數位數"/>
+		
+	   <property name="showSign" displayName="是否顯示符號" value="1" type="boolean" category="basic" editable="true" desc="是否顯示符號"/>
+				
+        <property name="pic0" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num0.bmp" allowEmpty="false" desc="數位0圖片" show="DisplayMode = 1"/>
+        <property name="pic1" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num1.bmp" allowEmpty="false" desc="數位1圖片" show="DisplayMode = 1"/>
+        <property name="pic2" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num2.bmp" allowEmpty="false" desc="數位2圖片" show="DisplayMode = 1"/>
+        <property name="pic3" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num3.bmp" allowEmpty="false" desc="數位3圖片" show="DisplayMode = 1"/>
+        <property name="pic4" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num4.bmp" allowEmpty="false" desc="數位4圖片" show="DisplayMode = 1"/>
+        <property name="pic5" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num5.bmp" allowEmpty="false" desc="數位5圖片" show="DisplayMode = 1"/>
+        <property name="pic6" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num6.bmp" allowEmpty="false" desc="數位6圖片" show="DisplayMode = 1"/>
+        <property name="pic7" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num7.bmp" allowEmpty="false" desc="數位7圖片" show="DisplayMode = 1"/>
+        <property name="pic8" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num8.bmp" allowEmpty="false" desc="數位8圖片" show="DisplayMode = 1"/>
+        <property name="pic9" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num9.bmp" allowEmpty="false" desc="數位9圖片" show="DisplayMode = 1"/>
+        <property name="picPositive" displayName="正號" type="Picture" category="Picture" value="$widgets\numbox\p_def_numbox_plus.bmp" editable="false" allowEmpty="false"  desc="正號圖片" show="DisplayMode = 1"/>
+        <property name="picNegative" displayName="負號" type="Picture" category="Picture" value="$widgets\numbox\p_def_numbox_minus.bmp" editable="false" allowEmpty="false"  desc="負號圖片" show="DisplayMode = 1"/>
+        <property name="picCover" displayName="空白" type="Picture" category="Picture" value="$widgets\numbox\p_def_numbox_num_null.bmp" editable="false" allowEmpty="false"  desc="空白圖片" show="DisplayMode = 1"/>  
+	   <property name="pic0Width" type="U16" visible="false" value="9" editable="false" desc="數位0圖片的寬度" show="DisplayMode = 1"/>
+	   <property name="pic0Height" type="U16" visible="false" value="18" editable="false" desc="數位0圖片的高度" show="DisplayMode = 1"/>
+        <property name="incX" type="U16" visible="false" category="Picture" value="9" editable="false" desc="數位圖片的高度" show="DisplayMode = 1"/>
+        <property name="partitionIncX" type="U16" category="Picture" value="2" editable="false" desc="分隔符號圖片的寬度" show="DisplayMode = 1"/>
+	   <property name="numBkColor" type="Color" value="0"  category="Picture" editable="true" desc="數位圖片的背景色，為純色。用於實現數位的背景透明顯示"  />
+	</properties>
+		
+</widget>

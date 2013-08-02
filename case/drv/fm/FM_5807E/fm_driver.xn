@@ -1,0 +1,125 @@
+/**************************************************************************
+*                                                                         *
+*   PROJECT     : MIPS port for UCOS-II                                   *
+*                                                                         *
+*   MODULE      : bank a&b link.xn                                        *
+*                                                                         *
+*   AUTHOR      : wuyueqian                                               *
+*                                                                         *
+*   PROCESSOR   : MIPS 4KEc (32 bit RISC) - Actions board                 *
+*                                                                         *
+*   Tool-chain  : Cygnus                                                  *
+*                                                                         *
+*                                                                         *
+*   Linker script file                                                    *
+*                                                                         *
+**************************************************************************/
+
+/************************fm drv  memory map********************************
+*-------------------------------code--------------------------------------*
+*---rcode        :0xbfc29000-0xbfc29fff  length:0x1000                    *  
+*I2C代码使用固化时,占用如下rom_I2C空间, 否则, 也可放在上述rcode空间       *
+*---rom_I2C      :0xbfc08000-0xbfc087ff  length:0x800                     *  
+*---bankA        :(0x18**0000+0x24c00)-(0x18**0000+0x24fff)  length:0x400 *
+*---bankB        :(0x28**0000+0x25000)-(0x28**0000+0x257ff)  length:0x800 *
+*-------------------------------data--------------------------------------*
+*--rdata: 0x9fc1dd00-0x9fc1dfff length:0x300                              *
+***************************************************************************/
+
+/*定义GROUP BANK INDEX 和其他地址变量*/
+INPUT(link_base.xn)
+INPUT(sdk_link_base.xn)
+
+/*UI group index，驱动开发人员需选择*/
+BANK_GROUP_INDEX = DRV_GROUP_FM;
+
+/*2.从地址map图中获取UI模块的常驻代码段物理地址，只需写低14位，驱动开发人员需填写*/
+SRAM_TEXT_ADDR = SRAM_AP_BACK_CODEC_RCODE_ADDR;                             /*fm drv 常驻代码占用后台codec空间4k*/
+SRAM_DATA_ADDR = 0x1dd00;                      /* 占用后台常驻数据空间的后0.75k*/
+
+
+/*3.转换为链接地址,不能修改*/
+RCODE_TEXT_ADDR = RCODE_ADDR_BASE + SRAM_TEXT_ADDR;
+ROM_TEXT_ADDR = RCODE_ADDR_BASE + SROM_I2C_ADDR;    /*2k rom*/
+RDATA_DATA_ADDR = RDATA_ADDR_BASE + SRAM_DATA_ADDR;         
+
+KERNEL_BANK_A_ADDR_BASE = (KERNEL_BANK_A << 28) + (BANK_GROUP_INDEX << 24) + SRAM_BANK_A_ADDR;
+KERNEL_BANK_B_ADDR_BASE = (KERNEL_BANK_B << 28) + (BANK_GROUP_INDEX << 24) + SRAM_BANK_B_ADDR;
+KERNEL_BANK_C_ADDR_BASE = (KERNEL_BANK_C << 28) + (BANK_GROUP_INDEX << 24) + SRAM_BANK_C_ADDR;
+
+/*bank的实际空间大小,不能修改*/
+KERNEL_BANK_A_SIZE = SRAM_BANK_A_SIZE;
+KERNEL_BANK_B_SIZE = SRAM_BANK_B_SIZE;
+KERNEL_BANK_C_SIZE = SRAM_BANK_C_SIZE;
+
+/*系统允许的bank的最大空间大小，不能修改*/
+KERNEL_BANK_SPACE = BANK_SPACE;
+
+OUTPUT_ARCH(mips)
+
+ENTRY(fm_drv_op)
+
+SECTIONS
+{
+    .text RCODE_TEXT_ADDR  : 
+    {
+        _resident_text = ABSOLUTE(.); /*只是标号*/
+        /*4.填写rcode输入节*/
+        rcode_fm_op_entry.o(.text)
+        /*rcode_fm_I2C.o(.text)*/
+        rcode_fm_i2cdrv1.o(.text .rodata)
+        api.a(.text)
+        _resident_text_end = ABSOLUTE(.);
+        /*. = SRAM_AP_BACK_CODEC_RCODE_SIZE;*/        
+    }
+    .rom ROM_TEXT_ADDR  :   
+    {
+        rom_I2C.o(.text .rodata)
+        . = SROM_I2C_SIZE;   
+    }      
+    .data RDATA_DATA_ADDR   :  AT(ADDR(.text) + SIZEOF(.text)) 
+    {
+        _resident_data = ABSOLUTE(.);
+        /*5.填写rdata输入节，所以文件产生的.data都被链接到这里*/
+        *.o(.data)
+        _resident_data_end = ABSOLUTE(.);
+    }
+
+    .bss :
+    {
+        *(.bss)
+        *(.sbss)
+        *(.common)
+        *(common)
+    }    
+
+    /*6.链接bank a代码*/
+    . = KERNEL_BANK_A_ADDR_BASE;
+    BANK_A_0    : 
+    {
+        bank_a_fm_init.o(.text .rodata)  
+        . = KERNEL_BANK_A_SIZE;
+    }
+
+    
+     /*7.链接bank b代码*/
+    . = KERNEL_BANK_B_ADDR_BASE;
+    BANK_B_0    : 
+    {
+        bank_b_fm_i2cdrv2.o(.text .rodata)  
+        . = KERNEL_BANK_B_SIZE;
+    } 
+
+    /*假设还有一个bank b*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_1   : 
+    {
+        bank_b_fm_i2cdrv3.o(.text .rodata) 
+        . = KERNEL_BANK_B_SIZE;
+    }
+        
+    /*8.链接bank c代码, card 模块没有*/
+    . = KERNEL_BANK_C_ADDR_BASE;
+    
+    
+ }

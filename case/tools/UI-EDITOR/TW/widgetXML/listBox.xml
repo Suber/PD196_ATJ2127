@@ -1,0 +1,232 @@
+﻿<widget name="listBox" type="widget" adapter="AListBoxAdapter"
+            icon="widgets/list.png" >
+
+     <categories>
+     <category name = "basic"/>
+     <category name = "item"/>
+     <category name = "slider"/>
+     <category name = "title"/>
+     <category name = "ratio"/>
+     </categories>
+     
+   <properties>
+        <property name="x" type="U16" value="" editable="true" relative ="Left" desc="控制項左上角x座標"/>
+        <property name="y" type="U16" value="" editable="true" relative ="Top" desc="控制項左上角y座標"/>
+        <property name="width" type="U16" value="" editable="true" desc="控制項寬度"/>
+        <property name="height" type="U16" value="" editable="true"  desc="控制項高度"/>
+        <property name="visible" type="boolean" value="1" category="basic" editable="true"  desc="控制項是否顯示"/>
+
+        <property name="total" type="U16" value="12" category="basic" editable="true" desc="列表查看總項數，用戶隨意設置，一般設置大於列表一屏列表項數"/>
+        <property name="onePageNum" type="U16" value="6" category="basic" editable="true" desc="列表一屏顯示的列表項數"/>
+        <property name="current" type="U16" default="1" value="1" category="basic" editable="true" desc="當前啟動的列表項序號，從1開始編號"/>
+        <property name="select" type="U16" default="1" value="2" category="basic" editable="true" desc="當前選中的列表項序號，從1開始編碼（選中和啟動不一樣，選中表示當前正在起作用的項序號，而啟動僅僅是在控制項正中流覽的項序號）"/>                     
+        
+        <property name="bgPicX" type="U16" value="0" category="basic" editable="true" relative ="Left" desc="背景圖片的X座標"/>
+        <property name="bgPicY" type="U16" value="0" category="basic" editable="true" relative ="Top" desc="背景圖片的Y座標"/>
+        <property name="bgPic" type="Picture" value="$widgets\background\p_def_background.bmp" category="basic" editable="false" desc="控制項背景圖片" AsbgPic="true"/>
+        <property name="bgPicWidth" type="U16" visible="false" value="" editable="false" desc="背景圖片的寬度"/>
+        <property name="bgPicHeight" type="U16" visible="false" value="" editable="false" desc="背景圖片的高度"/>     
+                
+        <property name="incY" type="U16" category="item" value="24" editable="true" desc="列表項的間距，即相鄰兩個列表項的Y座標差值"/>
+        <property name="itemBgPicX" type="U16" category="item" value="0" editable="true" relative ="Left" desc="列表項第一項背景圖片X座標"/>
+        <property name="itemBgPicY" type="U16" category="item" value="16" editable="true" relative ="Top" desc="列表項第一項背景圖片Y座標"/>
+        <property name="showItemBg" type="boolean" category="basic" value="1" editable="true" desc="是否顯示列表項的背景"/>
+                      
+        <property name="itemFontSize" displayName="字體大小" type="Enum" editable="false" category="item" value="1" enumKeys="小字體,中字體,大字體" enumValues="0,1,2" default="0" desc="非啟動列表項字體大小"/>        
+        <property name="itemActFontSize" displayName="字體大小" type="Enum" editable="false" category="item" value="1" enumKeys="小字體,中字體,大字體" enumValues="0,1,2" default="0" desc="啟動列表項字體大小"/>
+        <property name="itemLeftAlign" displayName="非活動項列表對齊屬性" type="Enum" editable="false" category="item" value="0" enumKeys="左對齊,居中,右對齊" enumValues="0,1,2" default="0" desc="非啟動項列表對齊屬性"/>
+        <property name="itemActLeftAlign" displayName="活動項列表對齊屬性" type="Enum" editable="false" category="item" value="0" enumKeys="左對齊,居中,右對齊" enumValues="0,1,2" default="0" desc="啟動項列表對齊屬性"/>
+    
+        <property name="itemMultilineMode" displayName="長字串顯示模式" type="Enum" editable="false" category="item" value="0" enumKeys="多行,滾屏,截斷,省略號" enumValues="0,1,2,3" default="0" desc="非啟動列表項長字串顯示模式"/>
+        <property name="itemActMultilineMode" displayName="長字串顯示模式" type="Enum" editable="false" category="item" value="0" enumKeys="多行,滾屏,截斷,省略號" enumValues="0,1,2,3" default="0" desc="啟動列表項長字串顯示模式"/>
+
+        <property name="BgPicForAllItems" type="Picture" category="item" value="$widgets\listbox\p_def_list_allback.bmp" editable="false" desc="所有列表項的背景圖片，該圖片要剛好能覆蓋掉所有列表項，且不能覆蓋控制項其他部分" />
+        <property name="BgPicForAllItemsWidth" type="U16" visible="false" value="" editable="false" desc="所有列表項的背景圖片寬"/>
+        <property name="BgPicForAllItemsHeight" type="U16" visible="false" value="" editable="false" desc="所有列表項的背景圖片高"/>
+        <property name="itemBgType" type="Enum" editable="false" value="2" category="item" enumKeys="背景顏色,背景圖片(single),背景圖片(multy)" enumValues="0,1,2" desc="非啟動列表項背景類型" show="showItemBg = 1"/>
+        <property name="itemBgColor" type="Color" category="item" value="16777215" editable="true" desc="非啟動列表項背景色" show="showItemBg = 1&itemBgType = 0"/>
+        <property name="itemBgPic0" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina0.bmp" editable="false" desc="非啟動列表項背景圖0" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic1" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina1.bmp" editable="false" desc="非啟動列表項背景圖1" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic2" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina2.bmp" editable="false" desc="非啟動列表項背景圖2" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic3" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina3.bmp" editable="false" desc="非啟動列表項背景圖3" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic4" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina4.bmp" editable="false" desc="非啟動列表項背景圖4" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic5" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina5.bmp" editable="false" desc="非啟動列表項背景圖5" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic6" type="Picture" category="item" value="" editable="false" desc="非啟動列表項背景圖6" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic7" type="Picture" category="item" value="" editable="false" desc="非啟動列表項背景圖7" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic8" type="Picture" category="item" value="" editable="false" desc="非啟動列表項背景圖8" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic9" type="Picture" category="item" value="" editable="false" desc="非啟動列表項背景圖9" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic10" type="Picture" category="item" value="" editable="false" desc="非啟動列表項背景圖10" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic11" type="Picture" category="item" value="" editable="false" desc="非啟動列表項背景圖11" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPicWidth" type="U16" visible="false" value="" editable="false" desc="非啟動列表項背景圖寬"/>
+        <property name="itemBgPicHeight" type="U16" visible="false" value="" editable="false" desc="非啟動列表項背景圖高"/>
+            
+        
+        <property name="itemActBgType" type="Enum" editable="false" value="1" category="item" enumKeys="背景顏色,背景圖片(single),背景圖片(multy)" enumValues="0,1,2" desc="啟動列表項背景類型" show="showItemBg = 1"/>
+        <property name="itemActBgColor" type="Color" category="item" value="16777215" editable="true"  desc="活動列表項背景色" show="showItemBg = 1&itemActBgType = 0"/>        
+        <property name="itemActBgPic0" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_a.bmp" editable="false" desc="活動列表項背景圖0" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic1" type="Picture" category="item" value="" editable="false" desc="活動列表項背景圖1" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic2" type="Picture" category="item" value="" editable="false" desc="活動列表項背景圖2" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic3" type="Picture" category="item" value="" editable="false" desc="活動列表項背景圖3" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic4" type="Picture" category="item" value="" editable="false" desc="活動列表項背景圖4" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic5" type="Picture" category="item" value="" editable="false" desc="活動列表項背景圖5" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic6" type="Picture" category="item" value="" editable="false" desc="活動列表項背景圖6" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic7" type="Picture" category="item" value="" editable="false" desc="活動列表項背景圖7" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic8" type="Picture" category="item" value="" editable="false" desc="活動列表項背景圖8" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic9" type="Picture" category="item" value="" editable="false" desc="活動列表項背景圖9" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic10" type="Picture" category="item" value="" editable="false" desc="活動列表項背景圖10" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic11" type="Picture" category="item" value="" editable="false" desc="活動列表項背景圖11" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        
+        
+        <property name="itemHeadPicX" type="U16" category="item" value="13" editable="true" relative ="Left" desc="第一項列表項前置圖示X座標"/>
+        <property name="itemHeadPicY" type="U16" category="item" value="24" editable="true" relative ="Top" desc="第一項列表項前置圖示Y座標"/>
+        <property name="itemHeadType" type="Enum" editable="false" value="0" category="item" enumKeys="不顯示,背景圖片(single),背景圖片(multy)" enumValues="0,1,2" desc="選中項（非啟動）列表項前置圖示顯示方式"/>
+        <property name="itemHeadPic" type="Picture" category="item" value="" editable="true" desc="非活動列表項前置圖示原始圖片，為純色背景" show="itemHeadType > 0"/>
+        <property name="itemHeadPicBkColor" type="Color" category="item" value="0" editable="false" desc="非活動列表項前置圖示原始圖片的背景色" show="itemHeadType > 0"/> 
+        <property name="itemHeadPic0" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina.bmp" editable="false" desc="非活動列表項前置圖示0" show="itemHeadType > 0"/>
+        <property name="itemHeadPic1" type="Picture" category="item" value="" editable="false" desc="非啟動列表項前置圖示1" show="itemHeadType > 0"/>
+        <property name="itemHeadPic2" type="Picture" category="item" value="" editable="false" desc="非啟動列表項前置圖示2" show="itemHeadType > 0"/>
+        <property name="itemHeadPic3" type="Picture" category="item" value="" editable="false" desc="非啟動列表項前置圖示3" show="itemHeadType > 0"/>
+        <property name="itemHeadPic4" type="Picture" category="item" value="" editable="false" desc="非啟動列表項前置圖示4" show="itemHeadType > 0"/>
+        <property name="itemHeadPic5" type="Picture" category="item" value="" editable="false" desc="非啟動列表項前置圖示5" show="itemHeadType > 0"/>
+        <property name="itemHeadPic6" type="Picture" category="item" value="" editable="false" desc="非啟動列表項前置圖示6" show="itemHeadType > 0"/>
+        <property name="itemHeadPic7" type="Picture" category="item" value="" editable="false" desc="非啟動列表項前置圖示7" show="itemHeadType > 0"/>
+        <property name="itemHeadPic8" type="Picture" category="item" value="" editable="false" desc="非啟動列表項前置圖示8" show="itemHeadType > 0"/>
+        <property name="itemHeadPic9" type="Picture" category="item" value="" editable="false" desc="非啟動列表項前置圖示9" show="itemHeadType > 0"/>
+        <property name="itemHeadPic10" type="Picture" category="item" value="" editable="false" desc="非啟動列表項前置圖示10" show="itemHeadType > 0"/>
+        <property name="itemHeadPic11" type="Picture" category="item" value="" editable="false" desc="非啟動列表項前置圖示11" show="itemHeadType > 0"/>
+        <property name="itemHeadPicWidth" type="U16" visible="false" value="" editable="false" desc="列表項前置圖示寬"/>
+        <property name="itemHeadPicHeight" type="U16" visible="false" value="" editable="false" desc="列表項前置圖示高"/>
+          
+        <property name="itemActHeadType" type="Enum" editable="false" value="0" category="item" enumKeys="不顯示,背景圖片(single),背景圖片(multy)" enumValues="0,1,2" desc="選中項（啟動）列表項前置圖示顯示方式"/>
+        <property name="itemActHeadPic0" type="Picture" category="item" value="" editable="false" desc="活動列表項前置圖示0" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic1" type="Picture" category="item" value="" editable="false" desc="啟動列表項前置圖示1" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic2" type="Picture" category="item" value="" editable="false" desc="啟動列表項前置圖示2" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic3" type="Picture" category="item" value="" editable="false" desc="啟動列表項前置圖示3" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic4" type="Picture" category="item" value="" editable="false" desc="啟動列表項前置圖示4" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic5" type="Picture" category="item" value="" editable="false" desc="啟動列表項前置圖示5" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic6" type="Picture" category="item" value="" editable="false" desc="啟動列表項前置圖示6" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic7" type="Picture" category="item" value="" editable="false" desc="啟動列表項前置圖示7" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic8" type="Picture" category="item" value="" editable="false" desc="啟動列表項前置圖示8" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic9" type="Picture" category="item" value="" editable="false" desc="啟動列表項前置圖示9" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic10" type="Picture" category="item" value="" editable="false" desc="啟動列表項前置圖示10" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic11" type="Picture" category="item" value="" editable="false" desc="啟動列表項前置圖示11" show="itemActHeadType > 0"/>
+        
+                 
+        <property name="itemTextX" type="U16" category="item" value="5" editable="true" relative ="Left" desc="第一項列表項文本X座標"/>
+        <property name="itemTextY" type="U16" category="item" value="20" editable="true" relative ="Top" desc="第一項列表項文本Y座標"/>
+        <property name="itemColor" type="Color" category="item" value="12632256" editable="true" desc="非活動列表項文本字體顏色"/>
+        <property name="itemActColor" type="Color" category="item" value="16777215" editable="true" desc="當前活動列表項文本字體顏色"/>
+        <property name="itemTextWidth" type="U16" category="item" value="95" editable="true" desc="列表項文本寬度"/>
+        <property name="itemTextHeight" type="U16" category="item" value="16" editable="true" desc="列表項文本高度"/>
+        
+        <property name="itemTailPicX" type="U16" category="item" value="105" editable="true" relative ="Left" desc="首個列表項的後置圖示X座標"/>
+        <property name="itemTailPicY" type="U16" category="item" value="24" editable="true" relative ="Top" desc="首個列表項的後置圖示Y座標"/>
+        
+        <property name="itemTailType" type="Enum" editable="false" value="2" category="item" enumKeys="不顯示,背景圖片(single),背景圖片(multy)" enumValues="0,1,2" desc="選中項（非啟動）列表項後置圖示顯示方式"/>
+        <property name="itemTailPic" type="Picture" category="item" value="" editable="false" desc="非活動列表項後置圖示原始圖片，為純色背景" show="itemTailType > 0"/>
+        <property name="itemTailPicBkColor" type="Color" category="item" value="0" editable="false" desc="非活動列表項後置圖示原始圖片的背景色" show="itemTailType > 0"/> 
+        <property name="itemTailPic0" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_0.bmp" editable="false" desc="非活動列表項後置圖示0" show="itemTailType > 0"/>
+        <property name="itemTailPic1" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_1.bmp" editable="false" desc="非活動列表項後置圖示1" show="itemTailType > 0"/>
+        <property name="itemTailPic2" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_2.bmp" editable="false" desc="非活動列表項後置圖示2" show="itemTailType > 0"/>   
+        <property name="itemTailPic3" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_3.bmp" editable="false" desc="非活動列表項後置圖示3" show="itemTailType > 0"/>
+        <property name="itemTailPic4" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_4.bmp" editable="false" desc="非活動列表項後置圖示4" show="itemTailType > 0"/>
+        <property name="itemTailPic5" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_5.bmp" editable="false" desc="非活動列表項後置圖示5" show="itemTailType > 0"/>       
+        <property name="itemTailPic6" type="Picture" category="item" value="" editable="false" desc="非活動列表項後置圖示6" show="itemTailType > 0"/>
+        <property name="itemTailPic7" type="Picture" category="item" value="" editable="false" desc="非活動列表項後置圖示7" show="itemTailType > 0"/>
+        <property name="itemTailPic8" type="Picture" category="item" value="" editable="false" desc="非活動列表項後置圖示8" show="itemTailType > 0"/>       
+        <property name="itemTailPic9" type="Picture" category="item" value="" editable="false" desc="非活動列表項後置圖示9" show="itemTailType > 0"/>
+        <property name="itemTailPic10" type="Picture" category="item" value="" editable="false" desc="非活動列表項後置圖示10" show="itemTailType > 0"/>
+        <property name="itemTailPic11" type="Picture" category="item" value="" editable="false" desc="非活動列表項後置圖示11" show="itemTailType > 0"/> 
+        <property name="itemTailPicWidth" type="U16" visible="false" value="0" editable="false" desc="列表項後置圖示寬"/>
+        <property name="itemTailPicHeight" type="U16" visible="false" value="0" editable="false" desc="列表項後置圖示高"/>
+         
+        <property name="itemActTailType" type="Enum" editable="false" value="1" category="item" enumKeys="不顯示,背景圖片(single),背景圖片(multy)" enumValues="0,1,2" desc="選中項（啟動）列表項後置圖示顯示方式"/>
+        <property name="itemActTailPic0" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_a.bmp" editable="false" desc="當前活動列表項後置圖示0" show="itemActTailType > 0"/>
+        <property name="itemActTailPic1" type="Picture" category="item" value="" editable="false" desc="當前活動列表項後置圖示1" show="itemActTailType > 0"/>
+        <property name="itemActTailPic2" type="Picture" category="item" value="" editable="false" desc="當前活動列表項後置圖示2" show="itemActTailType > 0"/>
+        <property name="itemActTailPic3" type="Picture" category="item" value="" editable="false" desc="當前活動列表項後置圖示3" show="itemActTailType > 0"/>
+        <property name="itemActTailPic4" type="Picture" category="item" value="" editable="false" desc="當前活動列表項後置圖示4" show="itemActTailType > 0"/>
+        <property name="itemActTailPic5" type="Picture" category="item" value="" editable="false" desc="當前活動列表項後置圖示5" show="itemActTailType > 0"/>
+        <property name="itemActTailPic6" type="Picture" category="item" value="" editable="false" desc="當前活動列表項後置圖示6" show="itemActTailType > 0"/>
+        <property name="itemActTailPic7" type="Picture" category="item" value="" editable="false" desc="當前活動列表項後置圖示7" show="itemActTailType > 0"/>
+        <property name="itemActTailPic8" type="Picture" category="item" value="" editable="false" desc="當前活動列表項後置圖示8" show="itemActTailType > 0"/>
+        <property name="itemActTailPic9" type="Picture" category="item" value="" editable="false" desc="當前活動列表項後置圖示9" show="itemActTailType > 0"/>
+        <property name="itemActTailPic10" type="Picture" category="item" value="" editable="false" desc="當前活動列表項後置圖示10" show="itemActTailType > 0"/>
+        <property name="itemActTailPic11" type="Picture" category="item" value="" editable="false" desc="當前活動列表項後置圖示11" show="itemActTailType > 0"/>
+        
+
+        <property name="showTitle"  type="boolean" category="basic" value="0" editable="true" desc="是否顯示標題欄"/>
+        <property name="titleX" type="U16" category="title" value="0" editable="true" relative ="Left" desc="標題欄字串顯示區域X座標" show="showTitle > 0"/>
+        <property name="titleY" type="U16" category="title" value="18" editable="true" relative ="Top" desc="標題欄字串顯示區域Y座標" show="showTitle > 0"/>  
+        <property name="titleWidth" type="U16" category="title" value="128" editable="true" desc="標題欄字串顯示區域寬度" show="showTitle > 0"/>
+        <property name="titleHeight" type="U16" category="title" value="16" editable="true" desc="標題欄字串顯示區域高度" show="showTitle > 0"/>    
+        <property name="titleColor" type="Color" category="title" value="16777215" editable="true" desc="標題欄字串前景顏色" show="showTitle > 0"/>
+        <property name="titleFontSize" displayName="字體大小" type="Enum" editable="false" category="title" value="1" enumKeys="小字體,中字體,大字體" enumValues="0,1,2" default="0" desc="標題欄字串字體大小" show="showTitle > 0"/>
+        <property name="titleAlign" type="Enum" editable="false" value="1" category="title" enumKeys="左對齊,居中,右對齊" enumValues="0,1,2" desc="標題欄字串對齊方式" show="showTitle > 0"/>
+
+        <property name="showProgress"  type="boolean" category="basic" value="1" editable="true" desc="是否顯示滑動條"/>         
+        
+        <property name="length" type="U16" category="slider" value="100" editable="true" desc="滑動條長度" show="showProgress > 0"/>
+        
+        <property name="progBgPicX" type="U16" category="slider" value="125" editable="true" relative ="Left" desc="滑動條背景圖X座標" show="showProgress > 0"/>
+        <property name="progBgPicY" type="U16" category="slider" value="16" editable="true" relative ="Top" desc="滑動條背景圖Y座標" show="showProgress > 0"/>
+        
+    
+        <property name="progBgPic" type="Picture" category="slider" value="$widgets\listbox\p_def_list_slider_bg.bmp" editable="false" desc="滑動杆模式滑動條背景圖X座標" show="showProgress > 0"/>
+        <property name="progBgPicWidth" type="U16" visible="false" value="" editable="false"  desc="滑動杆模式滑動條背景圖寬" show="showProgress > 0"/>
+        <property name="progBgPicHeight" type="U16" visible="false" value="" editable="false" desc="滑動杆模式滑動條背景圖高" show="showProgress > 0"/>
+        <property name="progPicX" type="U16" category="slider" value="125" editable="true" relative ="Left" desc="滑動條上游標圖片的X座標" show="showProgress > 0"/>
+        <property name="progPicY" type="U16" category="slider" value="16" editable="true" relative ="Top" desc="滑動條上游標圖片的Y座標" show="showProgress > 0"/>
+        <property name="progPic" type="Picture" category="slider" value="$widgets\listbox\p_def_list_slider_tag.bmp" editable="false" desc="滑動杆模式滑動條的游標圖" show="showProgress > 0"/>
+        <property name="unprogPic" type="Picture" category="slider" value="$widgets\listbox\p_def_list_slider_tag_clr.bmp" editable="false" desc="用於清除滑動杆模式滑動條上游標圖的圖片" show="showProgress > 0"/>
+        <property name="progPicWidth" type="U16" visible="false" value="0" editable="false" desc="滑動杆模式滑動條的游標圖的寬"/>
+        <property name="progPicHeight" type="U16" visible="false" value="0" editable="false" desc="滑動杆模式滑動條的游標圖的高"/>
+        <property name="progLen" type="U8"  value="1" editable="true"  desc="滑動點長度，要求sliderPointID對應的圖片的高度等於這個值" show="showProgress > 0"/>
+            
+        <property name="showRatio"  type="boolean" category="basic" value="1" editable="true" desc="是否顯示‘序號/總數’項"/>  
+        <property name="RatioDisplayMode" type="Enum" editable="false" value="字串" category="ratio" enumKeys="字串,圖片" enumValues="0,1" desc="‘序號/總數’項的顯示模式" show="showRatio = 1"/>
+        <property name="stringColor" type="Color" value="16777215" category="ratio" editable="true" desc="數位和分隔符號的顏色，僅在字串模式有效" show="RatioDisplayMode = 0&showRatio = 1"/>
+        <property name="stringBkColor" type="Color" value="0" category="ratio" editable="true" desc="數字和分隔符號的背景顏色，僅在字串模式有效" show="RatioDisplayMode = 0&showRatio = 1"/>
+        <property name="RatioFontSize" displayName="字體大小" type="Enum" editable="false" category="ratio" value="1" enumKeys="小字體,中字體,大字體" enumValues="0,1,2" default="0" desc="序列號字體大小" show="RatioDisplayMode = 0&showRatio = 1"/>
+
+        <property name="RatioX" type="U16" value="0" category="ratio" editable="true" relative ="Left" desc="序號項X座標"  show="showRatio = 1"/>
+        <property name="RatioY" type="U16" value="2" category="ratio" editable="true" relative ="Top" desc="序號項Y座標"  show="showRatio = 1"/>
+        <property name="RatioIndexCnt" type="U16" value="2" category="ratio" editable="true" desc="序號項位數"  show="showRatio = 1"/>
+        <property name="RatioTotalCnt" type="U16" value="2" category="ratio" editable="true" desc="總數項位數"  show="showRatio = 1"/>
+        <property name="RatioIndexshowHigh" type="boolean" value="1" category="ratio" editable="true" desc="序號項高位是否補零"  show="showRatio = 1"/>
+        <property name="RatioTotalshowHigh" type="boolean" value="1" category="ratio" editable="true" desc="總數項高位是否補零"  show="showRatio = 1"/>
+        <property name="RatioIndexNum" type="S32" value="2" category="ratio" editable="true" desc="序號項數值"  show="showRatio = 1"/>
+        <property name="RatioTotalNum" type="S32" value="4" category="ratio" editable="true" desc="總數項數值"  show="showRatio = 1"/>
+        <property name="RatioWidth" type="U16" visible="false" value="128" category="ratio" editable="true" desc="‘序號/總數’項可變動區域的總寬度"  show="showRatio = 1"/>
+        <property name="RatioHeight" type="U16" visible="false" value="16" category="ratio" editable="true" desc="‘序號/總數’項可變動區域的總高度"  show="showRatio = 1"/>
+        <property name="RatioAlign" type="Enum" editable="false" value="1" category="ratio" enumKeys="左對齊,居中,右對齊" enumValues="0,1,2" desc="‘序號/總數’項的對齊方式"  show="showRatio = 1"/>
+        
+        <property name="RatioUseBgPic" type="boolean" displayName="是否使用背景圖" category="ratio" value="1" editable="true" desc="是否使用背景圖"  show="showRatio = 1"/>
+        <property name="RatioBgPic" type="Picture" value="$widgets\listbox\p_def_list_ratio_bg.bmp" category="ratio" editable="true" desc="背景圖片"  show="showRatio = 1" storeType = "1"/>
+        <property name="RatioBgPicX" type="U16" value="30" editable="true" category="ratio" relative ="Left" desc="背景圖片左上角x座標" show="showRatio = 1"/>
+        <property name="RatioBgPicY" type="U16" value="0" editable="true" category="ratio" relative ="Top" desc="背景圖片左上角y座標" show="showRatio = 1"/>      
+        <property name="RatioBgPicWidth" type="U16" visible="false" value="0" editable="false" desc="背景圖寬"/>
+        <property name="RatioBgPicHeight" type="U16" visible="false" value="0" editable="false" desc="背景圖高"/>
+
+        <property name="partitionPic" displayName="分隔符號圖片" value="" type="Picture" category="ratio" editable="false" desc="分隔符號圖片" show="RatioDisplayMode > 0&showRatio = 1"/>
+            
+        <property name="pic0" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="數位0圖片" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic1" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="數位1圖片" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic2" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="數位2圖片" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic3" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="數位3圖片" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic4" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="數位4圖片" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic5" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="數位5圖片" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic6" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="數位6圖片" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic7" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="數位7圖片" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic8" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="數位8圖片" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic9" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="數位9圖片" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="picCover" displayName="空白" type="Picture" category="ratio" value="" editable="false" allowEmpty="false"  desc="空白圖片" show="RatioDisplayMode > 0&showRatio = 1"/>  
+        <property name="pic0Width" type="U16" visible="false" category="ratio" value="" editable="false" desc="數位圖片的寬度" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic0Height" type="U16" visible="false" value="" editable="false" desc="數位圖片的高度"/>        
+        <property name="partitionPicWidth" type="U16" visible="false" category="ratio" value="" editable="false" desc="分隔符號圖片的寬" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="partitionPicHeight" type="U16" visible="false" value="" editable="false" desc="分隔符號圖片的高"/>
+        <property name="numBkColor" type="Color" value="0"  category="ratio" editable="true" desc="數位圖片的背景色，為純色。用於實現數位的背景透明顯示"  show="RatioDisplayMode > 0&showRatio = 1"/>      
+    </properties>
+
+        
+</widget>

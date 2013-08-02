@@ -1,0 +1,16 @@
+﻿<widget name="SubScene" type="widget" adapter="JLabelAdapter"
+			icon="widgets/subscene.png" >
+
+     <categories>
+     <category name = "basic"/>
+     </categories>
+     
+	<properties>	
+		<property name="type" type="U16" value="" editable="true" category="basic" desc="子场景模板名称"/>		
+		<property name="x" type="U16" value="" editable="true" category="basic" relative ="Left" desc="控件左上角x坐标"/>
+		<property name="y" type="U16" value="" editable="true" category="basic" relative ="Top" desc="控件左上角y坐标"/>		
+		<property name="width" type="U16" value="70" category="basic" editable="true" desc="控件宽度"/>
+		<property name="height" type="U16" value="20" category="basic" editable="true" desc="控件高度"/>	
+	</properties>
+		
+</widget>

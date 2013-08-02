@@ -1,0 +1,68 @@
+﻿<widget name="numbox" type="widget" adapter="ANumBoxAdapter"
+			icon="widgets/numBox.png" >
+
+     <categories>
+     <category name = "basic"/>
+     <category name = "picture"/>
+     </categories>
+     
+	<properties>
+	   <property name="x" type="U16" value=""  editable="true"  relative ="Left" desc="x coordinate of the left-top corner of the widget"/>
+	   <property name="y" type="U16" value=""  editable="true"  relative = "Top" desc="y coordinate of the left-top corner of the widget"/>
+        <property name="width" type="U16" value="101"  editable="true" desc="width of the widget"/>
+        <property name="height" type="U16" value="18"  editable="true" desc="height of the widget"/>
+        <property name="numX" type="U16" value="0" category="basic" editable="true"  relative ="Left" desc="x coordinate of the left-top corner of num rect"/>
+        <property name="numY" type="U16" value="0" category="basic" editable="true"  relative = "Top" desc="y coordinate of the left-top corner of num rect"/>
+        <property name="numWidth" type="U16" value="101" category="basic" editable="true" desc="width of num rect"/>
+        <property name="numHeight" type="U16" value="18" category="basic" editable="true" desc="height of num rect"/>
+	   <property name="visible" type="boolean" value="1" category="basic" editable="true" desc="whether the widget is visible"/>
+		
+	   <property name="useBgPic" type="boolean" displayName="whether the background pic is visible" category="basic" value="1" editable="true" desc="whether the background pic is visible"/>
+	   <property name="bgPic" type="Picture" value="" category="basic" editable="true" storeType="1" desc="background pic"/>
+	   <property name="bgPicX" type="U16" value="0" editable="true" category="basic" relative ="Left" desc="x coordinate of the left-top corner of background pic"/>
+	   <property name="bgPicY" type="U16" value="0" editable="true" category="basic" relative ="Top" desc="y coordinate of the left-top corner of background pic"/>		
+	   <property name="bgPicWidth" type="U16" visible="false" value="0" editable="false" desc="width of bgPic"/>
+	   <property name="bgPicHeight" type="U16" visible="false" value="0" editable="false" desc="height of bgPic"/>
+
+		<!--<property name="x0" type="U16" editable="true" />
+		<property name="y0" type="U16" editable="true" /> -->
+        <property name="DisplayMode" type="Enum" editable="false" value="1" category="basic" enumKeys="String,Num Picture" enumValues="0,1" desc="display mode"/>
+        <property name="Composition" type="Enum" editable="false" value="0" category="basic" enumKeys="One number,Two nunber" enumValues="0,1" desc="composition mode"/>
+	   <property name="number1" type="S32" value="1234567890" category="basic" editable="true" desc="value of number 1"/>
+	   <property name="digits1" type="U16" value="10" category="basic" editable="true" desc="count of digits of number 1. number 1 will be shown with its actual digit number if this value equals to 0"/>
+	   <property name="number2" type="S32" value="1234567890" category="basic" editable="true" desc="value of number 2" show="Composition > 0"/>
+	   <property name="digits2" type="U16" value="10" category="basic" editable="true" desc="count of digits of number 2. number 2 will be shown with its actual digit number if this value equals to 0" show="Composition > 0"/>
+        <property name="stringColor" type="Color" value="0" category="basic" editable="true" desc="Font Color of number and partition,effective only in String mode" show="DisplayMode = 0"/>
+        <property name="stringBkColor" type="Color" value="16777215" category="basic" editable="true" desc="Background Color of number and delimiter,effective only in String mode"  show="DisplayMode = 0"/>
+        <property name="FontSize" displayName="Font size" type="Enum" editable="false" category="basic" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size"  show="DisplayMode = 0"/>
+
+           
+	   <property name="align" type="Enum" editable="false" value="left to right" category="basic" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" desc="align type"/>
+			
+	   <property name="showPartition" displayName="whether the partition is visible" value="1" type="boolean" category="basic" editable="true" desc="whether the partition is visible"/>
+        <property name="partitionPic" displayName="partition Picture" value="$widgets\numbox\p_def_numbox_dot.bmp" type="Picture" category="Picture" editable="false" desc="partition Picture"  show="DisplayMode = 1"/> 
+	   <property name="DecimalDigits" displayName="count of digits of decimal" value="2" type="U16" category="basic" editable="true" desc="count of digits of decimal"/>
+		
+	   <property name="showSign" displayName="whether sign is shown" value="1" type="boolean" category="basic" editable="true" desc="whether sign is shown"/>
+				
+        <property name="pic0" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num0.bmp" allowEmpty="false" desc="pic of num 0" show="DisplayMode = 1"/>
+        <property name="pic1" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num1.bmp" allowEmpty="false" desc="pic of num 1" show="DisplayMode = 1"/>
+        <property name="pic2" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num2.bmp" allowEmpty="false" desc="pic of num 2" show="DisplayMode = 1"/>
+        <property name="pic3" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num3.bmp" allowEmpty="false" desc="pic of num 3" show="DisplayMode = 1"/>
+        <property name="pic4" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num4.bmp" allowEmpty="false" desc="pic of num 4" show="DisplayMode = 1"/>
+        <property name="pic5" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num5.bmp" allowEmpty="false" desc="pic of num 5" show="DisplayMode = 1"/>
+        <property name="pic6" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num6.bmp" allowEmpty="false" desc="pic of num 6" show="DisplayMode = 1"/>
+        <property name="pic7" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num7.bmp" allowEmpty="false" desc="pic of num 7" show="DisplayMode = 1"/>
+        <property name="pic8" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num8.bmp" allowEmpty="false" desc="pic of num 8" show="DisplayMode = 1"/>
+        <property name="pic9" type="Picture" category="Picture" editable="false" value="$widgets\numbox\p_def_numbox_num9.bmp" allowEmpty="false" desc="pic of num 9" show="DisplayMode = 1"/>
+        <property name="picPositive" displayName="pic of positive signal" type="Picture" category="Picture" value="$widgets\numbox\p_def_numbox_plus.bmp" editable="false" allowEmpty="false"  desc="pic of positive signal" show="DisplayMode = 1"/>
+        <property name="picNegative" displayName="pic of negative signal" type="Picture" category="Picture" value="$widgets\numbox\p_def_numbox_minus.bmp" editable="false" allowEmpty="false"  desc="pic of negative signal" show="DisplayMode = 1"/>
+        <property name="picCover" displayName="pic of null" type="Picture" category="Picture" value="$widgets\numbox\p_def_numbox_num_null.bmp" editable="false" allowEmpty="false"  desc="pic of null" show="DisplayMode = 1"/> 
+	   <property name="pic0Width" type="U16" visible="false" value="9" editable="false" desc="width of pic0" show="DisplayMode = 1"/>
+	   <property name="pic0Height" type="U16" visible="false" value="18" editable="false" desc="height of pic0" show="DisplayMode = 1"/>
+        <property name="incX" type="U16" visible="false" category="Picture" value="9" editable="false" desc="width of num pic" show="DisplayMode = 1"/>
+        <property name="partitionIncX" type="U16" category="Picture" value="2" editable="false" desc="width of partition pic" show="DisplayMode = 1"/>
+	   <property name="numBkColor" type="Color" value="0"  category="Picture" editable="true" desc="background color of num pic,with pure color. for the purpose of transparent background of num pic"  />
+	</properties>
+		
+</widget>

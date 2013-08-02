@@ -1,0 +1,33 @@
+<widget name="resgroup_resource" type="widget" adapter="JPanelAdapter"
+			icon="icons/resgroup.png" >
+
+	<properties>
+		<property name="x" type="U16" editable="true" default="0" />
+		<property name="y" type="U16" editable="true" default="0" />
+		<property name="abs_x" type="U16" editable="false" default="0" />
+		<property name="abs_y" type="U16" editable="false" default="0"/>
+		<property name="width" type="U16" editable="true" default="100" />
+		<property name="height" type="U16" editable="true" default="200" />
+		<property name="background" type="Color" editable="true" default="15658734"/>
+		<property name="transparency" type="U8" editable="true" default="255"/>
+		<property name="opaque" type="boolean" editable="true" default="0"/>
+		<property name="visible" type="boolean" editable="true" default="1" />
+	</properties>
+	
+	<events>
+		<event name="mousePressed" />
+		<event name="mouseRelease" />
+	</events>
+	
+	<functions>
+		<function name="create" />
+		<function name="destroy" />
+	</functions>
+	
+	<draws>
+		<draw type="image" x0="10" y0="20" image="sample.gif" />
+		<draw type="text" x0="10" y0="20" text="Hello Actions !" />
+		<draw type="image" x0="10" y0="20" x1="100" y1="150" image="sample.gif" />
+	</draws>
+	
+</widget>

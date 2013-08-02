@@ -1,0 +1,72 @@
+*-------------------------------------------------------------------------------
+* Wolfson Microelectronics device configuration file
+* Created by WISCE utility at 11:30:49 on 2009-07-02
+*
+* Device type: WM8904
+*-------------------------------------------------------------------------------
+
+*-------------------------------------------------------------------------------
+* Register operations have the following format:
+*
+*      <register> <value> <access_type> <action> [<dev_addr>] [<mask>]
+*
+* where:
+*      <register>      is the register index
+*      <value>         is the data value
+*      <access_type>   is one of:
+*          AC97_16_bit_data
+*          3wire_9_bit_data
+*          2wire_9_bit_data
+*      <action>        is one of
+*          Write         - write the given value
+*          Read          - documents the value that was read
+*          RModW         - read/modify/write
+*                          (newval = (currval & ~<mask>) | <value>)
+*      <dev_addr>      is the 2wire device address
+*      <mask>          is the mask for the RModW operation
+*
+* for example:
+*   R12  0x1234  AC97_16_bit_data Write
+*     - this would write the hex value 0x1234 to register 12 (decimal)
+*       using AC97
+*
+*   R36  0x1F5   2wire_9_bit_data Write 0x34
+*     - this would write the hexadecimal value 0x1F5 to register
+*       36 (decimal) on the 2-wire device at address 0x34 (hex)
+*
+*   0xC  4660    AC97_16_bit_data Write
+*   0x24 501     2wire_9_bit_data Write 0x34
+*     - these are the same two operations using hexadecimal registers
+*       and decimal values
+*
+* Lines beginning with// are comments and are ignored when processing
+* the file.
+*
+* The register index can be written either in decimal format, prefixed by 'R'
+* or in hexadecimal format, prefixed by '0x'.
+*
+* For 9-bit 2- and 3-wire operations, <value> is the actual 9 bit register
+* contents, NOT the 16 bit data word.
+*
+* Entries in a line can be separated by spaces or tabs. The amount of
+* space between each entry does not matter but entries must be arranged
+* in the correct order from left to right. A file can be created in a text
+* editor (e.g. Notepad), or created in Excel and saved as .txt format
+* (tab separated).
+*
+*-------------------------------------------------------------------------------
+
+* ----- ------ -------------------- ------- --------- ------------------------------
+*  REG   DATA         ACCESS        READ OR  DEVICE
+* INDEX  VALUE         TYPE          WRITE   ADDRESS  COMMENT (for information only)
+* ----- ------ -------------------- ------- --------- ------------------------------
+   0x00 0x0000 SMbus_16_bit_data     Write  0x34      * SW Reset and ID(00H):    0000  SW_RST_DEV_ID1=0000_0000_0000_0000
+   0x16 0x0006 SMbus_16_bit_data     Write  0x34      * Clock Rates 2(16H):      0006  MCLK_INV=0, SYSCLK_SRC=0, TOCLK_RATE=0, OPCLK_ENA=0, CLK_SYS_ENA=1, CLK_DSP_ENA=1, TOCLK_ENA=0
+   0x04 0x0009 SMbus_16_bit_data     Write  0x34      * Bias Control 0(04H):     0009  POBCTRL=0, ISEL=10, STARTUP_BIAS_ENA=0, BIAS_ENA=1
+   0x05 0x0043 SMbus_16_bit_data     Write  0x34      * VMID Control 0(05H):     0043  VMID_BUF_ENA=1, VMID_RES=01, VMID_ENA=1
+   0x14 0x845E SMbus_16_bit_data     Write  0x34      * Clock Rates 0(14H):      845E  TOCLK_RATE_DIV16=0, TOCLK_RATE_X4=0, SR_MODE=0, MCLK_DIV=0
+   0x0C 0x0003 SMbus_16_bit_data     Write  0x34      * Power Management 0(0CH): 0003  INL_ENA=1, INR_ENA=1
+   0x12 0x0003 SMbus_16_bit_data     Write  0x34      * Power Management 6(12H): 0003  DACL_ENA=0, DACR_ENA=0, ADCL_ENA=1, ADCR_ENA=1
+   0x2C 0x0005 SMbus_16_bit_data     Write  0x34      * Analogue Left Input 0(2CH): 0005  LINMUTE=0, LIN_VOL=0_0101
+   0x2D 0x0005 SMbus_16_bit_data     Write  0x34      * Analogue Right Input 0(2DH): 0005  RINMUTE=0, RIN_VOL=0_0101
+ 

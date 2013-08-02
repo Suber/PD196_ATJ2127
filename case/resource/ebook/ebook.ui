@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="ebook" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="ebook.sty" />
+    <property name="prj_res_head_file" value="ebook_res.h" />
+    <property name="prj_res_str_dir" value="ebook\" />
+    <property name="prj_sty_file" value="ebook.sty" />
+    <property name="prj_sty_head_file" value="ebook_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="14" />
+        <property name="Font_large" value="16" />
+        <scene>
+            <property name="name" value="scene00" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup0" />
+                <property name="id" value="0" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="PLAY_SCENE_BACKGD" />
+                    <property name="id" value="11" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\ebookbg_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="TEXT_BACKGD" />
+                    <property name="id" value="12" />
+                    <property name="x" value="80" />
+                    <property name="y" value="26" />
+                    <property name="width" value="128" />
+                    <property name="height" value="144" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\ebook_text_bg_p2.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="FILE_NAME_BACKGD" />
+                    <property name="id" value="13" />
+                    <property name="x" value="80" />
+                    <property name="y" value="154" />
+                    <property name="width" value="114" />
+                    <property name="height" value="16" />
+                    <property name="visible" value="0" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\ebook_filename_bg_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="AUTO_PLAY_PICBOX" />
+                    <property name="id" value="9" />
+                    <property name="x" value="100" />
+                    <property name="y" value="10" />
+                    <property name="width" value="14" />
+                    <property name="height" value="16" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\p_manual_play.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\pic\p_auto_play.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="FILE_NAME" />
+                    <property name="id" value="14" />
+                    <property name="x" value="96" />
+                    <property name="y" value="146" />
+                    <property name="width" value="94" />
+                    <property name="height" value="24" />
+                    <property name="textX" value="4" />
+                    <property name="textY" value="8" />
+                    <property name="textWidth" value="90" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="numBox">
+                    <property name="name" value="TRACK_NUMBER_BOX" />
+                    <property name="id" value="10" />
+                    <property name="x" value="156" />
+                    <property name="y" value="16" />
+                    <property name="width" value="64" />
+                    <property name="height" value="8" />
+                    <property name="numX" value="-34" />
+                    <property name="numY" value="-3" />
+                    <property name="numWidth" value="64" />
+                    <property name="numHeight" value="8" />
+                    <property name="visible" value="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPic" value=".\BgPicDoc\TRACK_NUMBER_BOX_bg.bmp" storetype="1" />
+                    <property name="bgPicX" value="-34" />
+                    <property name="bgPicY" value="-3" />
+                    <property name="bgPicWidth" value="64" />
+                    <property name="bgPicHeight" value="8" />
+                    <property name="DisplayMode" value="1" />
+                    <property name="Composition" value="1" />
+                    <property name="number1" value="45912" />
+                    <property name="digits1" value="0" />
+                    <property name="number2" value="78913" />
+                    <property name="digits2" value="0" />
+                    <property name="stringColor" value="0" />
+                    <property name="stringBkColor" value="16777215" />
+                    <property name="FontSize" value="1" />
+                    <property name="align" value="0" />
+                    <property name="showPartition" value="1" />
+                    <property name="partitionPic" value=".\pic\slash_p.bmp" />
+                    <property name="DecimalDigits" value="2" />
+                    <property name="showSign" value="0" />
+                    <property name="pic0" value=".\pic\num0_p.bmp" />
+                    <property name="pic1" value=".\pic\num1_p.bmp" />
+                    <property name="pic2" value=".\pic\num2_p.bmp" />
+                    <property name="pic3" value=".\pic\num3_p.bmp" />
+                    <property name="pic4" value=".\pic\num4_p.bmp" />
+                    <property name="pic5" value=".\pic\num5_p.bmp" />
+                    <property name="pic6" value=".\pic\num6_p.bmp" />
+                    <property name="pic7" value=".\pic\num7_p.bmp" />
+                    <property name="pic8" value=".\pic\num8_p.bmp" />
+                    <property name="pic9" value=".\pic\num9_p.bmp" />
+                    <property name="picPositive" value="" />
+                    <property name="picNegative" value="" />
+                    <property name="picCover" value=".\pic\num_Cover.bmp" />
+                    <property name="pic0Width" value="6" />
+                    <property name="pic0Height" value="8" />
+                    <property name="incX" value="6" />
+                    <property name="partitionIncX" value="4" />
+                    <property name="numBkColor" value="0" />
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\pic\ebookbg_p.bmp" />
+        <picture value=".\pic\ebook_filename_bg_p.bmp" />
+        <picture value=".\pic\ebook_text_bg_p.bmp" />
+        <picture value=".\pic\ebook_text_bg_p2.bmp" />
+        <picture value=".\pic\num0_p.bmp" />
+        <picture value=".\pic\num1_p.bmp" />
+        <picture value=".\pic\num2_p.bmp" />
+        <picture value=".\pic\num3_p.bmp" />
+        <picture value=".\pic\num4_p.bmp" />
+        <picture value=".\pic\num5_p.bmp" />
+        <picture value=".\pic\num6_p.bmp" />
+        <picture value=".\pic\num7_p.bmp" />
+        <picture value=".\pic\num8_p.bmp" />
+        <picture value=".\pic\num9_p.bmp" />
+        <picture value=".\pic\num_Cover.bmp" />
+        <picture value=".\pic\p_auto_play.bmp" />
+        <picture value=".\pic\p_manual_play.bmp" />
+        <picture value=".\pic\slash_p.bmp" />
+        <txt value=".\ebook.xls" />
+        <string value="S_PLAYSETTING" />
+        <string value="S_DELETEEBK" />
+        <string value="S_BMKSELECT" />
+        <string value="S_DELETEBMK" />
+        <string value="S_ADDBMK" />
+        <string value="S_PAGESELECT" />
+        <string value="S_MANUPLAY" />
+        <string value="S_AUTOPLAY" />
+        <string value="S_DELETEOPTION" />
+        <string value="S_ADDOPTION" />
+        <string value="S_ADD_BMK" />
+        <string value="S_DELETE_BMK" />
+        <string value="S_DELETE_TEXT" />
+        <string value="S_TEXT_NOFOUND" />
+        <string value="S_REPLACEOPTION" />
+        <string value="S_FULLMSG" />
+        <string value="S_NOBMK" />
+        <string value="S_DELETEFILE" />
+        <string value="S_NOPLAYNOREAD" />
+        <string value="S_NOPLAYNOREAD_C" />
+        <string value="S_NOPLAYREAD" />
+        <string value="S_NOPLAYREAD_C" />
+        <string value="S_NOWPLAYNOREAD" />
+        <string value="S_NOWPLAYNOREAD_C" />
+        <string value="S_NOWPLAYREAD" />
+        <string value="S_NOWPLAYREAD_C" />
+        <string value="S_LPLAYNOREAD" />
+        <string value="S_LPLAYNOREAD_C" />
+        <string value="S_LPLAYREAD" />
+        <string value="S_LPLAYREAD_C" />
+    </resource>
+</ui-rad>

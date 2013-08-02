@@ -1,0 +1,15 @@
+﻿<widget name="attributeBox" type="widget" adapter="AttributeBoxAdapter"
+			icon="widgets/attributeBox.gif" >
+			
+     <categories>
+     <category name = "basic"/>
+     </categories>
+
+	<properties>
+		<property name="x" type="U32" value="" category="basic" editable="true" relative ="Left" desc="控件左上角x坐标" />
+		<property name="y" type="U32" value="" category="basic" editable="true" relative ="Top" desc="控件左上角y坐标" />
+		<property name="width" type="U32" value="200" category="basic" editable="true" desc="控件宽度" />
+		<property name="height" type="U32" value="50" category="basic" editable="true" desc="控件高度"/>
+	</properties>
+		
+</widget>

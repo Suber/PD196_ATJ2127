@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="record" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="record.sty" />
+    <property name="prj_res_head_file" value="record_res.h" />
+    <property name="prj_res_str_dir" value="record\" />
+    <property name="prj_sty_file" value="record.sty" />
+    <property name="prj_sty_head_file" value="record_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <property name="prj_ver" value="V100" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="12" />
+        <property name="Font_large" value="13" />
+        <scene>
+            <property name="name" value="scene00" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup01" />
+                <property name="id" value="1" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="$(screenWidth)" />
+                <property name="height" value="$(screenHeight)" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_RECORD_BG" />
+                    <property name="id" value="1" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\res\record_bg_1.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="STY_RECORD_STATE" />
+                    <property name="id" value="2" />
+                    <property name="x" value="81" />
+                    <property name="y" value="154" />
+                    <property name="width" value="13" />
+                    <property name="height" value="14" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\res\record_play.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\res\record_pause.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="ProgressBar">
+                    <property name="name" value="STY_RECORD_PROGRESS" />
+                    <property name="id" value="3" />
+                    <property name="x" value="199" />
+                    <property name="y" value="135" />
+                    <property name="width" value="108" />
+                    <property name="height" value="3" />
+                    <property name="visible" value="1" />
+                    <property name="total" value="108" />
+                    <property name="current" value="20" />
+                    <property name="length" value="108" />
+                    <property name="ProgressBarStyle" value="0" />
+                    <property name="horizontal" value="1" />
+                    <property name="bgPicX" value="-102" />
+                    <property name="bgPicY" value="29" />
+                    <property name="bgPic" value=".\res\record_progressbar_gray.bmp" />
+                    <property name="useTransparentBg" value="0" />
+                    <property name="bgPicWidth" value="108" />
+                    <property name="bgPicHeight" value="3" />
+                    <property name="progStartX" value="-102" />
+                    <property name="fillPicY" value="29" />
+                    <property name="progStartY" value="8" />
+                    <property name="fillPicX" value="20" />
+                    <property name="fillPic" value="$widgets/progress/p_def_progress_a.bmp" />
+                    <property name="unfillPic" value="$widgets/progress/p_def_progress_ina.bmp" />
+                    <property name="progPicWidth" value="1" />
+                    <property name="progPicHeight" value="3" />
+                    <property name="unprogPicWidth" value="1" />
+                    <property name="unprogPicHeight" value="3" />
+                    <property name="tagPic" value="" />
+                    <property name="tagPicWidth" value="3" />
+                    <property name="tagPicHeight" value="3" />
+                    <property name="tagPicY" value="29" />
+                    <property name="tagPicX" value="19" />
+                    <property name="scale" value="1" />
+                    <property name="WidgetbgPic" value=".\BgPicDoc\STY_RECORD_PROGRESS_bg.bmp" storetype="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_RECORD_FILENAME" />
+                    <property name="id" value="4" />
+                    <property name="x" value="239" />
+                    <property name="y" value="48" />
+                    <property name="width" value="116" />
+                    <property name="height" value="16" />
+                    <property name="textX" value="-152" />
+                    <property name="textY" value="-3" />
+                    <property name="textWidth" value="116" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-152" />
+                    <property name="bgPicY" value="-3" />
+                    <property name="text" value="str_record_save" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_RECORD_FMFREQ" />
+                    <property name="id" value="5" />
+                    <property name="x" value="241" />
+                    <property name="y" value="84" />
+                    <property name="width" value="70" />
+                    <property name="height" value="16" />
+                    <property name="textX" value="-154" />
+                    <property name="textY" value="-14" />
+                    <property name="textWidth" value="70" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-154" />
+                    <property name="bgPicY" value="-14" />
+                    <property name="text" value="sel_disk" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="timeBox">
+                    <property name="name" value="STY_RECORD_TIME" />
+                    <property name="id" value="6" />
+                    <property name="x" value="219" />
+                    <property name="y" value="117" />
+                    <property name="width" value="100" />
+                    <property name="height" value="8" />
+                    <property name="timeX" value="-122" />
+                    <property name="timeY" value="33" />
+                    <property name="timeWidth" value="100" />
+                    <property name="timeHeight" value="8" />
+                    <property name="visible" value="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="stringBkColor" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\STY_RECORD_TIME_bg.bmp" storetype="1" />
+                    <property name="bgPicX" value="-122" />
+                    <property name="bgPicY" value="33" />
+                    <property name="bgPicWidth" value="100" />
+                    <property name="bgPicHeight" value="8" />
+                    <property name="FontSize" value="1" />
+                    <property name="DisplayMode" value="1" />
+                    <property name="Composition" value="1" />
+                    <property name="align" value="left to right" />
+                    <property name="stringColor" value="16777215" />
+                    <property name="incX" value="6" />
+                    <property name="partitionIncX" value="4" />
+                    <property name="pic0" value=".\res\num0_p.bmp" />
+                    <property name="pic1" value=".\res\num1_p.bmp" />
+                    <property name="pic2" value=".\res\num2_p.bmp" />
+                    <property name="pic3" value=".\res\num3_p.bmp" />
+                    <property name="pic4" value=".\res\num4_p.bmp" />
+                    <property name="pic5" value=".\res\num5_p.bmp" />
+                    <property name="pic6" value=".\res\num6_p.bmp" />
+                    <property name="pic7" value=".\res\num7_p.bmp" />
+                    <property name="pic8" value=".\res\num8_p.bmp" />
+                    <property name="pic9" value=".\res\num9_p.bmp" />
+                    <property name="picNULL" value=".\res\num_bg.bmp" />
+                    <property name="picColon" value=".\res\doubledot_p.bmp" />
+                    <property name="picSlash" value=".\res\slash_p.bmp" />
+                    <property name="picDash" value="" />
+                    <property name="picSpace" value="" />
+                    <property name="numBkColor" value="0" />
+                    <property name="number1" value="0" />
+                    <property name="number2" value="1" />
+                    <property name="number3" value="2" />
+                    <property name="digits1" value="2" />
+                    <property name="showHigh1" value="0" />
+                    <property name="showFirstPartition" value="1" />
+                    <property name="FirstPartitionStr" value=":" />
+                    <property name="showMiddlePartition" value="1" />
+                    <property name="MiddlePartitionStr" value="1" />
+                    <property name="number4" value="123" />
+                    <property name="number5" value="4" />
+                    <property name="number6" value="5" />
+                    <property name="digits2" value="3" />
+                    <property name="showHigh2" value="0" />
+                    <property name="showSecondPartition" value="1" />
+                    <property name="SecondPartitionStr" value=":" />
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\res\doubledot_p.bmp" />
+        <picture value=".\res\num0_p.bmp" />
+        <picture value=".\res\num1_p.bmp" />
+        <picture value=".\res\num2_p.bmp" />
+        <picture value=".\res\num3_p.bmp" />
+        <picture value=".\res\num4_p.bmp" />
+        <picture value=".\res\num5_p.bmp" />
+        <picture value=".\res\num6_p.bmp" />
+        <picture value=".\res\num7_p.bmp" />
+        <picture value=".\res\num8_p.bmp" />
+        <picture value=".\res\num9_p.bmp" />
+        <picture value=".\res\num_bg.bmp" />
+        <picture value=".\res\record_bg_1.bmp" />
+        <picture value=".\res\record_pause.bmp" />
+        <picture value=".\res\record_play.bmp" />
+        <picture value=".\res\record_progressbar1.bmp" />
+        <picture value=".\res\record_progressbar_BG_1.bmp" />
+        <picture value=".\res\record_progressbar_gray.bmp" />
+        <picture value=".\res\record_recording.bmp" />
+        <picture value=".\res\record_timerbox_bg.bmp" />
+        <picture value=".\res\slash_p.bmp" />
+        <txt value=".\record_string.xls" />
+        <string value="start_record" />
+        <string value="record_dir" />
+        <string value="sel_disk" />
+        <string value="sel_disk_internal" />
+        <string value="sel_disk_external" />
+        <string value="saved2" />
+        <string value="mdirout" />
+        <string value="str_disk_full" />
+        <string value="str_record_savetxt" />
+        <string value="set_rec_format" />
+        <string value="set_rec_format_wav" />
+        <string value="set_rec_format_mp3" />
+        <string value="set_rec_format_act" />
+        <string value="set_rec_type" />
+        <string value="set_rec_source" />
+        <string value="set_rec_source_mic" />
+        <string value="set_rec_source_linein" />
+        <string value="set_rec_bitrate" />
+        <string value="set_rec_bitrate_8kbps" />
+        <string value="set_rec_bitrate_32kbps" />
+        <string value="set_rec_bitrate_64kbps" />
+        <string value="set_rec_bitrate_128kbps" />
+        <string value="set_rec_bitrate_192kbps" />
+        <string value="set_rec_bitrate_256kbps" />
+        <string value="set_rec_bitrate_512kbps" />
+        <string value="set_rec_bitrate_768kbps" />
+        <string value="set_rec_bitrate_1024kbps" />
+        <string value="set_rec_bitrate_1536kbps" />
+        <string value="set_avr_track_mode" />
+        <string value="set_track_mode" />
+        <string value="set_normal_mode" />
+        <string value="set_avr_mode" />
+        <string value="set_noise_cancellation" />
+        <string value="start_noise_cancellation" />
+        <string value="stop_noise_cancellation" />
+        <string value="s_record_file_full" />
+        <string value="s_rec_train_scene" />
+        <string value="s_rec_meeting_scene" />
+        <string value="s_rec_long_range_scene" />
+        <string value="s_rec_normal_scene" />
+        <string value="s_set_recording_scene" />
+        <string value="s_rec_stop_noise_cancellation" />
+        <string value="rec_card_s" />
+        <string value="rec_nocard_s" />
+        <string value="rec_act_card_s" />
+        <string value="rec_act_nocard_s" />
+    </resource>
+</ui-rad>

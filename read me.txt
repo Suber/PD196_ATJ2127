@@ -1,0 +1,7 @@
+本发布包默认为EVB版本，与DEMO版的key、lcd、fm驱动不同，如果需要DEMO版，需要作如下：
+1、将\usdk212a\case\inc\lcd_driver.h中的宏_DEMO_打开，编译lcd和welcome驱动；
+2、编译\usdk212a\case\drv\Key_demo；
+3、编译\usdk212a\case\drv\fm\FM_AR1019；
+最后打包固件。
+
+目录case\codec_wm8904 是支持wolfson wm8904的 录音和解码应用参考代码

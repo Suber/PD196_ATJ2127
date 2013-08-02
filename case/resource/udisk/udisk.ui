@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="udisk" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="udisk.sty" />
+    <property name="prj_res_head_file" value="udisk_res.h" />
+    <property name="prj_res_str_dir" value="udisk\" />
+    <property name="prj_sty_file" value="udisk.sty" />
+    <property name="prj_sty_head_file" value="udisk_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <style>
+        <property name="name" value="udisk_link" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="12" />
+        <property name="Font_large" value="13" />
+        <scene>
+            <property name="name" value="udisk_linking" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup0" />
+                <property name="id" value="0" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="udisk_link_bg" />
+                    <property name="id" value="1" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\udisk_pic\p_udisk_bg.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="udisk_mp3" />
+                    <property name="id" value="2" />
+                    <property name="x" value="96" />
+                    <property name="y" value="72" />
+                    <property name="width" value="20" />
+                    <property name="height" value="28" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\udisk_pic\p_udisk_mp3.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="udisk_link_type" />
+                    <property name="id" value="3" />
+                    <property name="x" value="137" />
+                    <property name="y" value="72" />
+                    <property name="width" value="25" />
+                    <property name="height" value="11" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\udisk_pic\p_udisk_msc.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\udisk_pic\p_udisk_mtp.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="udisk_state_str" />
+                    <property name="id" value="5" />
+                    <property name="x" value="265" />
+                    <property name="y" value="192" />
+                    <property name="width" value="120" />
+                    <property name="height" value="16" />
+                    <property name="textX" value="-181" />
+                    <property name="textY" value="-165" />
+                    <property name="textWidth" value="120" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-181" />
+                    <property name="bgPicY" value="-165" />
+                    <property name="text" value="s_udisk_linking" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\udisk_state_str_bg.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="120" />
+                    <property name="bgPicHeight" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="udisk_point_1" />
+                    <property name="id" value="6" />
+                    <property name="x" value="98" />
+                    <property name="y" value="106" />
+                    <property name="width" value="12" />
+                    <property name="height" value="12" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\udisk_pic\p_udisk_point_1ina.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\udisk_pic\p_udisk_point_1a.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="udisk_point_2" />
+                    <property name="id" value="7" />
+                    <property name="x" value="98" />
+                    <property name="y" value="118" />
+                    <property name="width" value="12" />
+                    <property name="height" value="12" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\udisk_pic\p_udisk_point_2ina.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\udisk_pic\p_udisk_point_2a.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="udisk_point_3" />
+                    <property name="id" value="8" />
+                    <property name="x" value="98" />
+                    <property name="y" value="130" />
+                    <property name="width" value="12" />
+                    <property name="height" value="12" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\udisk_pic\p_udisk_point_3ina.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\udisk_pic\p_udisk_point_3a.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="udisk_point_4" />
+                    <property name="id" value="9" />
+                    <property name="x" value="98" />
+                    <property name="y" value="142" />
+                    <property name="width" value="12" />
+                    <property name="height" value="12" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\udisk_pic\p_udisk_point_4ina.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\udisk_pic\p_udisk_point_4a.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="udisk_point_5" />
+                    <property name="id" value="10" />
+                    <property name="x" value="98" />
+                    <property name="y" value="154" />
+                    <property name="width" value="12" />
+                    <property name="height" value="12" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\udisk_pic\p_udisk_point_5ina.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\udisk_pic\p_udisk_point_5a.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="udisk_battery" />
+                    <property name="id" value="11" />
+                    <property name="x" value="184" />
+                    <property name="y" value="11" />
+                    <property name="width" value="20" />
+                    <property name="height" value="13" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\udisk_pic\p_udisk_battery_0.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\udisk_pic\p_udisk_battery_1.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\udisk_pic\p_udisk_battery_2.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\udisk_pic\p_udisk_battery_3.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="4" value=".\udisk_pic\p_udisk_battery_4.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\udisk_pic\p_udisk_battery_0.bmp" />
+        <picture value=".\udisk_pic\p_udisk_battery_1.bmp" />
+        <picture value=".\udisk_pic\p_udisk_battery_2.bmp" />
+        <picture value=".\udisk_pic\p_udisk_battery_3.bmp" />
+        <picture value=".\udisk_pic\p_udisk_battery_4.bmp" />
+        <picture value=".\udisk_pic\p_udisk_bg.bmp" />
+        <picture value=".\udisk_pic\p_udisk_mp3.bmp" />
+        <picture value=".\udisk_pic\p_udisk_msc.bmp" />
+        <picture value=".\udisk_pic\p_udisk_mtp.bmp" />
+        <picture value=".\udisk_pic\p_udisk_point_1a.bmp" />
+        <picture value=".\udisk_pic\p_udisk_point_1ina.bmp" />
+        <picture value=".\udisk_pic\p_udisk_point_2a.bmp" />
+        <picture value=".\udisk_pic\p_udisk_point_2ina.bmp" />
+        <picture value=".\udisk_pic\p_udisk_point_3a.bmp" />
+        <picture value=".\udisk_pic\p_udisk_point_3ina.bmp" />
+        <picture value=".\udisk_pic\p_udisk_point_4a.bmp" />
+        <picture value=".\udisk_pic\p_udisk_point_4ina.bmp" />
+        <picture value=".\udisk_pic\p_udisk_point_5a.bmp" />
+        <picture value=".\udisk_pic\p_udisk_point_5ina.bmp" />
+        <txt value=".\udisk_res.xls" />
+        <string value="s_udisk_charging" />
+        <string value="s_udisk_linking" />
+        <string value="s_udisk_full_charged" />
+    </resource>
+</ui-rad>

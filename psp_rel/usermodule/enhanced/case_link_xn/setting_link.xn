@@ -1,0 +1,97 @@
+/**************************************************************************
+*                                                                         *
+*   PROJECT     : MIPS port for UCOS-II                                   *
+*                                                                         *
+*   MODULE      : bank a&b link.xn                                        *
+*                                                                         *
+*   AUTHOR      : wuyueqian                                               *
+*                                                                         *
+*   PROCESSOR   : MIPS 4KEc (32 bit RISC) - Actions board                 *
+*                                                                         *
+*   Tool-chain  : Cygnus                                                  *
+*                                                                         *
+*                                                                         *
+*   Linker script file                                                    *
+*                                                                         *
+**************************************************************************/
+
+/*定义GROUP BANK INDEX 和其他地址变量*/
+INPUT(link_base.xn)
+
+/*1.AP INDEX*/
+AP_INDEX = FRONT_AP;
+
+
+/*只是建议起始地址，也可以往后偏移，如control_2一般不是从这个地址，如果要占全部的空间，则使用control_1*/
+BANK_CONTROL_1_ADDR_BASE = (AP_BANK_FRONT_CONTROL_1 << 24) + SRAM_AP_BANK_FRONT_CONTROL_ADDR;
+
+/*back ap 没有UI段*/
+BANK_UI_1_ADDR_BASE = (AP_BANK_FRONT_UI_1 << 24) + SRAM_AP_BANK_FRONT_UI_ADDR;
+
+/*固定复用basal或者codec的空间，不能跨空间使用，跟control1和control2不一样*/
+BANK_FRONT_ENHANCED_1_ADDR_BASE = (AP_BANK_FRONT_ENHANCED_1 << 24) + SRAM_AP_BANK_FRONT_ENHANCED_1_ADDR;
+BANK_FRONT_ENHANCED_2_ADDR_BASE = (AP_BANK_FRONT_ENHANCED_2 << 24) + SRAM_AP_BANK_FRONT_ENHANCED_2_ADDR;
+
+BANK_BACK_ENHANCED_1_ADDR_BASE = (AP_BANK_BACK_ENHANCED_1 << 24) + SRAM_AP_BANK_BACK_ENHANCED_1_ADDR;
+BANK_BACK_ENHANCED_2_ADDR_BASE = (AP_BANK_BACK_ENHANCED_2 << 24) + SRAM_AP_BANK_BACK_ENHANCED_2_ADDR;
+
+
+/*bank的实际空间大小,不能修改*/
+BANK_CONTROL_SIZE = SRAM_AP_BANK_FRONT_CONTROL_SIZE;
+BANK_UI_SIZE = SRAM_AP_BANK_FRONT_UI_SIZE;
+BANK_FRONT_ENHANCED1_SIZE = SRAM_AP_BANK_FRONT_ENHANCED_1_SIZE;
+BANK_FRONT_ENHANCED2_SIZE = SRAM_AP_BANK_FRONT_ENHANCED_2_SIZE;
+BANK_BACK_ENHANCED1_SIZE = SRAM_AP_BANK_BACK_ENHANCED_1_SIZE;
+BANK_BACK_ENHANCED2_SIZE = SRAM_AP_BANK_BACK_ENHANCED_2_SIZE;
+
+/*系统允许的bank的最大空间大小，不能修改*/
+AP_BANK_SPACE = BANK_SPACE;
+
+OUTPUT_ARCH(mips)
+EXTERN(vfs_op_entry)
+
+SECTIONS
+{      
+    
+    . = BANK_FRONT_ENHANCED_1_ADDR_BASE;
+  /*OFFSET 为FRONT_BANK 1组的实际物理地址*/
+    OFFSET = . & 0x3ffff;
+    BANK_FRONT_ENHANCED_COMM_1_0    : 
+    {
+        eh_module.o(.text .rodata .xdata)
+        . = BANK_FRONT_ENHANCED1_SIZE;      
+    }
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+
+    /*转换播放列表location操作*/    
+    BANK_FRONT_ENHANCED_FUNC_1_0    : 
+    {
+        eh_change_location.o(.text .rodata .xdata)
+        . = BANK_FRONT_ENHANCED1_SIZE;      
+    }
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    
+    
+  /*.链接FRONT_ENHANCED_2代码*/
+    
+    . = BANK_FRONT_ENHANCED_2_ADDR_BASE;
+  /*OFFSET 为FRONT_BANK 2组的实际物理地址*/
+    OFFSET = . & 0x3ffff;
+    
+    BANK_FRONT_ENHANCED_COMM_2_0    : 
+    {
+        eh_module_sub.o(.text .rodata .xdata) 
+        . = BANK_FRONT_ENHANCED2_SIZE;     
+    }
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    
+    
+    BANK_FRONT_ENHANCED_FUNC_2_1    : 
+    {
+        eh_change_location_sub.o(.text .rodata .xdata)  
+        . = BANK_FRONT_ENHANCED2_SIZE;    
+    }
+           
+    
+                                                      
+ }

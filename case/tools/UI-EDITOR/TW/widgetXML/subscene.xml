@@ -1,0 +1,16 @@
+﻿<widget name="SubScene" type="widget" adapter="JLabelAdapter"
+			icon="widgets/subscene.png" >
+
+     <categories>
+     <category name = "basic"/>
+     </categories>
+     
+	<properties>	
+		<property name="type" type="U16" value="" editable="true" category="basic" desc="子場景範本名稱"/>		
+		<property name="x" type="U16" value="" editable="true" category="basic" relative ="Left" desc="控制項左上角x座標"/>
+		<property name="y" type="U16" value="" editable="true" category="basic" relative ="Top" desc="控制項左上角y座標"/>		
+		<property name="width" type="U16" value="70" category="basic" editable="true" desc="控制項寬度"/>
+		<property name="height" type="U16" value="20" category="basic" editable="true" desc="控制項高度"/>	
+	</properties>
+		
+</widget>

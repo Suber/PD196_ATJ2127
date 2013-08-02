@@ -1,0 +1,16 @@
+﻿<widget name="SubScene" type="widget" adapter="JLabelAdapter"
+			icon="widgets/subscene.png" >
+
+     <categories>
+     <category name = "basic"/>
+     </categories>
+     
+	<properties>	
+		<property name="type" type="U16" value="" editable="true" category="basic" desc="Sub-scene name"/>		
+		<property name="x" type="U16" value="" editable="true" category="basic" relative ="Left" desc="x coordinate of the left-top corner of the widget"/>
+		<property name="y" type="U16" value="" editable="true" category="basic" relative ="Top" desc="y coordinate of the left-top corner of the widget"/>		
+		<property name="width" type="U16" value="70" category="basic" editable="true" desc="width of the widget"/>
+		<property name="height" type="U16" value="20" category="basic" editable="true" desc="height of the widget"/>	
+	</properties>
+		
+</widget>

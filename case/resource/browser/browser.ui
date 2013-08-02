@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="browser" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="browser.sty" />
+    <property name="prj_res_head_file" value="browser_res.h" />
+    <property name="prj_res_str_dir" value="browser\" />
+    <property name="prj_sty_file" value="browser.sty" />
+    <property name="prj_sty_head_file" value="browser_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="12" />
+        <property name="Font_large" value="13" />
+        <scene>
+            <property name="name" value="scene00" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup0" />
+                <property name="id" value="0" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <txt value=".\browser.xls" />
+        <string value="s_del_all" />
+        <string value="s_del_radio_file" />
+        <string value="s_del_record_file" />
+        <string value="s_no_radio_file" />
+        <string value="s_no_record_file" />
+        <string value="s_browser_del" />
+        <string value="s_del_failed" />
+        <string value="s_noplay" />
+        <string value="s_playing" />
+        <string value="s_lastplay" />
+        <string value="s_cardmenu" />
+    </resource>
+</ui-rad>

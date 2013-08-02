@@ -1,0 +1,116 @@
+#/*******************************************************************************
+# *                              USDK213F
+# *                            Module: MODULE LINK ADDR
+# *                 Copyright(c) 2003-2009 Actions Semiconductor,
+# *                            All Rights Reserved.
+# *
+# * History:
+# *      <author>    <time>           <version >             <desc>
+# *       fanqh     2008-3-10 15:00     1.0             build this file
+# *       hmwei     2009-7-3 10:16      1.1             增加说明，并修改alarm链接地址
+#*******************************************************************************/
+#/*!
+# * \file     sdk.xn
+# * \brief    所有模块的链接地址
+# * \author   fanqh
+# * \version 1.0
+# * \date  2008/3/10
+# * \note
+# * app模块地址范围：0x6000_0000~0x7fff_ffff，最大支持128个app
+# * so模块地址范围： 0x4000_0000~0x5fff_ffff，最大支持128个so
+# * ko模块地址范围： 0xc000_0000~0xdfff_ffff，最大支持128个ko
+#*******************************************************************************/
+
+#/*************************************************************/
+#/*******************app****************/
+#/*************************************************************/
+#/* 0x78000000~0x7ff00000, for psp app */
+EMULATOR_VADDR      =           0x78000000  #/*******************emulator prio=2****************/
+
+INIT_VADDR          =           0x79000000
+
+#/*************************************************************/
+#/*******************so****************/
+#/*************************************************************/
+#/* 0x40000000~0x46f00000, for psp so */
+#/* 0x4e000000~0x5ff00000, for alsp so */
+LIBC_FS_VADDR       =           0x40400000  #/*APINO_LIBC_FS*/
+LIBC_SYS_INDEP      =           0x40800000  #/*APINO_LIBC_SYS_INDEP*/
+GUI_VADDR           =           0x40c00000  #/*APINo_GUI*/
+FONTDRV_VADDR       =           0x41000000
+APCONFIG_VADDR      =           0x41400000  #/*#APINo_APCONFIG*/
+SNDSO_VADDR         =           0x41800000
+MNAVI_VADDR         =           0x41c00000  #/*APINo_MNAVI*/
+MLANG_LIB_VADDR     =           0x42000000  #/**/
+SQLITE_VADDR        =           0x42400000  #/*APINo_SQLITE*/
+PLIST_VADDR         =           0x42800000  #/*#APINo_PLIST*/
+ACT_MEM_VADDR       =           0x42c00000
+A_CODEC_VADDR       =           0x43000000  #/*APINo_MMM*/
+V_CODEC_VADDR       =           0x43400000  #/*APINo_MMM*/
+MMM_DC_VADDR        =           0x43800000  #/*APINo_MMM*/
+MMM_DV_VADDR        =           0x43c00000  #/*APINo_MMM*/
+FONT2DRV_VADDR      =           0x44000000
+MMM_LIB_AUDIO       =           0x44400000
+DSPSO_VADDR         =           0x44800000
+MMM_AUDIO_DEC       =           0x44c00000
+SWFPLAYERSO_VADDR   =           0x45000000
+OPENVG_VADDR        =           0x45400000
+
+#/*******************ko****************/
+#/* 0xc0000000~0xcff00000, for psp ko; */
+SYS_VADDR           =           0xc0000000  #/*APINo_SYS*/
+
+FS_VADDR            =           0xc0800000  #/*APINo_FS*/
+
+PM_VADDR            =           0xc1000000  #/*APINo_PM*/
+VRAM_VADDR          =           0xc1400000  #/*APINo_VRAM*/
+FLASH_VADDR         =           0xc1800000  #/*APINo_FLASH*/
+                                            
+KSC_VADDR           =           0xc2000000  #/*APINo_KSC*/
+TVOUT_VADDR         =           0xc2400000  #/*APINo_TVOUT*/
+UMON_VADDR          =           0xc2800000
+FB_VADDR            =           0xc2c00000  #/*APINo_FB*/
+DSPKO_VADDR         =           0xc3000000
+DRMKO_VADDR         =           0xc3400000
+UDC4UVC_VADDR       =           0xc3800000  #/*APINo_UDC*/
+LIBC_GENERAL_VADDR  =           0xc3c00000  #/*APINO_LIBC_GENERAL*/
+AOTG_UOC_VADDR      =           0xc4000000  #/*APINo_UOC*/
+AOTG_UDC_VADDR      =           0xc4400000  #/*APINo_UDC*/
+FSG_VADDR           =           0xc4800000  #/*APINo_UFD*/
+UVC_VADDR           =           0xc4c00000  #/*APINo_UVC*/
+TUNNEL_VADDR        =           0xc5000000  #
+STUB_VADDR          =           0xc5400000  #/*APINo_STUB*/
+ALARM_VADDR         =           0xc5800000
+MISC_VADDR          =           0xc5c00000
+
+#/* gsensor */
+
+RTC_VADDR           =           0xc6400000
+SNDKO_VADDR         =           0xc6800000
+SYSINFO_VADDR       =           0xc6c00000
+MMM_DCA_VADDR       =           0xc7000000  #/*APINo_DCT*/
+MMM_DCT_VADDR       =           0xc7400000  #/*APINo_DCT*/
+USTOR_VADDR         =           0xc7800000
+UCORE_VADDR         =           0xc7c00000
+UHC_VADDR           =           0xc8000000
+HOTPLUG_VADDR       =           0xc8400000
+UVIEW_VADDR         =           0xc8800000
+USBPRT_VADDR        =           0xc8c00000
+FFT_VADDR           =           0xc9000000
+
+#/* ir */
+
+HDMI_VADDR          =           0xc9800000
+TESTDRV_VADDR       =           0xc9c00000
+WD_VADDR            =           0xca000000
+ALARM_VADDR         =           0xca400000
+GPU_VADDR           =           0xca800000
+HDMI_MONITOR_VADDR  =           0xcac00000
+
+#/* snd_cfg */
+
+HANTRODRV_ADDR      =           0xcb400000
+
+#/*mfp*/
+MFP_VADDR           =           0xcb800000
+

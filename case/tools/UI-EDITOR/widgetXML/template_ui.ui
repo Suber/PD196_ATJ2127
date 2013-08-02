@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="$(projectName)" />
+    <property name="prj_language" value="$(languageId)" />
+    <property name="prj_screen_width" value="$(screenWidth)" />
+    <property name="prj_screen_height" value="$(screenHeight)" />
+    <property name="prj_case_path" value="$(caseDir)" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="$(resPicPath)" />
+    <property name="prj_res_head_file" value="$(resHeaderPath)" />
+    <property name="prj_res_str_dir" value="$(resStrDir)" />
+    <property name="prj_sty_file" value="$(styPath)" />
+    <property name="prj_sty_head_file" value="$(styHeaderPath)" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value=""/>
+    <property name="snapshot" value=""/>  
+    <style>
+      <property name="name" value="style0"/>
+      <property name="width" value="$(screenWidth)"/>
+      <property name="height" value="$(screenHeight)"/>
+      <property name="x" value=""/>
+      <property name="y" value=""/>
+      <scene>
+        <property name="name" value="scene00"/>
+        <property name="id" value="0"/>
+        <element class="resgroup_resource">
+          <property name="name" value="resgroup01"/>
+          <property name="id" value="1"/>
+          <property name="x" value="0"/>
+          <property name="y" value="0"/>
+          <property name="width" value="$(screenWidth)"/>
+          <property name="height" value="$(screenHeight)"/>
+          <property name="background" value="15658734"/>
+          <property name="transparency" value="255"/>
+          <property name="opaque" value="0"/>
+          <property name="visible" value="1"/>
+        </element>
+      </scene>
+    </style>
+    <resource>
+    <picture value="NULL"/>
+    <txt value=""/>
+    </resource>
+</ui-rad>

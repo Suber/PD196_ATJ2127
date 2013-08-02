@@ -1,0 +1,78 @@
+﻿<widget name="dialogbox" type="widget" adapter="ADialogBoxAdapter"
+            icon="widgets/dialog.png" >
+
+     <categories>
+     <category name = "basic"/>
+     <category name = "item1"/>
+     <category name = "item2"/>
+     <category name = "item3"/>
+     </categories>
+
+    <properties>
+        <property name="x" type="U16" value=""  editable="true" relative ="Left" desc="x coordinate of the left-top corner of the widget"/>
+        <property name="y" type="U16" value="" editable="true" relative ="Top" desc="y coordinate of the left-top corner of the widget"/>
+        <property name="width" type="U16" value=""  editable="true" desc="width of the widget"/>
+        <property name="height" type="U16" value=""  editable="true" desc="height of the widget"/>
+        <property name="visible" type="boolean" value="1" category="basic"  editable="true" desc="whether the widget is visible"/>
+        <property name="bgPic" type="Picture" value="$widgets\background\p_def_background.bmp" category="basic" editable="false" desc="background picture" AsbgPic="true" />
+        <property name="bgPicX" type="U16" value="0" category="basic" editable="true" relative ="Left" desc="x coordinate of the left-top corner of bgPic"/>
+        <property name="bgPicY" type="U16" value="0" category="basic" editable="true" relative ="Top" desc="y coordinate of the left-top corner of bgPic"/>
+        <property name="bgPicWidth" type="U16" visible="false" value="" editable="false" />
+        <property name="bgPicHeight" type="U16" visible="false" value="" editable="false" />    
+
+        <property name="ShowItems" type="boolean" value="1" category="basic" editable="true" desc="whether item list is visible"/>
+        <property name="ShowTypePic" type="boolean" value="0" category="basic" editable="true" desc="whether typePic is visible"/>
+
+        <property name="typePicInit" type="Picture" value="" category="basic" editable="false" desc="the orignal pic of typePic,with background of pure color" show="ShowTypePic = 1"/>
+        <property name="typePicInitBgColor" type="Color" category="basic" value="0" editable="false" desc="background color of the orignal picture of typePic" show="ShowTypePic = 1"/> 
+        <property name="typePic" type="Picture" value="" category="basic" editable="false" desc="Picture of type"  show="ShowTypePic = 1"/>
+        <property name="typePicX" type="U16" value="5" category="basic" editable="true" relative ="Left" desc="x coordinate of the left-top corner of typePic"  show="ShowTypePic = 1"/>
+        <property name="typePicY" type="U16" value="5" category="basic" editable="true" relative ="Top" desc="y coordinate of the left-top corner of typePic"  show="ShowTypePic = 1"/>
+        <property name="typePicWidth" type="U16" visible="false" value="" editable="false" />
+        <property name="typePicHeight" type="U16" visible="false" value="" editable="false" />  
+        <property name="descText" type="MultiLanguage" value="Description of Dialog" category="basic" editable="false" desc="Contents of Dialog description"/>
+        <property name="descX" type="U16" value="4" category="basic" editable="true" relative ="Left" desc="x coordinate of the left-top corner of the rect of descText"/>
+        <property name="descY" type="U16" value="5" category="basic" editable="true" relative ="Top" desc="y coordinate of the left-top corner of the rect of descText"/>
+        <property name="descWidth" type="U16" value="120" category="basic" editable="true" desc="width of the rect of descText"/>
+        <property name="descHeight" type="U16" value="80" category="basic" editable="true" desc="height of the rect of descText"/>
+        <property name="descAlign" type="Enum" value="1" category="basic" editable="true" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" default="1" desc="align type of descText"/>
+        <property name="descFontSize" displayName="Font size" type="Enum" editable="false" category="basic" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size of descText"/>
+        <property name="descFontColor" type="Color" value="16777215" category="basic" editable="true" desc="Font color of descText"/>
+        <property name="itemFontColor" type="Color" value="12632256" category="basic" editable="true" desc="Font color of no-selected items" show="ShowItems = 1"/>
+        <property name="itemActFontColor" type="Color" value="16777215" category="basic" editable="true" desc="Font color of selected items"  show="ShowItems = 1"/>
+        <property name="itemCount" type="Enum" value="2" category="basic" editable="false" enumKeys="0,1,2,3" enumValues="0,1,2,3" default="0" desc="item Count"  show="ShowItems = 1"/>
+        <property name="current" type="Enum" default="1" value="1" category="basic" editable="false" enumKeys="0,1,2,3" enumValues="0,1,2,3" desc="Currently selected item"  show="ShowItems = 1"/>  
+        <property name="itemBackMode" type="Enum" value="2" category="basic" editable="true" enumKeys="Background Color,Background Pic(single),Background Pic(multy)" enumValues="0,1,2" default="0" desc="Background mode of no-selected items"  show="ShowItems = 1"/>
+        <property name="itemBackColor" type="Color" value="504000" category="basic" editable="true" desc="background color of no-selected items"  show="itemBackMode = 0"  show="ShowItems = 1"/>
+        <property name="itemActBackMode" type="Enum" value="1" category="basic" editable="true" enumKeys="Background Color,Background Pic(single),Background Pic(multy)" enumValues="0,1,2" default="0" desc="Background mode of selected items"  show="ShowItems = 1"/>
+        <property name="itemActBackColor" type="Color" value="108000" category="basic" editable="true" desc="background color of selected item" show="itemActBackMode = 0&ShowItems = 1"/>
+        <property name="itemAlign" type="Enum" value="1" category="basic" editable="true" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" default="1" desc="align type of items"  show="ShowItems = 1"/>
+        <property name="itemFontSize" displayName="Font size" type="Enum" editable="false" category="basic" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size of items"  show="ShowItems = 1"/>
+
+        <property name="item1Text" type="MultiLanguage" value="item1" category="item1" editable="false" desc="text of item1" show="itemCount > 0&ShowItems = 1"/>
+        <property name="item1X" type="U16" value="0" category="item1" editable="true" relative ="Left" desc="x coordinate of the left-top corner of item 1" show="itemCount > 0&ShowItems = 1"/>
+        <property name="item1Y" type="U16" value="112" category="item1" editable="true" relative ="Top" desc="y coordinate of the left-top corner of item 1" show="itemCount > 0&ShowItems = 1"/>
+        <property name="item1Width" type="U16" value="128" category="item1" editable="true" desc="width of item 1" show="itemCount > 0&ShowItems = 1"/>
+        <property name="item1Height" type="U16" value="24" category="item1" editable="true" desc="height of item 1" show="itemCount > 0&ShowItems = 1"/>
+        <property name="itemBackPic1" type="Picture" value="$widgets\dialogbox\p_def_dialog_ina0.bmp" category="item1" editable="false" desc="Background pic of no-selected item 1" show="itemCount > 0&itemBackMode > 0&ShowItems = 1"/>
+        <property name="itemActBackPic1" type="Picture" value="$widgets\dialogbox\p_def_dialog_a.bmp" category="item1" editable="false" desc="Background pic of selected item 1" show="itemCount > 0&itemActBackMode > 0&ShowItems = 1"/>
+
+        <property name="item2Text" type="MultiLanguage" value="item2" category="item2" editable="false" desc="text of item2" show="itemCount > 1&ShowItems = 1"/>
+        <property name="item2X" type="U16" value="0" category="item2" editable="true" relative ="Left" desc="x coordinate of the left-top corner of item 2" show="itemCount > 1&ShowItems = 1"/>
+        <property name="item2Y" type="U16" value="136" category="item2" editable="true" relative ="Top" desc="y coordinate of the left-top corner of item 2" show="itemCount > 1&ShowItems = 1"/>
+        <property name="item2Width" type="U16" value="128" category="item2" editable="true" desc="width of item 2" show="itemCount > 1&ShowItems = 1"/>
+        <property name="item2Height" type="U16" value="24" category="item2" editable="true" desc="height of item 2" show="itemCount > 1&ShowItems = 1"/>
+        <property name="itemBackPic2" type="Picture" value="$widgets\dialogbox\p_def_dialog_ina1.bmp" category="item2" editable="false" desc="Background pic of no-selected item 2" show="itemCount > 1&itemBackMode > 0&ShowItems = 1"/>
+        <property name="itemActBackPic2" type="Picture" value="$widgets\dialogbox\p_def_dialog_a.bmp" category="item2" editable="false" desc="Background pic of selected item 2" show="itemCount > 1&itemActBackMode > 0&ShowItems = 1"/>
+
+        <property name="item3Text" type="MultiLanguage" value="item3" category="item3" editable="false" desc="text of item3" show="itemCount > 2&ShowItems = 1"/>
+        <property name="item3X" type="U16" value="0" category="item3" editable="true" relative ="Left" desc="x coordinate of the left-top corner of item 3" show="itemCount > 2&ShowItems = 1"/>
+        <property name="item3Y" type="U16" value="136" category="item3" editable="true" relative ="Top" desc="y coordinate of the left-top corner of item 3" show="itemCount > 2&ShowItems = 1"/>
+        <property name="item3Width" type="U16" value="128" category="item3" editable="true" desc="width of item 3" show="itemCount > 2&ShowItems = 1"/>
+        <property name="item3Height" type="U16" value="24" category="item3" editable="true" desc="height of item 3" show="itemCount > 2&ShowItems = 1"/>
+        <property name="itemBackPic3" type="Picture" value="" category="item3" editable="false" desc="Background pic of no-selected item 3" show="itemCount > 2&itemBackMode > 0&ShowItems = 1"/>
+        <property name="itemActBackPic3" type="Picture" value="" category="item3" editable="false" desc="Background pic of selected item 3" show="itemCount > 2&itemActBackMode > 0&ShowItems = 1"/>
+ 
+    </properties>
+        
+</widget>

@@ -1,0 +1,485 @@
+/**************************************************************************
+*                                                                         *
+*   PROJECT     : MIPS port for UCOS-II                                   *
+*                                                                         *
+*   MODULE      : bank a&b link.xn                                        *
+*                                                                         *
+*   AUTHOR      : wuyueqian                                               *
+*                                                                         *
+*   PROCESSOR   : MIPS 4KEc (32 bit RISC) - Actions board                 *
+*                                                                         *
+*   Tool-chain  : Cygnus                                                  *
+*                                                                         *
+*                                                                         *
+*   Linker script file                                                    *
+*                                                                         *
+**************************************************************************/
+/************************common memory map*********************************
+*-------------------------------code--------------------------------------*
+*---rcode   : 0xbfc21580-0xbfc2187f                     length:0x300      *
+*---bank a  :(0x16**0000+0x24c00)-(0x16**0000+0x24fff)  length:0x400      *
+*---bank b  :(0x26**0000+0x25000)-(0x26**0000+0x257ff)  length:0x800      *
+*---bank c  :(0x36**0000+0x21a00)-(0x36**0000+0x21dff)  length:0x400      *
+*---说明                                                                  *
+*---1 最高4bit 表示bank a/b/c，次高4bit 表示驱动号                        *
+*---2 **高6bit 为bank号，比如0x16064c00中0x06高6bit为0x01，故为 bank 1    *
+*-------------------------------data--------------------------------------*
+*--rdata    : 0x9fc1ce00-0x9fc1d1ff                     length:0x400      *
+*---说明                                                                  *
+*---1 rdata 中 0x9fc1d140-0x9fc1d1ff 这 0xc0 空间被固化代码全局变量占用   *
+***************************************************************************/
+
+/*定义GROUP BANK INDEX 和其他地址变量*/
+INPUT(link_base.xn)
+INPUT(sdk_link_base.xn)
+
+/*UI group index，驱动开发人员需选择*/
+BANK_GROUP_INDEX = DRV_GROUP_UI;
+
+/*2.从地址map图中获取UI模块的常驻代码段物理地址，只需写低14位，驱动开发人员需填写*/
+SRAM_TEXT_ADDR = SRAM_UI_RCODE_ADDR;
+SRAM_DATA_ADDR = SRAM_UI_DATA_ADDR;
+
+
+/*3.转换为链接地址,不能修改*/
+RCODE_TEXT_ADDR = RCODE_ADDR_BASE + SRAM_TEXT_ADDR;
+ROM_TEXT_ADDR = RCODE_ADDR_BASE + SROM_UI_ADDR;/*3KB，0xb400*/
+RDATA_DATA_ADDR = RDATA_ADDR_BASE + SRAM_DATA_ADDR;
+
+KERNEL_BANK_A_ADDR_BASE = (KERNEL_BANK_A << 28) + (BANK_GROUP_INDEX << 24) + SRAM_BANK_A_ADDR;
+KERNEL_BANK_B_ADDR_BASE = (KERNEL_BANK_B << 28) + (BANK_GROUP_INDEX << 24) + SRAM_BANK_B_ADDR;
+KERNEL_BANK_C_ADDR_BASE = (KERNEL_BANK_C << 28) + (BANK_GROUP_INDEX << 24) + SRAM_BANK_C_ADDR;
+
+/*bank的实际空间大小,不能修改*/
+KERNEL_BANK_A_SIZE = SRAM_BANK_A_SIZE;
+KERNEL_BANK_B_SIZE = SRAM_BANK_B_SIZE;
+KERNEL_BANK_C_SIZE = SRAM_BANK_C_SIZE;
+
+/*.text 段总大小减去 api.a(.text)的总大小，防止 api.a(.text) 链接在 *fill* 后导致溢出几个字节的情况*/
+SRAM_UI_RCODE_SIZE_FILL = SRAM_UI_RCODE_SIZE - 8;
+/*输出段开头以4字节对齐， .bss 段总大小减4，防止 .data 段大小不是4整倍时溢出几个字节的情况*/
+SRAM_UI_DATA_SIZE_FILL = SRAM_UI_DATA_SIZE - 0xc0 - 4;/*减掉固化代码捆绑的0xc0字节*/
+
+/*系统允许的bank的最大空间大小，不能修改*/
+KERNEL_BANK_SPACE = BANK_SPACE;
+
+OUTPUT_ARCH(mips)
+
+ENTRY(ui_driver_op)
+
+SECTIONS
+{
+	. = 0x9fc1d140;
+	UI_DRV_ROM_DATA :/*固化地址全局数据160B*/
+    {
+    	/*固化地址全局数据*/
+    	rom_data_and_common.o(.bss)
+    	. = 0xc0;
+    }
+       
+    .rom ROM_TEXT_ADDR  :   
+    {
+    	rom_data_and_common.o(.text .rodata)
+        rom_ui_image.o(.text .rodata)
+        rom_ui_string.o(.text .rodata)
+        . = 0xc00;
+    }
+    
+    .text RCODE_TEXT_ADDR  : 
+    {
+        /*4.填写rcode输入节*/
+        api.a(.text  .rodata)/*不能改变*/
+        rcode_ui_op_entry.o(.text .rodata)/*不能改变*/
+        rcode_ui_functions.o(.text  .rodata)
+        . = SRAM_UI_RCODE_SIZE_FILL;
+    }
+    
+    .data RDATA_DATA_ADDR   :  AT(ADDR(.text) + SIZEOF(.text)) 
+    {
+        /*5.填写rdata输入节，所以文件产生的.data都被链接到这里*/
+        rcode_ui_op_entry.o(.data)
+    }
+    .bss :
+    {
+        *(.bss)
+        *(.sbss)
+        *(.common)
+        *(common)
+        . = SRAM_UI_DATA_SIZE_FILL - SIZEOF(.data);
+    }
+        
+
+    /*6.链接bank a代码*/
+    . = KERNEL_BANK_A_ADDR_BASE;
+     BANK_A_0   : 
+    {
+        bank_a_ui_draw_3Drect.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+    /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_1   : 
+    {
+        bank_a_ui_draw_rect_frame.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }
+       
+    /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_2   : 
+    {
+        bank_a_ui_get_textbox_attrb.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+    /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_3   : 
+    {
+        bank_a_ui_load_attribute.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }
+      
+    /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_4   : 
+    {
+        bank_a_ui_res_open.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }
+          
+    /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_5   : 
+    {
+        bank_a_ui_thai_point.o(.text .rodata)
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+    /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_6   : 
+    {
+        bank_a_ui_get_listbox_attrb.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+    /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_7   : 
+    {
+        bank_a_ui_get_picbox_attrb.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }
+       
+     /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_8   : 
+    {
+        bank_a_ui_fill_rect_dump.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+     /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_9   : 
+    {
+        bank_a_ui_itoa.o(.text .rodata)
+        bank_a_ui_show_numbox_1.o(.text .rodata)
+        . = KERNEL_BANK_A_SIZE; 
+    }
+    
+     /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_10   : 
+    {
+        bank_a_ui_show_parambox_2.o(.text .rodata)
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+    /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_11   : 
+    {
+        bank_a_ui_show_timebox_3.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+     /*假设还有一个bank b，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_12   : 
+    {
+        bank_a_ui_show_parambox.o(.text .rodata)
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+     /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_13   : 
+    {
+        bank_a_ui_show_listbox.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+    /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_14   : 
+    {
+        bank_a_ui_show_listbox_2.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+     /*假设还有一个bank b，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_15   : 
+    {
+        bank_a_ui_show_sliderbar.o(.text .rodata)
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+     /*假设还有一个bank b，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_16   : 
+    {
+        bank_a_ui_show_sliderbar_3.o(.text .rodata)
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+     /*假设还有一个bank b，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_17   : 
+    {
+        bank_a_ui_putstring_sub_2.o(.text .rodata)
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+     /*假设还有一个bank b，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_18   : 
+    {
+        bank_a_fix_ui_string.o(.text .rodata)
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+     /*假设还有一个bank b，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_19   : 
+    {
+        bank_a_fix_ui_string_2.o(.text .rodata)
+        . = KERNEL_BANK_A_SIZE;
+    }
+    
+     /*7.链接bank b代码*/
+    . = KERNEL_BANK_B_ADDR_BASE;
+    BANK_B_0    : 
+    {
+        bank_a_ui_thai_point.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE;
+    } 
+
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_1   : 
+    {
+        bank_b_ui_arabic_nsm.o(.text .rodata)
+        bank_b_ui_arabic_ligature.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE;
+    }
+    
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_2   : 
+    {
+        bank_b_ui_copy_arabic.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE;
+    }
+    
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_3   : 
+    {
+        bank_b_ui_get_text_line.o(.text .rodata) 
+        . = KERNEL_BANK_B_SIZE;
+    }
+    
+     /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_4   : 
+    {
+        bank_b_ui_putstring.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE;  
+    }
+ 
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_5   : 
+    {
+        bank_b_ui_scroll_string.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE;
+    }
+    
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_6   : 
+    {
+        bank_b_ui_scroll_string_ext.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE; 
+    }
+         
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_7   : 
+    {
+        bank_b_ui_show_listbox_1.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE; 
+    }
+   
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_8   : 
+    {
+        bank_b_ui_show_numbox.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE; 
+    }
+    
+     /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_9   : 
+    {
+        bank_b_ui_show_parambox_1.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE; 
+    }
+    
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_10   : 
+    {
+        bank_b_ui_show_sliderbar_2.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE; 
+    }
+             
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_11   : 
+    {
+        bank_b_ui_show_progressbar.o(.text .rodata) 
+        . = KERNEL_BANK_B_SIZE;
+    }
+    
+     /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_12   : 
+    {
+         bank_b_ui_show_timebox.o(.text .rodata)
+         bank_b_ui_show_timebox_1.o(.text .rodata)
+         bank_b_ui_show_timebox_2.o(.text .rodata) 
+         . = KERNEL_BANK_B_SIZE;
+    }
+    
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_13   : 
+    {
+        bank_b_ui_show_textbox.o(.text .rodata) 
+        . = KERNEL_BANK_B_SIZE;
+    }
+    
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_14   : 
+    {
+        bank_b_ui_show_sliderbar_1.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE; 
+    }
+    
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_15   : 
+    {
+        bank_b_ui_show_picbox.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE; 
+    }
+    
+     /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_16   : 
+    {
+        bank_b_ui_string_sdimage.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE;  
+    }
+    
+     /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_17   : 
+    {
+        bank_b_ui_show_dialogbox.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE; 
+    }
+     /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_B_SIZE);
+     BANK_B_18   : 
+    {
+        bank_b_ui_show_picbox_2.o(.text .rodata)
+        . = KERNEL_BANK_B_SIZE; 
+    }
+    
+           
+    /*8.链接bank c代码, card 模块没有*/
+    . = KERNEL_BANK_C_ADDR_BASE;
+    BANK_C_0    : 
+    {
+        bank_c_ui_init.o(.text .rodata)   
+        . = KERNEL_BANK_C_SIZE;
+    }
+    
+    /*假设还有一个bank c，文件名为bank_c_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_C_SIZE);
+     BANK_C_1   : 
+    {
+        bank_c_ui_set_language.o(.text .rodata)
+        . = KERNEL_BANK_C_SIZE;
+    }
+             
+    /*假设还有一个bank c，文件名为bank_c_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_C_SIZE);
+     BANK_C_2   : 
+    {
+        bank_c_ui_char_to_unicode.o(.text .rodata)
+        bank_c_ui_utf8_to_unicode.o(.text .rodata)  
+        bank_c_ui_unicode_to_char.o(.text .rodata) 
+        . = KERNEL_BANK_C_SIZE;
+    }
+    
+    /*假设还有一个bank c ，文件名为bank_c_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_C_SIZE);
+     BANK_C_3   : 
+    {
+        bank_c_ui_ellipsis_to_longstr.o(.text .rodata) 
+        . = KERNEL_BANK_C_SIZE;
+    }
+   
+    /*假设还有一个bank c ，文件名为bank_c_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_C_SIZE);
+    BANK_C_4    : 
+    {
+        bank_c_misc_functions.o(.text .rodata)  
+        . = KERNEL_BANK_C_SIZE;
+    }
+   
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_C_SIZE);
+    BANK_C_5   : 
+    {
+        bank_c_ui_show_transparent.o(.text .rodata)
+        . = KERNEL_BANK_C_SIZE; 
+    }
+    
+    /*假设还有一个bank b，文件名为bank_b_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_C_SIZE);
+    BANK_C_6   : 
+    {
+        bank_c_ui_putstring_sub.o(.text .rodata)
+        . = KERNEL_BANK_C_SIZE; 
+    }
+ }

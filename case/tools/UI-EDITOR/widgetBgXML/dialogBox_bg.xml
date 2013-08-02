@@ -1,0 +1,42 @@
+<widget name="dialogBox" type="widget" adapter="AImageAdapter"
+			icon="widgets/picregion.png" >
+
+	<typePic>
+		<property name="name" type="String" value="typepic.bmp"/>
+		<property name="x" type="U16" value="@typePicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@typePicY"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@typePicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@typePicHeight"  desc="图片高度"/>
+           <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</typePic>
+	
+	<itemBackPic1>
+		<property name="name" type="String" value="itemina0.bmp"/>
+		<property name="x" type="U16" value="@item1X"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@item1Y"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@item1Width"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@item1Height"  desc="图片高度"/>
+           <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBackPic1>
+	
+	<itemBackPic2>
+		<property name="name" type="String" value="itemina1.bmp"/>
+		<property name="x" type="U16" value="@item2X"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@item2Y"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@item2Width"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@item2Height"  desc="图片高度"/>
+           <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBackPic2>
+	
+	<itemBackPic3>
+		<property name="name" type="String" value="itemina2.bmp"/>
+		<property name="x" type="U16" value="@item3X"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@item3Y"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@item3Width"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@item3Height"  desc="图片高度"/>
+           <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBackPic3>
+		
+</widget>
+
+1、添加条件，判断是否截取背景图；

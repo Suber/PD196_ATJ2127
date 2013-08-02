@@ -1,0 +1,3 @@
+LIBRARY drv_ui
+EXPORTS
+;GetDrvFuncTbl

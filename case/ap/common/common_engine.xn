@@ -1,0 +1,111 @@
+/**************************************************************************
+*                                                                         *
+*   PROJECT     : MIPS port for UCOS-II                                   *
+*                                                                         *
+*   MODULE      : control bank link.xn                                    *
+*                                                                         *
+*   AUTHOR      : lzcai                                                   *
+*                                                                         *
+*   PROCESSOR   : MIPS 4KEc (32 bit RISC) - Actions board                 *
+*                                                                         *
+*   Tool-chain  : Cygnus                                                  *
+*                                                                         *
+*                                                                         *
+*   Linker script file                                                    *
+*                                                                         *
+**************************************************************************/
+/************************common memory map*********************************
+*-------------------------------code--------------------------------------*
+*---bank control :(0x60**0000+0x1e000)-(0x60**0000+0x1e7ff)  length:0x800 *
+*---说明                                                                  *
+*---1 ** 高6bit 为bank号，比如0x6005e000中0x05高6bit为0x01，故为 bank 1   *
+***************************************************************************/
+
+/*定义GROUP BANK INDEX 和其他地址变量*/
+INPUT(link_base.xn)
+
+/*2.从地址map图中获取card模块的常驻代码段物理地址，只需写低14位，开发人员需填写，集成开始后只由集成人员修改，驱动人员不允许修改*/
+SRAM_TEXT_ADDR = 0x1e800;
+SRAM_DATA_ADDR = 0x1da00;
+
+/*3.转换为链接地址,不能修改*/
+RCODE_TEXT_ADDR = RCODE_ADDR_BASE + SRAM_TEXT_ADDR;
+RDATA_DATA_ADDR = RDATA_ADDR_BASE + SRAM_DATA_ADDR;
+
+BANK_CONTROL_1_ADDR_BASE = (AP_BANK_BACK_CONTROL_1 << 24) + SRAM_AP_BANK_BACK_CONTROL_ADDR;
+/*bank的实际空间大小,不能修改*/
+BANK_CONTROL_SIZE = SRAM_AP_BANK_BACK_CONTROL_SIZE;
+
+/*back ap 没有UI段*/
+
+/*系统允许的bank的最大空间大小，不能修改*/
+AP_BANK_SPACE = BANK_SPACE;
+
+OUTPUT_ARCH(mips)
+EXTERN(key_op_entry)
+EXTERN(audio_device_op_entry)
+
+SECTIONS
+{   
+    /* 常驻代码段: .text */
+    .text RCODE_TEXT_ADDR   : 
+    {
+    }
+           
+    /* 初始化了的全局数据段，紧跟在 .text段后面: .data */
+    .data RDATA_DATA_ADDR   : AT(ADDR(.text) + SIZEOF(.text)) 
+    {
+    }
+    
+    /* 未初始化的全局数据段，由系统初始为0 */
+    .bss    :
+    {
+    }
+    
+    /*common部分：占用control bank 1组的40-63，共24个bank*/
+    . = BANK_CONTROL_1_ADDR_BASE + AP_BANK_SPACE * 40;
+    /*OFFSET为control bank 1组的实际物理地址*/
+    OFFSET = . & 0x3ffff;
+    BANK_CONTROL_1_40   : 
+    {
+        app_manager_bank.o(.text .rodata .xdata)
+        . = BANK_CONTROL_SIZE;
+    }
+    
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1)))  + OFFSET;
+    BANK_CONTROL_1_41   : 
+    {
+        app_timer_bank.o(.text .rodata .xdata)
+        . = BANK_CONTROL_SIZE;
+    }
+    
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_42   : 
+    {
+        message_bank_broadcast.o(.text .rodata .xdata)
+        message_bank_init.o(.text .rodata .xdata)
+        message_bank_send.o(.text .rodata .xdata)
+        . = BANK_CONTROL_SIZE;
+    }
+    
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_43   : 
+    {
+        /* 去掉软看门狗部分 */
+        . = BANK_CONTROL_SIZE;
+    } 
+    
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_44   : 
+    {
+        common_config.o(.text .rodata .xdata)
+        . = BANK_CONTROL_SIZE;
+    }
+    
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_45    : 
+    {
+        common_sound.o(.text .rodata .xdata)
+        . = BANK_CONTROL_SIZE;
+    }
+ }

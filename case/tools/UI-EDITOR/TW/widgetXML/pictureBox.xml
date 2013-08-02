@@ -1,0 +1,17 @@
+﻿<widget name="pictureBox" type="widget" adapter="AImageAdapter"
+			icon="widgets/picregion.png" >
+
+     <categories>
+     <category name = "basic"/>
+     </categories>
+     
+	<properties>
+		<property name="x" type="U16" value="" category="basic" editable="true" relative ="Left" desc="控制項左上角x座標"/>
+		<property name="y" type="U16" value="" category="basic" editable="true" relative ="Top" desc="控制項左上角y座標"/>
+		<property name="width" type="U16" value="100" category="basic" editable="false" desc="控制項寬度"/>
+		<property name="height" type="U16" value="80" category="basic" editable="false" desc="控制項高度"/>
+		<property name="visible" type="boolean" value="1" category="basic" editable="true" desc="控制項是否顯示"/>
+		<property name="screenshotBgPic" type="Picture_BG" value="" category="basic" editable="false" desc="作為嵌入式背景圖的背景圖片"/>				
+	</properties>
+		
+</widget>

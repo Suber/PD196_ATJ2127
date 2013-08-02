@@ -1,0 +1,759 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="music" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="music.sty" />
+    <property name="prj_res_head_file" value="music_res.h" />
+    <property name="prj_res_str_dir" value="music\" />
+    <property name="prj_sty_file" value="music.sty" />
+    <property name="prj_sty_head_file" value="music_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <property name="prj_ver" value="V100" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="14" />
+        <property name="Font_large" value="16" />
+        <scene>
+            <property name="name" value="music_play" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup0" />
+                <property name="id" value="0" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="PLAY_SCENE_BACKGD" />
+                    <property name="id" value="1" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\Music\musicbg_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="LOOP_MODE_PICBOX" />
+                    <property name="id" value="8" />
+                    <property name="x" value="158" />
+                    <property name="y" value="151" />
+                    <property name="width" value="16" />
+                    <property name="height" value="10" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\Music\loop_bg_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\pic\Music\loopone_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\pic\Music\loopall_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\pic\Music\loopintro_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="ID3_SCROLL_TEXTBOX" />
+                    <property name="id" value="9" />
+                    <property name="x" value="530" />
+                    <property name="y" value="239" />
+                    <property name="width" value="112" />
+                    <property name="height" value="16" />
+                    <property name="textX" value="-434" />
+                    <property name="textY" value="-109" />
+                    <property name="textWidth" value="112" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-434" />
+                    <property name="bgPicY" value="-109" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="0" />
+                    <property name="bgPic" value=".\BgPicDoc\ID3_SCROLL_TEXTBOX_bg.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="112" />
+                    <property name="bgPicHeight" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="SHUFFLE_MODE_PICBOX" />
+                    <property name="id" value="17" />
+                    <property name="x" value="175" />
+                    <property name="y" value="151" />
+                    <property name="width" value="16" />
+                    <property name="height" value="10" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\Music\shuffle_bg_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\pic\Music\shuffle_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="numBox">
+                    <property name="name" value="TRACK_NUMBER_BOX" />
+                    <property name="id" value="25" />
+                    <property name="x" value="485" />
+                    <property name="y" value="314" />
+                    <property name="width" value="52" />
+                    <property name="height" value="8" />
+                    <property name="numX" value="-367" />
+                    <property name="numY" value="-300" />
+                    <property name="numWidth" value="52" />
+                    <property name="numHeight" value="8" />
+                    <property name="visible" value="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPic" value=".\BgPicDoc\TRACK_NUMBER_BOX_bg.bmp" storetype="1" />
+                    <property name="bgPicX" value="-367" />
+                    <property name="bgPicY" value="-300" />
+                    <property name="bgPicWidth" value="52" />
+                    <property name="bgPicHeight" value="8" />
+                    <property name="DisplayMode" value="1" />
+                    <property name="Composition" value="1" />
+                    <property name="number1" value="1234" />
+                    <property name="digits1" value="4" />
+                    <property name="number2" value="5678" />
+                    <property name="digits2" value="4" />
+                    <property name="stringColor" value="0" />
+                    <property name="stringBkColor" value="16777215" />
+                    <property name="FontSize" value="1" />
+                    <property name="align" value="left to right" />
+                    <property name="showPartition" value="1" />
+                    <property name="partitionPic" value=".\pic\Music\slash_p.bmp" />
+                    <property name="DecimalDigits" value="2" />
+                    <property name="showSign" value="0" />
+                    <property name="pic0" value=".\pic\Music\num0_p.bmp" />
+                    <property name="pic1" value=".\pic\Music\num1_p.bmp" />
+                    <property name="pic2" value=".\pic\Music\num2_p.bmp" />
+                    <property name="pic3" value=".\pic\Music\num3_p.bmp" />
+                    <property name="pic4" value=".\pic\Music\num4_p.bmp" />
+                    <property name="pic5" value=".\pic\Music\num5_p.bmp" />
+                    <property name="pic6" value=".\pic\Music\num6_p.bmp" />
+                    <property name="pic7" value=".\pic\Music\num7_p.bmp" />
+                    <property name="pic8" value=".\pic\Music\num8_p.bmp" />
+                    <property name="pic9" value=".\pic\Music\num9_p.bmp" />
+                    <property name="picPositive" value="" />
+                    <property name="picNegative" value="" />
+                    <property name="picCover" value="" />
+                    <property name="pic0Width" value="6" />
+                    <property name="pic0Height" value="8" />
+                    <property name="incX" value="6" />
+                    <property name="partitionIncX" value="4" />
+                    <property name="numBkColor" value="0" />
+                </element>
+                <element class="timeBox">
+                    <property name="name" value="MUSIC_CURTIME_TIMERBOX" />
+                    <property name="id" value="22" />
+                    <property name="x" value="197" />
+                    <property name="y" value="319" />
+                    <property name="width" value="64" />
+                    <property name="height" value="8" />
+                    <property name="timeX" value="-100" />
+                    <property name="timeY" value="-168" />
+                    <property name="timeWidth" value="64" />
+                    <property name="timeHeight" value="8" />
+                    <property name="visible" value="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="stringBkColor" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\MUSIC_CURTIME_TIMERBOX_bg.bmp" storetype="1" />
+                    <property name="bgPicX" value="-100" />
+                    <property name="bgPicY" value="-168" />
+                    <property name="bgPicWidth" value="64" />
+                    <property name="bgPicHeight" value="8" />
+                    <property name="FontSize" value="1" />
+                    <property name="DisplayMode" value="1" />
+                    <property name="Composition" value="1" />
+                    <property name="align" value="0" />
+                    <property name="stringColor" value="0" />
+                    <property name="incX" value="6" />
+                    <property name="partitionIncX" value="4" />
+                    <property name="pic0" value=".\pic\Music\num0_p.bmp" />
+                    <property name="pic1" value=".\pic\Music\num1_p.bmp" />
+                    <property name="pic2" value=".\pic\Music\num2_p.bmp" />
+                    <property name="pic3" value=".\pic\Music\num3_p.bmp" />
+                    <property name="pic4" value=".\pic\Music\num4_p.bmp" />
+                    <property name="pic5" value=".\pic\Music\num5_p.bmp" />
+                    <property name="pic6" value=".\pic\Music\num6_p.bmp" />
+                    <property name="pic7" value=".\pic\Music\num7_p.bmp" />
+                    <property name="pic8" value=".\pic\Music\num8_p.bmp" />
+                    <property name="pic9" value=".\pic\Music\num9_p.bmp" />
+                    <property name="picNULL" value=".\pic\Music\num_bg.bmp" />
+                    <property name="picColon" value=".\pic\Music\doubledot_p.bmp" />
+                    <property name="picSlash" value=".\pic\Music\slash_p.bmp" />
+                    <property name="picDash" value="" />
+                    <property name="picSpace" value="" />
+                    <property name="numBkColor" value="0" />
+                    <property name="number1" value="00" />
+                    <property name="number2" value="00" />
+                    <property name="number3" value="00" />
+                    <property name="digits1" value="2" />
+                    <property name="showHigh1" value="0" />
+                    <property name="showFirstPartition" value="1" />
+                    <property name="FirstPartitionStr" value=":" />
+                    <property name="showMiddlePartition" value="1" />
+                    <property name="MiddlePartitionStr" value="1" />
+                    <property name="number4" value="11" />
+                    <property name="number5" value="11" />
+                    <property name="number6" value="11" />
+                    <property name="digits2" value="2" />
+                    <property name="showHigh2" value="0" />
+                    <property name="showSecondPartition" value="1" />
+                    <property name="SecondPartitionStr" value=":" />
+                </element>
+                <element class="ProgressBar">
+                    <property name="name" value="MUSIC_PLAY_PROGRESSBAR" />
+                    <property name="id" value="20" />
+                    <property name="x" value="448" />
+                    <property name="y" value="333" />
+                    <property name="width" value="112" />
+                    <property name="height" value="3" />
+                    <property name="visible" value="1" />
+                    <property name="total" value="100" />
+                    <property name="current" value="50" />
+                    <property name="length" value="112" />
+                    <property name="ProgressBarStyle" value="0" />
+                    <property name="horizontal" value="1" />
+                    <property name="bgPicX" value="-352" />
+                    <property name="bgPicY" value="-170" />
+                    <property name="bgPic" value=".\pic\Music\progress_bg_p.bmp" />
+                    <property name="useTransparentBg" value="0" />
+                    <property name="bgPicWidth" value="112" />
+                    <property name="bgPicHeight" value="3" />
+                    <property name="progStartX" value="-352" />
+                    <property name="fillPicY" value="-170" />
+                    <property name="progStartY" value="8" />
+                    <property name="fillPicX" value="20" />
+                    <property name="fillPic" value=".\pic\Music\progress1_p.bmp" />
+                    <property name="unfillPic" value=".\pic\Music\progress_bg1_p.bmp" />
+                    <property name="progPicWidth" value="1" />
+                    <property name="progPicHeight" value="3" />
+                    <property name="unprogPicWidth" value="1" />
+                    <property name="unprogPicHeight" value="3" />
+                    <property name="tagPic" value="" />
+                    <property name="tagPicWidth" value="3" />
+                    <property name="tagPicHeight" value="3" />
+                    <property name="tagPicY" value="-170" />
+                    <property name="tagPicX" value="19" />
+                    <property name="scale" value="1" />
+                    <property name="WidgetbgPic" value=".\BgPicDoc\MUSIC_PLAY_PROGRESSBAR_bg.bmp" storetype="1" />
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="ALBUM_ART_BGPIC" />
+                    <property name="id" value="28" />
+                    <property name="x" value="98" />
+                    <property name="y" value="31" />
+                    <property name="width" value="92" />
+                    <property name="height" value="92" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\BgPicDoc\ALBUM_ART_BGPIC_bg0.bmp" type="1" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="ALBUM_ART_PICBOX" />
+                    <property name="id" value="3" />
+                    <property name="x" value="98" />
+                    <property name="y" value="31" />
+                    <property name="width" value="92" />
+                    <property name="height" value="92" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\Music\album_art_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="ID3_MUSIC_PICBOX" />
+                    <property name="id" value="34" />
+                    <property name="x" value="80" />
+                    <property name="y" value="130" />
+                    <property name="width" value="15" />
+                    <property name="height" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\BgPicDoc\ID3_MUSIC_PICBOX\ID3_MUSIC_PICBOX_bg0.bmp" type="1" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\pic\Music\title_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\pic\Music\artist_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\pic\Music\album_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="AB_STATUS_PICBOX" />
+                    <property name="id" value="13" />
+                    <property name="x" value="80" />
+                    <property name="y" value="154" />
+                    <property name="width" value="14" />
+                    <property name="height" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\Music\mrepnoa_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\pic\Music\mrepnob_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\pic\Music\mrepab_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="FULLSOUND_MODE_PICBOX" />
+                    <property name="id" value="18" />
+                    <property name="x" value="191" />
+                    <property name="y" value="151" />
+                    <property name="width" value="16" />
+                    <property name="height" value="10" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\Music\fullsound_bg_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\pic\Music\fullsound_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="EQ_MODE_PICBOX" />
+                    <property name="id" value="19" />
+                    <property name="x" value="191" />
+                    <property name="y" value="151" />
+                    <property name="width" value="16" />
+                    <property name="height" value="10" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\Music\fullsound_bg_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\pic\Music\eq_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="PLAY_STATUS_PICBOX" />
+                    <property name="id" value="4" />
+                    <property name="x" value="80" />
+                    <property name="y" value="154" />
+                    <property name="width" value="14" />
+                    <property name="height" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\Music\pause_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\pic\Music\play_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\pic\Music\fastfore_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\pic\Music\fastback_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="ALBUM_ART_REGION" />
+                    <property name="id" value="26" />
+                    <property name="x" value="519" />
+                    <property name="y" value="287" />
+                    <property name="width" value="92" />
+                    <property name="height" value="92" />
+                    <property name="textX" value="-421" />
+                    <property name="textY" value="-256" />
+                    <property name="textWidth" value="92" />
+                    <property name="textHeight" value="92" />
+                    <property name="bgPicX" value="-421" />
+                    <property name="bgPicY" value="-256" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16711680" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="0" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="0" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="2" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="audible_play" />
+            <property name="id" value="1" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup1" />
+                <property name="id" value="1" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="AUDIBLE_SCENE_BACKGD" />
+                    <property name="id" value="1" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\Music\musicbg_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="ID3_AUDIBLE_PICBOX" />
+                    <property name="id" value="36" />
+                    <property name="x" value="80" />
+                    <property name="y" value="130" />
+                    <property name="width" value="15" />
+                    <property name="height" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\BgPicDoc\ID3_MUSIC_PICBOX\ID3_MUSIC_PICBOX_bg0.bmp" type="1" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\pic\Music\title_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\pic\Music\artist_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\pic\Music\book_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="timeBox">
+                    <property name="name" value="AUDIBLE_TIMERBOX" />
+                    <property name="id" value="23" />
+                    <property name="x" value="514" />
+                    <property name="y" value="306" />
+                    <property name="width" value="92" />
+                    <property name="height" value="8" />
+                    <property name="timeX" value="-417" />
+                    <property name="timeY" value="-155" />
+                    <property name="timeWidth" value="92" />
+                    <property name="timeHeight" value="8" />
+                    <property name="visible" value="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="stringBkColor" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\AUDIBLE_TIMERBOX_bg.bmp" storetype="1" />
+                    <property name="bgPicX" value="-417" />
+                    <property name="bgPicY" value="-155" />
+                    <property name="bgPicWidth" value="92" />
+                    <property name="bgPicHeight" value="8" />
+                    <property name="FontSize" value="1" />
+                    <property name="DisplayMode" value="1" />
+                    <property name="Composition" value="1" />
+                    <property name="align" value="left to right" />
+                    <property name="stringColor" value="0" />
+                    <property name="incX" value="6" />
+                    <property name="partitionIncX" value="4" />
+                    <property name="pic0" value=".\pic\Music\num0_p.bmp" />
+                    <property name="pic1" value=".\pic\Music\num1_p.bmp" />
+                    <property name="pic2" value=".\pic\Music\num2_p.bmp" />
+                    <property name="pic3" value=".\pic\Music\num3_p.bmp" />
+                    <property name="pic4" value=".\pic\Music\num4_p.bmp" />
+                    <property name="pic5" value=".\pic\Music\num5_p.bmp" />
+                    <property name="pic6" value=".\pic\Music\num6_p.bmp" />
+                    <property name="pic7" value=".\pic\Music\num7_p.bmp" />
+                    <property name="pic8" value=".\pic\Music\num8_p.bmp" />
+                    <property name="pic9" value=".\pic\Music\num9_p.bmp" />
+                    <property name="picNULL" value=".\pic\Music\num_bg.bmp" />
+                    <property name="picColon" value=".\pic\Music\doubledot_p.bmp" />
+                    <property name="picSlash" value=".\pic\Music\slash_p.bmp" />
+                    <property name="picDash" value="" />
+                    <property name="picSpace" value="" />
+                    <property name="numBkColor" value="0" />
+                    <property name="number1" value="11" />
+                    <property name="number2" value="11" />
+                    <property name="number3" value="11" />
+                    <property name="digits1" value="2" />
+                    <property name="showHigh1" value="0" />
+                    <property name="showFirstPartition" value="1" />
+                    <property name="FirstPartitionStr" value=":" />
+                    <property name="showMiddlePartition" value="1" />
+                    <property name="MiddlePartitionStr" value="1" />
+                    <property name="number4" value="11" />
+                    <property name="number5" value="11" />
+                    <property name="number6" value="11" />
+                    <property name="digits2" value="2" />
+                    <property name="showHigh2" value="0" />
+                    <property name="showSecondPartition" value="1" />
+                    <property name="SecondPartitionStr" value=":" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="other_scene" />
+            <property name="id" value="2" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup2" />
+                <property name="id" value="2" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="OTHER_SCENE_BACKGD" />
+                    <property name="id" value="1" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\Music\musicbg_p.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="SHOW_LYRIC_TEXTBOX" />
+                    <property name="id" value="24" />
+                    <property name="x" value="697" />
+                    <property name="y" value="415" />
+                    <property name="width" value="92" />
+                    <property name="height" value="92" />
+                    <property name="textX" value="-599" />
+                    <property name="textY" value="-384" />
+                    <property name="textWidth" value="92" />
+                    <property name="textHeight" value="92" />
+                    <property name="bgPicX" value="-599" />
+                    <property name="bgPicY" value="-384" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="0" />
+                    <property name="bgPic" value=".\BgPicDoc\SHOW_LYRIC_TEXTBOX_bg.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="92" />
+                    <property name="bgPicHeight" value="92" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="ALBUM_NAME_TEXTBOX" />
+                    <property name="id" value="33" />
+                    <property name="x" value="83" />
+                    <property name="y" value="146" />
+                    <property name="width" value="128" />
+                    <property name="height" value="16" />
+                    <property name="textX" value="-3" />
+                    <property name="textY" value="8" />
+                    <property name="textWidth" value="128" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-3" />
+                    <property name="bgPicY" value="8" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16774388" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pic\Music\album_filename_bg.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="128" />
+                    <property name="bgPicHeight" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="0" />
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\BgPicDoc\ALBUM_ART_BGPIC_bg0.bmp" />
+        <picture value=".\BgPicDoc\AUDIBLE_TIMERBOX_bg.bmp" />
+        <picture value=".\BgPicDoc\ID3_MUSIC_PICBOX\ID3_MUSIC_PICBOX_bg0.bmp" />
+        <picture value=".\BgPicDoc\ID3_SCROLL_TEXTBOX_bg.bmp" />
+        <picture value=".\BgPicDoc\MUSIC_CURTIME_TIMERBOX_bg.bmp" />
+        <picture value=".\BgPicDoc\MUSIC_PLAY_PROGRESSBAR_bg.bmp" />
+        <picture value=".\BgPicDoc\SHOW_LYRIC_TEXTBOX_bg.bmp" />
+        <picture value=".\BgPicDoc\TRACK_NUMBER_BOX_bg.bmp" />
+        <picture value=".\pic\Music\album_art_p.bmp" />
+        <picture value=".\pic\Music\album_filename_bg.bmp" />
+        <picture value=".\pic\Music\album_no.bmp" />
+        <picture value=".\pic\Music\album_p.bmp" />
+        <picture value=".\pic\Music\artist_p.bmp" />
+        <picture value=".\pic\Music\book_p.bmp" />
+        <picture value=".\pic\Music\doubledot_p.bmp" />
+        <picture value=".\pic\Music\eq_p.bmp" />
+        <picture value=".\pic\Music\fastback_p.bmp" />
+        <picture value=".\pic\Music\fastfore_p.bmp" />
+        <picture value=".\pic\Music\fullsound_bg_p.bmp" />
+        <picture value=".\pic\Music\fullsound_p.bmp" />
+        <picture value=".\pic\Music\loopall_p.bmp" />
+        <picture value=".\pic\Music\loopintro_p.bmp" />
+        <picture value=".\pic\Music\loopone_p.bmp" />
+        <picture value=".\pic\Music\loop_bg_p.bmp" />
+        <picture value=".\pic\Music\mrepab_p.bmp" />
+        <picture value=".\pic\Music\mrepnoa_p.bmp" />
+        <picture value=".\pic\Music\mrepnob_p.bmp" />
+        <picture value=".\pic\Music\musicbg_p.bmp" />
+        <picture value=".\pic\Music\music_p.bmp" />
+        <picture value=".\pic\Music\num0_p.bmp" />
+        <picture value=".\pic\Music\num1_p.bmp" />
+        <picture value=".\pic\Music\num2_p.bmp" />
+        <picture value=".\pic\Music\num3_p.bmp" />
+        <picture value=".\pic\Music\num4_p.bmp" />
+        <picture value=".\pic\Music\num5_p.bmp" />
+        <picture value=".\pic\Music\num6_p.bmp" />
+        <picture value=".\pic\Music\num7_p.bmp" />
+        <picture value=".\pic\Music\num8_p.bmp" />
+        <picture value=".\pic\Music\num9_p.bmp" />
+        <picture value=".\pic\Music\num_bg.bmp" />
+        <picture value=".\pic\Music\pause_p.bmp" />
+        <picture value=".\pic\Music\play_p.bmp" />
+        <picture value=".\pic\Music\progress1_p.bmp" />
+        <picture value=".\pic\Music\progress_bg1_p.bmp" />
+        <picture value=".\pic\Music\progress_bg_p.bmp" />
+        <picture value=".\pic\Music\shuffle_bg_p.bmp" />
+        <picture value=".\pic\Music\shuffle_p.bmp" />
+        <picture value=".\pic\Music\slash_p.bmp" />
+        <picture value=".\pic\Music\title_p.bmp" />
+        <txt value=".\music_res.xls" />
+        <string value="null" />
+        <string value="s_play" />
+        <string value="s_allsong" />
+        <string value="s_artist" />
+        <string value="s_album" />
+        <string value="s_genre" />
+        <string value="s_now_favorite" />
+        <string value="s_now_favorite1" />
+        <string value="s_now_favorite2" />
+        <string value="s_now_favorite3" />
+        <string value="s_audible_books" />
+        <string value="s_shuffle_all" />
+        <string value="s_no_song" />
+        <string value="s_play_resume" />
+        <string value="s_books" />
+        <string value="s_author" />
+        <string value="s_add_to_which" />
+        <string value="s_add_favorite" />
+        <string value="s_add_favorite1" />
+        <string value="s_already_add_favorite" />
+        <string value="s_already_add" />
+        <string value="s_del_from_favor" />
+        <string value="s_del_from_favorite1" />
+        <string value="s_already_del_favorite" />
+        <string value="s_not_in_favorite" />
+        <string value="s_clear_favorite" />
+        <string value="s_clear_favorite1" />
+        <string value="s_already_clr_favorite" />
+        <string value="s_play_mode" />
+        <string value="s_music_from" />
+        <string value="s_this_title" />
+        <string value="s_this_album" />
+        <string value="s_this_artist" />
+        <string value="s_this_genre" />
+        <string value="s_repeat_mode" />
+        <string value="s_repeat_off" />
+        <string value="s_repeat_one" />
+        <string value="s_repeat_all" />
+        <string value="s_repeat_intro" />
+        <string value="s_shuffle" />
+        <string value="s_ab_set" />
+        <string value="s_ab_mode" />
+        <string value="s_ab_count" />
+        <string value="s_ab_gap" />
+        <string value="s_play_speed" />
+        <string value="s_sound_set" />
+        <string value="s_fullsound" />
+        <string value="s_equalize" />
+        <string value="s_rock" />
+        <string value="s_funk" />
+        <string value="s_hiphop" />
+        <string value="s_jazz" />
+        <string value="s_classic" />
+        <string value="s_techno" />
+        <string value="s_custom" />
+        <string value="s_volume_limit" />
+        <string value="s_sleep_timer" />
+        <string value="s_set_sleep_timer" />
+        <string value="s_already_sleep_timer" />
+        <string value="s_delete" />
+        <string value="s_bookmark" />
+        <string value="s_add_bookmark" />
+        <string value="s_sel_bookmark" />
+        <string value="s_del_bookmark" />
+        <string value="s_license_info" />
+        <string value="s_fullsound_eq_mux" />
+        <string value="s_already_vol_limit" />
+        <string value="s_time_remain" />
+        <string value="s_del_audible" />
+        <string value="s_switch_mode" />
+        <string value="s_switch_section" />
+        <string value="s_switch_song" />
+        <string value="s_can_not_find" />
+        <string value="s_set_sleep_timer_hint" />
+        <string value="s_srs_set" />
+        <string value="s_srs_wowhd" />
+        <string value="s_srs_user" />
+        <string value="s_no_bookmark" />
+        <string value="s_speed_unit" />
+        <string value="s_album_art" />
+        <string value="s_license_fail" />
+        <string value="S_UINT_MIN" />
+        <string value="S_USER_B" />
+        <string value="S_USER_L" />
+        <string value="S_USER_M" />
+        <string value="S_USER_H" />
+        <string value="S_USER_T" />
+        <string value="s_is_override_favlist" />
+        <string value="s_menu_option1" />
+        <string value="s_menu_option2" />
+        <string value="s_menu_option3" />
+        <string value="s_menu_option4" />
+        <string value="s_menu_option5" />
+        <string value="s_list_option1" />
+        <string value="s_list_option2" />
+        <string value="s_list_option3" />
+        <string value="s_list_option4" />
+        <string value="s_list_option5" />
+        <string value="s_set_menu" />
+        <string value="s_music" />
+        <string value="s_radio" />
+        <string value="s_m3ulist_option1" />
+        <string value="s_m3ulist_option2" />
+        <string value="s_m3ulist_option3" />
+        <string value="s_m3ulist_option4" />
+        <string value="s_m3ulist_option5" />
+    </resource>
+</ui-rad>

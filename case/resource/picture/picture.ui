@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="picture" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="picture.sty" />
+    <property name="prj_res_head_file" value="picture_res.h" />
+    <property name="prj_res_str_dir" value="picture\" />
+    <property name="prj_sty_file" value="picture.sty" />
+    <property name="prj_sty_head_file" value="picture_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <property name="prj_ver" value="V100" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="12" />
+        <property name="Font_large" value="13" />
+        <scene>
+            <property name="name" value="scene00" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup0" />
+                <property name="id" value="0" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="numBox">
+                    <property name="name" value="STY_PIC_NUM_NUMBERBOX" />
+                    <property name="id" value="1" />
+                    <property name="x" value="81" />
+                    <property name="y" value="11" />
+                    <property name="width" value="108" />
+                    <property name="height" value="16" />
+                    <property name="numX" value="19" />
+                    <property name="numY" value="-1" />
+                    <property name="numWidth" value="88" />
+                    <property name="numHeight" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPic" value="" storetype="1" />
+                    <property name="bgPicX" value="-1" />
+                    <property name="bgPicY" value="-1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="DisplayMode" value="0" />
+                    <property name="Composition" value="1" />
+                    <property name="number1" value="1234567890" />
+                    <property name="digits1" value="0" />
+                    <property name="number2" value="1234567890" />
+                    <property name="digits2" value="0" />
+                    <property name="stringColor" value="16777215" />
+                    <property name="stringBkColor" value="4210752" />
+                    <property name="FontSize" value="0" />
+                    <property name="align" value="1" />
+                    <property name="showPartition" value="1" />
+                    <property name="partitionPic" value="" />
+                    <property name="DecimalDigits" value="0" />
+                    <property name="showSign" value="0" />
+                    <property name="pic0" value="" />
+                    <property name="pic1" value="" />
+                    <property name="pic2" value="" />
+                    <property name="pic3" value="" />
+                    <property name="pic4" value="" />
+                    <property name="pic5" value="" />
+                    <property name="pic6" value="" />
+                    <property name="pic7" value="" />
+                    <property name="pic8" value="" />
+                    <property name="pic9" value="" />
+                    <property name="picPositive" value="" />
+                    <property name="picNegative" value="" />
+                    <property name="picCover" value="" />
+                    <property name="pic0Width" value="0" />
+                    <property name="pic0Height" value="0" />
+                    <property name="incX" value="0" />
+                    <property name="partitionIncX" value="0" />
+                    <property name="numBkColor" value="0" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_PIC_FILENAME_TEXTBOX" />
+                    <property name="id" value="2" />
+                    <property name="x" value="0" />
+                    <property name="y" value="144" />
+                    <property name="width" value="128" />
+                    <property name="height" value="16" />
+                    <property name="textX" value="80" />
+                    <property name="textY" value="10" />
+                    <property name="textWidth" value="128" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="80" />
+                    <property name="bgPicY" value="10" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16774388" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\picture_filename_bg.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="128" />
+                    <property name="bgPicHeight" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="0" />
+                </element>
+                <element class="numBox">
+                    <property name="name" value="STY_PIC_PREVIEW_NUMBERBOX" />
+                    <property name="id" value="3" />
+                    <property name="x" value="20" />
+                    <property name="y" value="0" />
+                    <property name="width" value="88" />
+                    <property name="height" value="16" />
+                    <property name="numX" value="80" />
+                    <property name="numY" value="10" />
+                    <property name="numWidth" value="88" />
+                    <property name="numHeight" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPic" value=".\picture_head_num_bg.bmp" storetype="1" />
+                    <property name="bgPicX" value="80" />
+                    <property name="bgPicY" value="10" />
+                    <property name="bgPicWidth" value="88" />
+                    <property name="bgPicHeight" value="16" />
+                    <property name="DisplayMode" value="0" />
+                    <property name="Composition" value="1" />
+                    <property name="number1" value="1234567890" />
+                    <property name="digits1" value="0" />
+                    <property name="number2" value="1234567890" />
+                    <property name="digits2" value="0" />
+                    <property name="stringColor" value="16777215" />
+                    <property name="stringBkColor" value="16777215" />
+                    <property name="FontSize" value="0" />
+                    <property name="align" value="1" />
+                    <property name="showPartition" value="1" />
+                    <property name="partitionPic" value="$widgets\timebox\H1_numPoint.bmp" />
+                    <property name="DecimalDigits" value="0" />
+                    <property name="showSign" value="0" />
+                    <property name="pic0" value="" />
+                    <property name="pic1" value="" />
+                    <property name="pic2" value="" />
+                    <property name="pic3" value="" />
+                    <property name="pic4" value="" />
+                    <property name="pic5" value="" />
+                    <property name="pic6" value="" />
+                    <property name="pic7" value="" />
+                    <property name="pic8" value="" />
+                    <property name="pic9" value="" />
+                    <property name="picPositive" value="" />
+                    <property name="picNegative" value="" />
+                    <property name="picCover" value="" />
+                    <property name="pic0Width" value="0" />
+                    <property name="pic0Height" value="0" />
+                    <property name="incX" value="10" />
+                    <property name="partitionIncX" value="10" />
+                    <property name="numBkColor" value="0" />
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\picture_dir.bmp" />
+        <picture value=".\picture_filename_bg.bmp" />
+        <picture value=".\picture_head_num_bg.bmp" />
+        <picture value=".\picture_no_thumbnail.bmp" />
+        <txt value=".\picture.xls" />
+        <string value="null" />
+        <string value="s_backlight" />
+        <string value="s_slide_set" />
+        <string value="s_delete_pic" />
+        <string value="s_time_per_slide" />
+        <string value="s_repeat" />
+        <string value="s_shuffle" />
+        <string value="s_preview" />
+        <string value="s_no_pic_file" />
+        <string value="s_is_stop_music" />
+        <string value="s_noplay_nopreview" />
+        <string value="s_playing_nopreview" />
+        <string value="s_lastplay_nopreview" />
+        <string value="s_noplay_preview" />
+        <string value="s_playing_preview" />
+        <string value="s_lastplay_preview" />
+        <string value="s_card_menu" />
+    </resource>
+</ui-rad>

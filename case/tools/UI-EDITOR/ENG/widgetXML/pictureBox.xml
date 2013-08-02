@@ -1,0 +1,17 @@
+﻿<widget name="pictureBox" type="widget" adapter="AImageAdapter"
+			icon="widgets/picregion.png" >
+
+     <categories>
+     <category name = "basic"/>
+     </categories>
+     
+	<properties>
+		<property name="x" type="U16" value="" category="basic" editable="true" relative ="Left" desc="x coordinate of the left-top corner of the widget"/>
+		<property name="y" type="U16" value="" category="basic" editable="true" relative ="Top" desc="y coordinate of the left-top corner of the widget"/>
+		<property name="width" type="U16" value="100" category="basic" editable="false" desc="width of the widget"/>
+		<property name="height" type="U16" value="80" category="basic" editable="false" desc="height of the widget"/>
+		<property name="visible" type="boolean" value="1" category="basic" editable="true" desc="whether the widget is visible"/>
+		<property name="screenshotBgPic" type="Picture_BG" value="" category="basic" editable="false" desc="Picture which can be used as embeded backgroud pic"/>				
+	</properties>
+		
+</widget>

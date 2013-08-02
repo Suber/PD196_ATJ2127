@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="setting" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="128" />
+    <property name="prj_screen_height" value="160" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="setting.sty" />
+    <property name="prj_res_head_file" value="setting_res.h" />
+    <property name="prj_res_str_dir" value="setting\" />
+    <property name="prj_sty_file" value="setting.sty" />
+    <property name="prj_sty_head_file" value="setting_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="128" />
+        <property name="height" value="160" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="12" />
+        <property name="Font_large" value="13" />
+        <scene>
+            <property name="name" value="scene00" />
+            <property name="id" value="0" />
+            <property name="width" value="128" />
+            <property name="height" value="160" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup0" />
+                <property name="id" value="0" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <txt value=".\US212A_SETTING_RES.xls" />
+        <string value="S_PLAY_MODE" />
+        <string value="S_SOUND_SETTING" />
+        <string value="S_SHUT_DOWN_TIMER" />
+        <string value="S_DISPLAY_SETTING" />
+        <string value="S_DATE_AND_TIME" />
+        <string value="S_SLIDE_SHOW_SETTING" />
+        <string value="S_LANGUAGE" />
+        <string value="S_PC_CONNECT_OPTION" />
+        <string value="S_INFORMATION" />
+        <string value="S_LEGAL_INFORMATION" />
+        <string value="S_FORMAT_DEVICE" />
+        <string value="S_FACTORY_SETTING" />
+        <string value="S_AUTORUN_SETTING" />
+        <string value="S_MUSIC_FROM" />
+        <string value="S_REPEAT" />
+        <string value="S_MUSIC_REPEAT_MODE" />
+        <string value="S_SLIDE_REPEAT_MODE" />
+        <string value="S_SHUFFLE" />
+        <string value="S_MUSIC_SHUFFLE_OPTION" />
+        <string value="S_SLIDE_SHUFFLE_OPTION" />
+        <string value="S_FULLSOUND" />
+        <string value="S_EQUALIZER" />
+        <string value="S_VOLUME_LIMIT" />
+        <string value="S_SHUT_DOWN_TIMER_OFF" />
+        <string value="S_MUSIC_REPEAT_OFF" />
+        <string value="S_MUSIC_SHUFFLE_OFF" />
+        <string value="S_FULLSOUND_OFF" />
+        <string value="S_EQ_OFF" />
+        <string value="S_SHUT_DOWN_SETTING" />
+        <string value="S_BRIGHTNESS_SETTING" />
+        <string value="S_THEME" />
+        <string value="S_BACKLIGHT_TIMER" />
+        <string value="S_SCREEN_SAVER" />
+        <string value="S_TIME_SETTING" />
+        <string value="S_DATE_SETTING" />
+        <string value="S_TIME_PER_SLIDE" />
+        <string value="S_LANGUAGE_SLOVAK" />
+        <string value="S_LANGUAGE_NORWEGIAN" />
+        <string value="S_LANGUAGE_GREEK" />
+        <string value="S_LANGUAGE_FINNISH" />
+        <string value="S_LANGUAGE_SIMPLIFIED_CHINESE" />
+        <string value="S_LANGUAGE_ENGLISH" />
+        <string value="S_LANGUAGE_TRAD_CHINESE" />
+        <string value="S_LANGUAGE_JAPANESE" />
+        <string value="S_LANGUAGE_KOREAN" />
+        <string value="S_LANGUAGE_FRENCH" />
+        <string value="S_LANGUAGE_GERMANY" />
+        <string value="S_LANGUAGE_ITALIAN" />
+        <string value="S_LANGUAGE_DUTCH" />
+        <string value="S_LANGUAGE_PORTUGUESE_EUROPEAN" />
+        <string value="S_LANGUAGE_PORTUGUESE_BRAZILIAN" />
+        <string value="S_LANGUAGE_SPANISH" />
+        <string value="S_LANGUAGE_SWEDISH" />
+        <string value="S_LANGUAGE_CZECH" />
+        <string value="S_LANGUAGE_DENISH" />
+        <string value="S_LANGUAGE_POLAND" />
+        <string value="S_LANGUAGE_RUSSIAN" />
+        <string value="S_LANGUAGE_TURKEY" />
+        <string value="S_LANGUAGE_HEBREW" />
+        <string value="S_LANGUAGE_THAI" />
+        <string value="S_LANGUAGE_HUNGARIAN" />
+        <string value="S_LANGUAGE_ROMANIAN" />
+        <string value="S_LANGUAGE_ARABIC" />
+        <string value="S_LANGUAGE_CROATIAN" />
+        <string value="S_LANGUAGE_SLOVENIAN" />
+        <string value="S_LANGUAGE_INDONESIAN" />
+        <string value="SN_LANGUAGE_SLOVAK" />
+        <string value="SN_LANGUAGE_NORWEGIAN" />
+        <string value="SN_LANGUAGE_GREEK" />
+        <string value="SN_LANGUAGE_FINNISH" />
+        <string value="SN_LANGUAGE_SIMPLIFIED_CHINESE" />
+        <string value="SN_LANGUAGE_ENGLISH" />
+        <string value="SN_LANGUAGE_TRAD_CHINESE" />
+        <string value="SN_LANGUAGE_JAPANESE" />
+        <string value="SN_LANGUAGE_KOREAN" />
+        <string value="SN_LANGUAGE_FRENCH" />
+        <string value="SN_LANGUAGE_GERMANY" />
+        <string value="SN_LANGUAGE_ITALIAN" />
+        <string value="SN_LANGUAGE_DUTCH" />
+        <string value="SN_LANGUAGE_PORTUGUESE_EUROPEAN" />
+        <string value="SN_LANGUAGE_PORTUGUESE_BRAZILIAN" />
+        <string value="SN_LANGUAGE_SPANISH" />
+        <string value="SN_LANGUAGE_SWEDISH" />
+        <string value="SN_LANGUAGE_CZECH" />
+        <string value="SN_LANGUAGE_DENISH" />
+        <string value="SN_LANGUAGE_POLAND" />
+        <string value="SN_LANGUAGE_RUSSIAN" />
+        <string value="SN_LANGUAGE_TURKEY" />
+        <string value="SN_LANGUAGE_HEBREW" />
+        <string value="SN_LANGUAGE_THAI" />
+        <string value="SN_LANGUAGE_HUNGARIAN" />
+        <string value="SN_LANGUAGE_ROMANIAN" />
+        <string value="SN_LANGUAGE_ARABIC" />
+        <string value="SN_LANGUAGE_CROATIAN" />
+        <string value="SN_LANGUAGE_SLOVENIAN" />
+        <string value="SN_LANGUAGE_INDONESIAN" />
+        <string value="S_PLAYER INFORMATION" />
+        <string value="S_DISK_INFORMATION" />
+        <string value="S_SUPPORT_FILES" />
+        <string value="S_FORMAT_DISK" />
+        <string value="S_FORMAT_CARD" />
+        <string value="S_DONT_FORMAT" />
+        <string value="S_YES" />
+        <string value="S_NO" />
+        <string value="S_DISABLE" />
+        <string value="S_DISABLE_AUTORUN" />
+        <string value="S_ENABLE" />
+        <string value="S_ENABLE_AUTORUN" />
+        <string value="S_FROM_ALL_SONGS" />
+        <string value="S_FROM_ARTIST" />
+        <string value="S_FROM_ALBUM" />
+        <string value="S_FROM_GENRE" />
+        <string value="S_REPEAT_ONE" />
+        <string value="S_REPEAT_ALL" />
+        <string value="S_EQ_ROCK" />
+        <string value="S_EQ_FUNK" />
+        <string value="S_EQ_HIP_HOP" />
+        <string value="S_EQ_JAZZ" />
+        <string value="S_EQ_CLASSICAL" />
+        <string value="S_EQ_TECHNO" />
+        <string value="S_EQ_CUSTOM" />
+        <string value="S_THEME_BLUE" />
+        <string value="S_THEME_GREEN" />
+        <string value="S_THEME_GRAY" />
+        <string value="S_THEME_PINK" />
+        <string value="S_THEME_RED" />
+        <string value="S_LIGHT_TIME_10S" />
+        <string value="S_LIGHT_TIME_20S" />
+        <string value="S_LIGHT_TIME_30S" />
+        <string value="S_LIGHT_TIME_ALWAYS" />
+        <string value="S_WITHOUT_SCREEN_SAVER" />
+        <string value="S_SCREEN_SAVER_CLOCK" />
+        <string value="S_SCREEN_SAVER_PHOTOS" />
+        <string value="S_SCREEN_OFF" />
+        <string value="S_SCREEN_SAVER_DEMO" />
+        <string value="S_SET_TIME_FORMAT" />
+        <string value="S_SET_TIME" />
+        <string value="S_SET_DATE_FORMAT" />
+        <string value="S_SET_DATE" />
+        <string value="S_STORAGE_MSC" />
+        <string value="S_STORAGE_MTP" />
+        <string value="S_EXPLAIN_MSC" />
+        <string value="S_EXPLAIN_MTP" />
+        <string value="S_MUSIC" />
+        <string value="S_PICTURE" />
+        <string value="S_VIDEO" />
+        <string value="S_TIME_FORMAT_12H" />
+        <string value="S_TIME_FORMAT_24H" />
+        <string value="S_DATE_FORMAT_DD_MM_YYYY" />
+        <string value="S_DATE_FORMAT_MM_DD_YYYY" />
+        <string value="S_DATE_FORMAT_YYYY_MM_DD" />
+        <string value="S_SETTING_OPTION" />
+        <string value="S_NOTE_PLAYER" />
+        <string value="S_NOTE_MSC" />
+        <string value="S_NOTE_MTP" />
+        <string value="S_NOTE_PICTURE" />
+        <string value="S_NOTE_VEDIO" />
+        <string value="S_SETTING_TITLE" />
+        <string value="S_SHUT_DOWN_TIMER_TITLE" />
+        <string value="S_SHUT_DOWN_ON_TITLE" />
+        <string value="S_SHUT_DOWN_OFF_TITLE" />
+        <string value="S_USER_SRS" />
+        <string value="S_WOWHD" />
+        <string value="S_SRS_OFF" />
+        <string value="S_SRS" />
+        <string value="S_MUSIC_SHUFFLE_ON" />
+        <string value="S_FULLSOUND_ON" />
+        <string value="S_SLIDE_REPEAT_ON" />
+        <string value="S_SLIDE_SHUFFLE_OFF" />
+        <string value="S_SLIDE_SHUFFLE_ON" />
+        <string value="S_SLIDE_REPEAT_OFF" />
+        <string value="S_PLAYER_INFORMATION" />
+        <string value="S_CLOSE_FULLSOUND_OR_NOT" />
+        <string value="S_CLOSE_SRS_OR_NOT" />
+        <string value="S_TIME_HH" />
+        <string value="S_TIME_MM" />
+        <string value="S_TIME_AM" />
+        <string value="S_TIME_PM" />
+        <string value="S_TIME_AMPM" />
+        <string value="S_DATE_DD" />
+        <string value="S_DATE_MM" />
+        <string value="S_DATE_YY" />
+        <string value="S_USER_B" />
+        <string value="S_USER_L" />
+        <string value="S_USER_M" />
+        <string value="S_USER_H" />
+        <string value="S_USER_T" />
+        <string value="S_RESTORE_OR_NOT" />
+        <string value="S_DELETE_ALL_OR_NOT" />
+        <string value="S_DISK_INFO_DETAIL" />
+        <string value="S_SLIDE_TIME_UNIT" />
+        <string value="S_SET_LIGHTNESS_END" />
+        <string value="S_SET_SHUT_DOWN_TIMER_END" />
+        <string value="S_REMAIN_TIME" />
+        <string value="S_NO_ARTIST" />
+        <string value="S_NO_ALBUM" />
+        <string value="S_NO_GENRE" />
+        <string value="S_SET_VOLUME_END" />
+        <string value="S_UINT_MIN" />
+        <string value="S_KEY_TONE" />
+        <string value="SN_KEY_TONE_ON" />
+        <string value="SN_KEY_TONE_OFF" />
+        <string value="S_RESTORED" />
+        <string value="S_REPEAT_OFF" />
+        <string value="S_REPEAT_INTRO" />
+    </resource>
+</ui-rad>

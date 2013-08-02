@@ -1,0 +1,219 @@
+/**************************************************************************
+*                                                                         *
+*   PROJECT     : MIPS port for UCOS-II                                   *
+*                                                                         *
+*   MODULE      : bank a&b link.xn                                        *
+*                                                                         *
+*   AUTHOR      : wuyueqian                                               *
+*                                                                         *
+*   PROCESSOR   : MIPS 4KEc (32 bit RISC) - Actions board                 *
+*                                                                         *
+*   Tool-chain  : Cygnus                                                  *
+*                                                                         *
+*                                                                         *
+*   Linker script file                                                    *
+*                                                                         *
+**************************************************************************/
+/************************ memory map********************************
+*-----------------------------ap code--------------------------------------*
+*---rcode        :0xbfc1ee00-0xbfc1f5ff  length:0x800                     *  
+*---bank UI      :(0x48**0000+0x1f600)-(0x48**0000+0x1fdff)  length:0x800 *
+*---bank control :(0x40**0000+0x1fe00)-(0x40**0000+0x205ff)  length:0x800 *
+*---bank enhance1:(0x78**0000+0x27000)-(0x78**0000+0x277ff)  length:0x800 *
+*---bank enhance2:(0x71**0000+0x27800)-(0x71**0000+0x27fff)  length:0x800 *
+*----------------------------ap data--------------------------------------*
+*--rdata: 0x9fc1d200-0x9fc1d9ff length:0x800                              *
+*--applib:0x9fc19f80-0x9fc19fff length:0x80                               *  
+*-------------------------engine code-------------------------------------*
+*---rcode        :0xbfc27800-0xbfc27fff  length:0x800                     *
+*---bank         :(0x50**0000+0x27000)-(0x50**0000+0x277ff)  length:0x800 *
+*-------------------------engine data-------------------------------------*
+*--rdata: 0x9fc28000-0x9fc287ff length:0x800                              *
+*-------------------------codec code--------------------------------------*
+*---rcode        :0xbfc29000-0xbfc2dfff  length:0x5000                    *
+*-------------------------codec data--------------------------------------*
+*--rdata: 0x9fc2e000-0x9fc3ff5c length:0x11f5c                            *
+***************************************************************************/
+/*定义GROUP BANK INDEX 和其他地址变量*/
+INPUT(link_base.xn)
+INPUT(sdk_link_base.xn)
+
+/*1.AP INDEX*/
+AP_INDEX = FRONT_AP;
+
+/*2.从地址map图中获取card模块的常驻代码段物理地址，只需写低14位，开发人员需填写，集成开始后只由集成人员修改，驱动人员不允许修改*/
+SRAM_TEXT_ADDR = SRAM_AP_FRONT_RCODE_ADDR;
+SRAM_DATA_ADDR = SRAM_AP_FRONT_DATA_ADDR;
+
+
+/*3.转换为链接地址,不能修改*/
+RCODE_TEXT_ADDR = RCODE_ADDR_BASE + SRAM_TEXT_ADDR;
+ROM_TEXT_ADDR = RCODE_ADDR_BASE + SROM_I2C_ADDR;    /*2k rom*/
+RDATA_DATA_ADDR = RDATA_ADDR_BASE + SRAM_DATA_ADDR;
+
+/*只是建议起始地址，也可以往后偏移，如control_2一般不是从这个地址，如果要占全部的空间，则使用control_1*/
+BANK_CONTROL_1_ADDR_BASE = (AP_BANK_FRONT_CONTROL_1 << 24) + SRAM_AP_BANK_FRONT_CONTROL_ADDR;
+
+/*back ap 没有UI段*/
+BANK_UI_1_ADDR_BASE = (AP_BANK_FRONT_UI_1 << 24) + SRAM_AP_BANK_FRONT_UI_ADDR;
+
+/*固定复用basal或者codec的空间，不能跨空间使用，跟control1和control2不一样*/
+BANK_ENHANCED_1_ADDR_BASE = (AP_BANK_FRONT_ENHANCED_1 << 24) + SRAM_AP_BANK_FRONT_ENHANCED_1_ADDR;
+BANK_ENHANCED_2_ADDR_BASE = (AP_BANK_FRONT_ENHANCED_2 << 24) + SRAM_AP_BANK_FRONT_ENHANCED_1_ADDR;
+
+/*bank的实际空间大小,不能修改*/
+BANK_CONTROL_SIZE = SRAM_AP_BANK_FRONT_CONTROL_SIZE;
+BANK_UI_SIZE = SRAM_AP_BANK_FRONT_UI_SIZE;
+BANK_ENHANCED1_SIZE = SRAM_AP_BANK_FRONT_ENHANCED_1_SIZE;
+BANK_ENHANCED2_SIZE = SRAM_AP_BANK_FRONT_ENHANCED_2_SIZE;
+
+/*系统允许的bank的最大空间大小，不能修改*/
+AP_BANK_SPACE = BANK_SPACE;
+
+OUTPUT_ARCH(mips)
+
+ENTRY(__start)
+EXTERN(lcd_op_entry)
+EXTERN(key_op_entry)
+EXTERN(audio_device_op_entry)
+
+SECTIONS
+{
+    /* case 全局数据，各AP共享 */
+    . = 0x9fc19f80;
+	APP_GLOBE_DATA :
+    {
+    	/*common globe 数据*/
+    	applib_globe_data.o(.bss)
+    	. = 0x80;
+    }
+    
+    /* 常驻代码段: .text */
+    .text RCODE_TEXT_ADDR	: 
+    {      
+        api.a(.text)     
+        record_message.o(.text .rodata .xdata)
+        app_timer_rcode.o(.text)        
+        message_rcode.o(.text)
+    }
+    /*
+     .rom ROM_TEXT_ADDR  :   
+    {
+        rom_I2C.o(.text .rodata)
+        . = SROM_I2C_SIZE;   
+    } 
+    */
+    .data RDATA_DATA_ADDR   : 
+    {
+        record_main.o(.data)
+        eh_rdata.o(.data)
+        eh_bs_rdata.o(.data)
+        eh_fsel_rdata.o(.data)
+    }
+
+    /* 未初始化的全局数据段，系统不会进行清零，由应用开发者自己把握: .bss, .sbss .common common */
+    .bss	:
+    {
+    	record_main.o(.bss)
+    	applib_app_data.o(.bss)
+    	common_ui_data.o(.bss)
+    	common_func_data.o(.bss)
+    	eh_rdata.o(.bss)
+        eh_bs_rdata.o(.bss)
+        eh_fsel_rdata.o(.bss)    
+        *(.sbss)
+        *(.common)/*小普通符号*/
+        *(common)/*标准普通符号*/
+    }
+
+    /*AP部分链接模版：占用bank control 1组的0x00-0x1f，共32个bank*/
+    /*bank0 预留给运行时库ctor */
+    . = BANK_CONTROL_1_ADDR_BASE;
+    /*OFFSET为control bank 1组的实际物理地址*/
+    OFFSET = . & 0x3ffff;
+    BANK_CONTROL_1_0	: 
+    {
+        ctor.o(.text .rodata)
+        . = BANK_CONTROL_SIZE;
+    }
+
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_1	: 
+    {
+        record_main.o(.text .rodata .xdata)
+        . = BANK_CONTROL_SIZE;
+    }
+    
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_2	: 
+    {
+        record_scene_recording.o(.text .rodata .xdata)
+        . = BANK_CONTROL_SIZE;
+    }
+       
+     . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_3	: 
+    {
+        record_file.o(.text .rodata .xdata)
+        . = BANK_CONTROL_SIZE;
+    }
+           
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_4	: 
+    {
+        record_menu.o(.text .rodata .xdata)
+        . = BANK_CONTROL_SIZE;
+    }
+    
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_5	: 
+    {
+         record_menu_config.o(.text .rodata .xdata)
+         . = BANK_CONTROL_SIZE;
+    }
+    
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_6	: 
+    {
+         record_disk.o(.text .rodata .xdata)
+         . = BANK_CONTROL_SIZE;
+    }      
+
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_7	: 
+    {
+         record_alarm.o(.text .rodata .xdata)
+         . = BANK_CONTROL_SIZE;
+    }
+    
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_CONTROL_1_8	: 
+    {
+         codec_WM8904.o(.text .rodata .xdata)
+         
+         . = BANK_CONTROL_SIZE;
+    }
+    
+/********************/    
+    . = BANK_UI_1_ADDR_BASE;
+    OFFSET = . & 0x3ffff;
+    BANK_UI_1_0    : 
+    {
+        record_paint.o(.text .rodata .xdata)    
+        record_scene_recording_sub.o(.text .rodata .xdata)
+        . = BANK_CONTROL_SIZE;
+    } 
+    
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_UI_1_1	: 
+    {
+        record_control.o(.text .rodata .xdata)   
+         . = BANK_CONTROL_SIZE;
+    } 
+    . = ((. + AP_BANK_SPACE) & (~(AP_BANK_SPACE - 1))) + OFFSET;
+    BANK_UI_1_2	: 
+    {
+        rom_I2C.o(.text .rodata)  
+         . = BANK_CONTROL_SIZE;
+    }        
+ }

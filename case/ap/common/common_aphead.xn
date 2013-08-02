@@ -1,0 +1,64 @@
+//把下面常驻代码段和常驻数据段放到各AP相同的段后面即可
+
+//前台AP
+SECTIONS
+{
+    /* case 全局数据，各AP共享 */
+    . = 0x9fc19f80;
+    APP_GLOBE_DATA :
+    {
+        /*common globe 数据*/
+        applib_globe_data.o(.bss)
+        . = 0x80;
+    }
+    
+    /*常驻代码*/
+    .text RCODE_TEXT_ADDR  : 
+    {
+        app_timer_rcode.o(.text)
+        message_rcode.o(.text)
+    }
+    /* 初始化了的全局数据段*/
+    .data RDATA_DATA_ADDR   :  AT(ADDR(.text) + SIZEOF(.text)) 
+    {
+    }
+    /*未初始化的全局数据段，系统不会进行清零*/
+    .bss :
+    {
+        applib_app_data.o(.bss)
+        common_ui_data.o(.bss)
+        common_func_data.o(.bss)
+    } 
+}
+
+//后台应用
+SECTIONS
+{
+    /* case 全局数据，各AP共享 */
+    . = 0x9fc19f80;
+    APP_GLOBE_DATA :
+    {
+        /*common globe 数据*/
+        applib_globe_data.o(.bss)
+        . = 0x80;
+    }
+    
+    /*常驻代码*/
+    .text RCODE_TEXT_ADDR  : 
+    {
+        app_timer_rcode.o(.text)
+        message_rcode_for_engine.o(.text)          
+    }
+    
+    /* 初始化了的全局数据段*/
+    .data RDATA_DATA_ADDR   :  AT(ADDR(.text) + SIZEOF(.text)) 
+    {
+    }
+    
+    /*未初始化的全局数据段，系统不会进行清零*/
+    .bss :
+    {
+        applib_app_data.o(.bss)
+        common_func_data.o(.bss)
+    }
+}

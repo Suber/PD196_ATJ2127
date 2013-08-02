@@ -1,0 +1,3 @@
+LIBRARY drv_lcd
+EXPORTS
+;GetDrvFuncTbl

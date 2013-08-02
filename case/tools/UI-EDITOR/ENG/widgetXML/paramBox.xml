@@ -1,0 +1,150 @@
+﻿<widget name="parambox" type="widget" adapter="AParamBoxAdapter"
+            icon="widgets/param.png" >
+
+     <categories>
+     <category name = "basic"/>
+     <category name = "title"/>
+     <category name = "number"/>
+     <category name = "unit"/>
+    
+     </categories>
+
+    <properties>
+          
+        <property name="x" type="U16" value="" editable="true" relative ="Left" desc="x coordinate of the left-top corner of the widget"/>
+        <property name="y" type="U16" value=""  editable="true" relative ="Top" desc="y coordinate of the left-top corner of the widget"/>
+        <property name="width" type="U16" value=""  editable="true" desc="width of the widget"/>
+        <property name="height" type="U16" value=""  editable="true" desc="height of the widget"/>
+               
+        <property name="visible" type="boolean" value="1" category="basic"  editable="true" desc="whether the widget is visible"/>
+        <property name="showTitle" type="boolean" value="0" category="basic" editable="true" desc="whether title is visible"/>
+        <property name="showNumber" displayName="whether number is visible" value="1" type="boolean" category="basic" editable="true" desc="whether number is visible"/>  
+        <property name="showUnit" displayName="whether unit is visible" value="1" type="boolean" category="basic" editable="true" desc="whether unit is visible"/>
+        <property name="orientation" displayName="param orientation" type="Enum" editable="false" category="basic" value="0" enumKeys="Horizontal,Vertical" enumValues="0,1" default="0" desc="param orientation"/> 
+        <property name="showTag" type="boolean" value="0" category="basic" editable="true" desc="whether the tag pic is visible"/>
+        <property name="paramAmount" type="Enum"  value="0" category="basic" editable="false" enumKeys="1,2,3" enumValues="0,1,2" desc="count of params"/>
+        <property name="current" type="Enum" default="1" value="0" category="basic" editable="true" enumKeys="1,2,3" enumValues="0,1,2" desc="index of param currently selected"/>
+   
+        <property name="bgPic" type="Picture" value="$widgets\background\p_def_background.bmp" category="basic" editable="false" desc="background picture" AsbgPic="true" />
+        <property name="bgPicX" type="U16" value="0" category="basic" editable="true" relative ="Left" desc="x coordinate of the left-top corner of bgPic"/>
+        <property name="bgPicY" type="U16" value="0" category="basic" editable="true" relative ="Top" desc="y coordinate of the left-top corner of bgPic"/>
+        <property name="bgPicWidth" type="U16" visible="false" value="" editable="false" />
+        <property name="bgPicHeight" type="U16" visible="false" value="" editable="false" />    
+        <property name="signPicInit" type="Picture" value="" category="basic" editable="false" desc="the orignal pic of signPic,with background of pure color" show="showTag = 1"/>
+        <property name="signPicInitBgColor" type="Color" category="basic" value="0" editable="false" desc="background color of signPicInit" show="showTag = 1"/> 
+        <property name="signPic" type="Picture" value="" category="basic" editable="false" desc="tag pic"  show="showTag = 1"/>
+        <property name="signPicX" type="U16" value="5" category="basic" editable="true" relative ="Left" desc="x coordinate of the left-top corner of signPic"  show="showTag = 1"/>
+        <property name="signPicY" type="U16" value="5" category="basic" editable="true" relative ="Top" desc="y coordinate of the left-top corner of signPic"  show="showTag = 1"/>
+        <property name="sinPicWidth" type="U16" visible="false" value="" editable="false" desc=""/>
+        <property name="sinPicHeight" type="U16" visible="false" value="" editable="false" desc=""/>    
+        
+        <property name="partitionPicInit1" type="Picture" value="" category="basic" editable="false" desc="the orignal pic of partitionPic1,with background of pure color"/>
+        <property name="partitionPic1BkColor" type="Color" category="basic" value="0" editable="false" desc="background color of partitionPicInit1" /> 
+        <property name="partitionPic1" type="Picture" value="" category="basic" editable="false" desc="param partition pic 1"/>
+        <property name="partitionPic1X" type="U16" value="0" category="basic" editable="true" relative ="Left" desc="x coordinate of the left-top corner of partitionPic1"/>
+        <property name="partitionPic1Y" type="U16" value="0" category="basic" editable="true" relative ="Top" desc="y coordinate of the left-top corner of partitionPic1"/>
+        <property name="partitionPic1Width" type="U16" value="0"  editable="false" />
+        <property name="partitionPic1Height" type="U16" value="0" editable="false" />
+
+        <property name="partitionPicInit2" type="Picture" value="" category="basic" editable="false" desc="the orignal pic of partitionPic2,with background of pure color"/>
+        <property name="partitionPic2BkColor" type="Color" category="basic" value="0" editable="false" desc="background color of partitionPicInit2" /> 
+        <property name="partitionPic2" type="Picture" value="" category="basic" editable="false" desc="param partition pic 2"/>
+        <property name="partitionPic2X" type="U16" value="0" category="basic" editable="true" relative ="Left" desc="x coordinate of the left-top corner of partitionPic2"/>
+        <property name="partitionPic2Y" type="U16" value="0" category="basic" editable="true" relative ="Top" desc="y coordinate of the left-top corner of partitionPic2"/>
+        <property name="partitionPic2Width" type="U16" value="0"  editable="false" />
+        <property name="partitionPic2Height" type="U16" value="0" editable="false" />
+
+        <property name="num1FigureX" type="U16" value="45" category="basic" editable="true" relative ="Left" desc="x coordinate of param 1" show="paramAmount > 0"/>
+        <property name="num1FigureY" type="U16" value="46" category="basic" editable="true" relative ="Top" desc="y coordinate of param 1" show="paramAmount > 0"/>
+        <property name="num1FigureWidth" type="U16" value="40"  category="basic"  editable="true" desc="width of param 1" show="paramAmount > 0"/>
+        <property name="num1FigureHeight" type="U16" value="80" category="basic"  editable="true" desc="height of param 1" show="paramAmount > 0"/>
+
+ 
+        <property name="num2FigureX" type="U16" value="45" category="basic" editable="true" relative ="Left" desc="x coordinate of param 2" show="paramAmount > 0"/>
+        <property name="num2FigureY" type="U16" value="46" category="basic" editable="true" relative ="Top" desc="y coordinate of param 2" show="paramAmount > 0"/>
+        <property name="num2FigureWidth" type="U16" value="40" category="basic"  editable="true" desc="width of param 2"  show="paramAmount > 0"/>
+        <property name="num2FigureHeight" type="U16" value="80" category="basic"  editable="true" desc="height of param 2"  show="paramAmount > 0"/>
+
+        <property name="num3FigureX" type="U16" value="45" category="basic" editable="true" relative ="Left" desc="x coordinate of param 3" show="paramAmount > 1"/>
+        <property name="num3FigureY" type="U16" value="46" category="basic" editable="true" relative ="Top" desc="y coordinate of param 3" show="paramAmount > 1"/>
+        <property name="num3FigureWidth" type="U16" value="40"  category="basic" editable="true" desc="width of param 3"  show="paramAmount > 1"/>
+        <property name="num3FigureHeight" type="U16" value="80"  category="basic" ditable="true" desc="height of param 3"  show="paramAmount > 1"/>
+
+        <property name="titleText" type="MultiLanguage" value="Param Setting" category="title" editable="false" desc="text of title"  show="showTitle = 1"/>
+        <property name="titleX" type="U16" value="5" category="title" editable="true" relative ="Left" desc="x coordinate of title rect" show="showTitle = 1"/>
+        <property name="titleY" type="U16" value="4" category="title" editable="true" relative ="Top" desc="y coordinate of title rect" show="showTitle = 1"/>
+        <property name="titleWidth" type="U16" value="120" category="title" editable="true" desc="width of title rect" show="showTitle = 1"/>
+        <property name="titleHeight" type="U16" value="20" category="title" editable="true" desc="height of title rect" show="showTitle = 1"/>
+        <property name="titleFontColor" type="Color" value="16777215" category="title" editable="true" desc="Font color of titleText" show="showTitle = 1"/>
+        <property name="titleAlign" type="Enum" value="1" category="title" editable="true" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" default="1" desc="align type of title text" show="showTitle = 1"/>
+        <property name="titleFontSize" displayName="Font size" type="Enum" editable="false" category="title" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size of title text" show="showTitle = 1"/>
+        
+               
+        <property name="showSymbol" displayName="whether the positive symbol is shown" value="1" type="boolean" category="number" editable="true" desc="whether the positive symbol is shown(remark:negative symbol will definitely be shown if the number is negative,while positive symbol is optional)" show="showNumber = 1"/>
+        <property name="showHigh" displayName="whether high zero is shown" value="1" type="boolean" category="number" editable="true" desc="whether high zero is shown(e.g. a number with value equals to 123 and count of digits is 4 ,will be shown as 0123)" show="showNumber = 1"/>
+        <property name="numberMode" type="Enum" value="0" category="number" editable="true" enumKeys="String,Num Picture" enumValues="0,1" default="1" desc="display mode of number" show="showNumber = 1"/>
+        <property name="numberAlign" type="Enum" value="1" category="number" editable="true" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" default="1" desc="align type of number" show="showNumber = 1"/>
+        
+        <property name="pic0" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="pic of num 0" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic1" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="pic of num 1" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic2" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="pic of num 2" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic3" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="pic of num 3" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic4" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="pic of num 4" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic5" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="pic of num 5" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic6" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="pic of num 6" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic7" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="pic of num 7" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic8" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="pic of num 8" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic9" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="pic of num 9" show="numberMode > 0&showNumber = 1"/>
+        <property name="picPositive" displayName="pic of positive symbol" type="Picture" category="number" value="" editable="false" allowEmpty="false"  desc="pic of positive symbol" show="numberMode > 0&showNumber = 1"/>
+        <property name="picNegative" displayName="负号" type="Picture" category="number" value="" editable="false" allowEmpty="false"  desc="pic of negative symbol" show="numberMode > 0&showNumber = 1"/>
+        <property name="picCover" displayName="空白" type="Picture" category="number" value="" editable="false" allowEmpty="false"  desc="pic of null" show="numberMode > 0&showNumber = 1"/>
+        <property name="numberPicW" type="U16"  value="0" category="number" editable="false" desc="width of num pic" show="numberMode > 0&showNumber = 1"/>
+        
+        <property name="numX" type="U16" value="46" category="number" editable="true" relative ="Left" desc="effective when paramAmount > 1 and vertical orientation: x coordinate of num rect is this value, while y coordinate equals to numFigureY; alway effective when paramAmount = 1, at this time, user must set it a value" show="showNumber = 1&paramAmount = 0|showNumber = 1&paramAmount > 0&orientation = 1"/>
+        <property name="numY" type="U16" value="62" category="number" editable="true" relative ="Top" desc="effective when paramAmount > 1 and horizontal orientation: y coordinate of num rect is this value, while x coordinate equals to numFigureX; alway effective when paramAmount = 1, at this time, user must set it a value" show="showNumber = 1&paramAmount = 0|showNumber = 1&paramAmount > 0&orientation = 0"/>
+        <property name="numWidth" type="U16" value="40" category="number" editable="true" desc="effective when paramAmount > 1 and vertical orientation: width of num rect is this value, while height equals to numFigureHeight ; alway effective when paramAmount = 1, at this time, user must set it a value" show="showNumber = 1&paramAmount > 0&orientation = 1|showNumber = 1&paramAmount = 0"/>
+        <property name="numHeight" type="U16" value="20" category="number" editable="true" desc="effective when paramAmount > 1 and horizontal orientation:height of num rect is this value, while width equals to numFigureWidth ; alway effective when paramAmount = 1, at this time, user must set it a value" show="showNumber = 1&paramAmount > 0&orientation = 0|showNumber = 1&paramAmount = 0"/>      
+
+        <property name="numberFontSize" displayName="Font size" type="Enum" editable="false" category="number" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size"  show="showNumber = 1&numberMode = 0"/>
+        
+        <property name="number1" type="U16" value="11" category="number" editable="true" desc="number 1" show="showNumber = 1"/>
+        <property name="digit1" type="U16" value="2" category="number" editable="true" desc="count of digits of number 1" show="showNumber = 1"/>           
+        
+        <property name="number2" type="U16" value="12" category="number" editable="true" desc="number 2" show="paramAmount > 0&showNumber = 1"/>
+        <property name="digit2" type="U16" value="2" category="number" editable="true" desc="count of digits of number 2" show="paramAmount > 0&showNumber = 1"/>
+
+        <property name="number3" type="U16" value="12" category="number" editable="true" desc="number 3" show="paramAmount > 1&showNumber = 1"/>
+        <property name="digit3" type="U16" value="2" category="number" editable="true" desc="count of digits of number 3" show="paramAmount > 1&showNumber = 1"/>
+        
+        <property name="itemBackMode" type="Enum" value="2" category="number" editable="true" enumKeys="Background Color,Background Pic(single),Background Pic(multy)" enumValues="0,1,2" default="0" desc="displaymode of inactive item" show="showNumber = 1"/>
+        <property name="itemActBackMode" type="Enum" value="2" category="number" editable="true" enumKeys="Background Color,Background Pic(single),Background Pic(multy)" enumValues="0,1,2" default="0" desc="displaymode of active item" show="showNumber = 1"/>
+        <property name="itemActBackColor" type="Color" value="108000" category="number" editable="true" desc="Background Color of active item" show="itemActBackMode = 0&showNumber = 1"/>
+        <property name="itemBackColor" type="Color" value="508000" category="number" editable="true" desc="Background Color of inactive item" show="itemBackMode = 0&showNumber = 1"/>
+        <property name="itemBackPic1" type="Picture" value="" category="number" editable="false" desc="background pic 1 of inactive item" show="itemBackMode > 0&showNumber = 1&paramAmount > 0"/>
+        <property name="itemBackPic2" type="Picture" value="" category="number" editable="false" desc="background pic 2 of inactive item"  show="itemBackMode > 0&showNumber = 1&paramAmount > 0"/>
+        <property name="itemBackPic3" type="Picture" value="" category="number" editable="false" desc="background pic 3 of inactive item"  show="itemBackMode > 0&showNumber = 1&paramAmount > 1"/>
+        <property name="itemActBackInitPic" type="Picture" value="" category="number" editable="false" desc="original picture of itemActBackPic,with pure color background" show="itemActBackMode > 0&showNumber = 1"/>
+        <property name="itemActBackInitPicBgColor" type="Color" category="number" value="0" editable="false" desc="background color of itemActBackInitPic" show="itemActBackMode > 0&showNumber = 1"/> 
+        <property name="itemActBackPic1" type="Picture" value="$widgets\parambox\p_def_param_a.bmp" category="number" editable="false" desc="background picture 1 of active item" show="itemActBackMode > 0&showNumber = 1"/>
+        <property name="itemActBackPic2" type="Picture" value="" category="number" editable="false" desc="background picture 2 of active item" show="itemActBackMode > 0&showNumber = 1&paramAmount > 0"/>
+        <property name="itemActBackPic3" type="Picture" value="" category="number" editable="false" desc="background picture 3 of active item" show="itemActBackMode>0&showNumber = 1&paramAmount > 1"/>      
+
+        
+        <property name="itemFontColor" type="Color" value="12632256" category="number" editable="true" desc="Font color of inactive item" show="numberMode = 0&showNumber = 1"/>
+        <property name="itemActFontColor" type="Color" value="16777215" category="number" editable="true" desc="Font color of active item" show="numberMode = 0&showNumber = 1"/>
+
+        <property name="unitX" type="U16" value="45" category="unit" editable="true" relative ="Left" desc="effective when paramAmount > 1 and vertical orientation: x coordinate of units is this value, while y coordinate equals to numFigureY; alway effective when paramAmount = 1, at this time, user must set it a value" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 1"/> 
+        <property name="unitY" type="U16" value="113" category="unit" editable="true" relative ="Top" desc="effective when paramAmount > 1 and horizontal orientation: y coordinate of units is this value, while x coordinate equals to numFigureX; alway effective when paramAmount = 1, at this time, user must set it a value" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 0"/>
+        <property name="unitWidth" type="U16" value="40" category="unit" editable="true" desc="effective when paramAmount > 1 and vertical orientation: width of units is this value, while height equals to numFigureHeight ; alway effective when paramAmount = 1, at this time, user must set it a value" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 1"/>        
+        <property name="unitHeight" type="U16" value="20" category="unit" editable="true" desc="effective when paramAmount > 1 and horizontal orientation:height of units is this value, while width equals to numFigureWidth ; alway effective when paramAmount = 1, at this time, user must set it a value" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 0"/>
+        <property name="unitFontColor" type="Color" value="16777215" category="unit" editable="true" desc="Font color of unit text" show="showUnit = 1"/>
+        <property name="unitFontSize" displayName="Font size" type="Enum" editable="false" category="unit" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size" show="showUnit = 1"/>
+        <property name="unitAlign" type="Enum" value="1" category="unit" editable="true" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" default="1" desc="align type of units" show="showUnit = 1"/>
+        
+        <property name="unit1" type="MultiLanguage" value="$1" category="unit" editable="false" desc="unit text 1" show="showUnit = 1"/>
+        <property name="unit2" type="MultiLanguage" value="$2" category="unit" editable="false" desc="unit text 2" show="paramAmount > 0&showUnit = 1"/>
+        <property name="unit3" type="MultiLanguage" value="$3" category="unit" editable="false" desc="unit text 3" show="paramAmount > 1&showUnit = 1"/>
+        
+    </properties>
+        
+</widget>

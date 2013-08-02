@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="upgrade" />
+    <property name="prj_language" value="0" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="upgrade.sty" />
+    <property name="prj_res_head_file" value="upgrade_res.h" />
+    <property name="prj_res_str_dir" value="upgrade\" />
+    <property name="prj_sty_file" value="upgrade.sty" />
+    <property name="prj_sty_head_file" value="upgrade_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <property name="prj_ver" value="V100" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="14" />
+        <property name="Font_large" value="16" />
+        <scene>
+            <property name="name" value="scene_upgrade" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup01" />
+                <property name="id" value="1" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="$(screenWidth)" />
+                <property name="height" value="$(screenHeight)" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="upgrade_background" />
+                    <property name="id" value="4" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\p_upgrade_bg.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="upgrade_percent" />
+                    <property name="id" value="2" />
+                    <property name="x" value="133" />
+                    <property name="y" value="119" />
+                    <property name="width" value="110" />
+                    <property name="height" value="16" />
+                    <property name="textX" value="-44" />
+                    <property name="textY" value="-19" />
+                    <property name="textWidth" value="110" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-44" />
+                    <property name="bgPicY" value="-19" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\upgrade_percent\upgrade_percent_bg.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="110" />
+                    <property name="bgPicHeight" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="upgrade_string2" />
+                    <property name="id" value="5" />
+                    <property name="x" value="289" />
+                    <property name="y" value="138" />
+                    <property name="width" value="110" />
+                    <property name="height" value="48" />
+                    <property name="textX" value="-200" />
+                    <property name="textY" value="-88" />
+                    <property name="textWidth" value="110" />
+                    <property name="textHeight" value="48" />
+                    <property name="bgPicX" value="-200" />
+                    <property name="bgPicY" value="-88" />
+                    <property name="text" value="s_upgrade_tips" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\upgrade_string2\upgrade_string2_bg.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="110" />
+                    <property name="bgPicHeight" value="48" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="upgrade_string" />
+                    <property name="id" value="6" />
+                    <property name="x" value="289" />
+                    <property name="y" value="138" />
+                    <property name="width" value="110" />
+                    <property name="height" value="16" />
+                    <property name="textX" value="-200" />
+                    <property name="textY" value="-108" />
+                    <property name="textWidth" value="110" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-200" />
+                    <property name="bgPicY" value="-108" />
+                    <property name="text" value="s_upgrading" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\upgrade_string\upgrade_string_bg.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="110" />
+                    <property name="bgPicHeight" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="3" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="ProgressBar">
+                    <property name="name" value="upgrade_progress" />
+                    <property name="id" value="3" />
+                    <property name="x" value="86" />
+                    <property name="y" value="138" />
+                    <property name="width" value="118" />
+                    <property name="height" value="3" />
+                    <property name="visible" value="1" />
+                    <property name="total" value="120" />
+                    <property name="current" value="50" />
+                    <property name="length" value="118" />
+                    <property name="ProgressBarStyle" value="0" />
+                    <property name="horizontal" value="1" />
+                    <property name="bgPicX" value="-2" />
+                    <property name="bgPicY" value="-11" />
+                    <property name="bgPic" value=".\pic\p_upgrade_prog_bg.bmp" />
+                    <property name="useTransparentBg" value="0" />
+                    <property name="bgPicWidth" value="118" />
+                    <property name="bgPicHeight" value="3" />
+                    <property name="progStartX" value="-2" />
+                    <property name="fillPicY" value="-11" />
+                    <property name="progStartY" value="8" />
+                    <property name="fillPicX" value="20" />
+                    <property name="fillPic" value=".\pic\p_upgrade_prog_0.bmp" />
+                    <property name="unfillPic" value="" />
+                    <property name="progPicWidth" value="1" />
+                    <property name="progPicHeight" value="3" />
+                    <property name="unprogPicWidth" value="1" />
+                    <property name="unprogPicHeight" value="6" />
+                    <property name="tagPic" value="" />
+                    <property name="tagPicWidth" value="1" />
+                    <property name="tagPicHeight" value="3" />
+                    <property name="tagPicY" value="-11" />
+                    <property name="tagPicX" value="19" />
+                    <property name="scale" value="1" />
+                    <property name="WidgetbgPic" value=".\BgPicDoc\upgrade_progress\upgrade_progress_bg.bmp" storetype="1" />
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\BgPicDoc\upgrade_percent\upgrade_percent_bg.bmp" />
+        <picture value=".\BgPicDoc\upgrade_progress\upgrade_progress_bg.bmp" />
+        <picture value=".\BgPicDoc\upgrade_string\upgrade_string_bg.bmp" />
+        <picture value=".\BgPicDoc\upgrade_string2\upgrade_string2_bg.bmp" />
+        <picture value=".\pic\p_upgrade_bg.bmp" />
+        <picture value=".\pic\p_upgrade_prog_0.bmp" />
+        <picture value=".\pic\p_upgrade_prog_bg.bmp" />
+        <txt value=".\upgrade.xls" />
+        <string value="s_upgrading" />
+        <string value="s_upgrade_tips" />
+        <string value="s_upgrade_succeed" />
+        <string value="s_upgrade_failed" />
+    </resource>
+</ui-rad>

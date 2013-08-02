@@ -1,0 +1,198 @@
+﻿<widget name="sliderbar" type="widget" adapter="ASliderBarAdapter"
+            icon="widgets/slider.png" >
+
+     <categories>
+     <category name = "basic"/>
+     <category name = "title"/>
+     <category name = "number"/>
+     <category name = "unit"/>
+     <category name = "slider"/>
+    
+     </categories>
+
+    <properties>
+          
+        <property name="x" type="U16" value="" editable="true" relative ="Left" desc="控件左上角x坐标"/>
+        <property name="y" type="U16" value=""  editable="true" relative ="Top" desc="控件左上角y坐标"/>
+        <property name="width" type="U16" value=""  editable="true" desc="控件宽度"/>
+        <property name="height" type="U16" value=""  editable="true" desc="控件高度"/>
+        
+         <property name="visible" type="boolean" value="1" category="basic"  editable="true" desc="是否显示控件"/>
+        <property name="showTitle" type="boolean" value="0" category="basic" editable="true" desc="是否显示标题栏"/>
+        <property name="showNumber" displayName="是否显示数字" value="0" type="boolean" category="basic" editable="true" desc="是否显示数字"/>  
+        <property name="showUnit" displayName="是否显示单位" value="0" type="boolean" category="basic" editable="true" desc="是否显示单位"/>
+        <property name="showSlider" displayName="是否显示滑动条" value="1" type="boolean" category="basic" editable="true" desc="是否显示滑动条"/>
+        <property name="orientation" displayName="排列方向" type="Enum" editable="false" category="basic" value="0" enumKeys="横向,竖向" enumValues="0,1" default="0" desc="参数排列方向"/> 
+        <property name="showTag" type="boolean" value="0" category="basic" editable="true" desc="是否显示类型图标"/>
+ 
+        <property name="bgPic" type="Picture" value="$widgets\background\p_def_background.bmp" category="basic" editable="false" desc="背景图片" AsbgPic="true"/>
+        <property name="bgPicX" type="U16" value="0" category="basic" editable="true" relative ="Left" desc="背景图片左上角x坐标"/>
+        <property name="bgPicY" type="U16" value="0" category="basic" editable="true" relative ="Top" desc="背景图片左上角y坐标"/>
+        <property name="bgPicWidth" type="U16" visible="false" value="" editable="false" />
+        <property name="bgPicHeight" type="U16" visible="false" value="" editable="false" />   
+        <property name="signPicInit" type="Picture" value="" category="basic" editable="false" desc="类型图标的原始图片,应当为纯色背景" show="showTag = 1"/>
+        <property name="signPicInitBkColor" type="Color" category="basic" value="0" editable="false" desc="类型图标原始图片的背景色" show="showTag = 1"/>  
+        <property name="signPic" type="Picture" value="" category="basic" editable="false" desc="类型图标" show="showTag = 1"/>
+        <property name="signPicX" type="U16" value="5" category="basic" editable="true" relative ="Left" desc="类型图标左上角x坐标" show="showTag = 1"/>
+        <property name="signPicY" type="U16" value="5" category="basic" editable="true" relative ="Top" desc="类型图标左上角y坐标"  show="showTag = 1"/>
+        <property name="sinPicWidth" type="U16" visible="false" value="" editable="false" desc=""/>
+        <property name="sinPicHeight" type="U16" visible="false" value="" editable="false" desc=""/>    
+        <property name="additionPicInit" type="Picture" value="" category="basic" editable="false" desc="附加图标的原始图片,应当为纯色背景"/>
+        <property name="additionPicInitBkColor" type="Color" category="basic" value="0" editable="false" desc="附加图标原始图片的背景色" /> 
+        <property name="additionPic" type="Picture" value="$widgets\listbox\p_def_list_back_ina.bmp" category="basic" editable="false" desc="附加图标"/>
+        <property name="additionPicX" type="U16" value="20" category="basic" editable="true" relative ="Left" desc="附加图标左上角x坐标"/>
+        <property name="additionPicY" type="U16" value="20" category="basic" editable="true" relative ="Top" desc="附加图标左上角y坐标"/>
+        <property name="additionPicWidth" type="U16" visible="false" value="" editable="false" desc=""/>
+        <property name="additionPicHeight" type="U16" visible="false" value="" editable="false" desc=""/>    
+
+        <property name="numFigureX" type="U16" value="44" category="basic" editable="true" relative ="Left" desc="参数（外形区域） X坐标"/>
+        <property name="numFigureY" type="U16" value="46" category="basic" editable="true" relative ="Top" desc="参数（外形区域） Y坐标"/>
+        <property name="numFigureWidth" type="U16" value="40" category="basic" editable="true" desc="参数（外形区域）宽度"/>
+        <property name="numFigureHeight" type="U16" value="80" category="basic" editable="true" desc="参数（外形区域）高度"/>
+        
+         
+        <property name="titleText" type="MultiLanguage" value="参数设置" category="title" editable="false" desc="标题栏字符串内容"  show="showTitle = 1"/>
+        <property name="titleX" type="U16" value="5" category="title" editable="true" relative ="Left" desc="标题栏左上角x坐标" show="showTitle = 1"/>
+        <property name="titleY" type="U16" value="4" category="title" editable="true" relative ="Top" desc="标题栏左上角y坐标" show="showTitle = 1"/>
+        <property name="titleWidth" type="U16" value="120" category="title" editable="true" desc="标题栏宽度" show="showTitle = 1"/>
+        <property name="titleHeight" type="U16" value="20" category="title" editable="true" desc="标题栏高度" show="showTitle = 1"/>
+        <property name="titleFontColor" type="Color" value="000000" category="title" editable="true" desc="标题栏字符串字体颜色" show="showTitle = 1"/>
+        <property name="titleAlign" type="Enum" value="1" category="title" editable="true" enumKeys="左对齐,居中,右对齐" enumValues="0,1,2" default="1" desc="标题栏字符串对齐方式" show="showTitle = 1"/>
+        <property name="titleFontSize" displayName="字体大小" type="Enum" editable="false" category="title" value="1" enumKeys="小字体,中字体,大字体" enumValues="0,1,2" default="0" desc="标题栏字符串字体大小" show="showTitle = 1"/>
+        
+        
+        <property name="paramAmount" type="Enum"  value="0" category="basic" editable="false" enumKeys="1,2,3,4,5" enumValues="0,1,2,3,4" desc="参数总数目"/>
+        <property name="current" type="Enum" default="1" value="0" category="basic" editable="true" enumKeys="1,2,3,4,5" enumValues="0,1,2,3,4" desc="当前选中参数"/>
+        
+        <property name="showSymbol" displayName="是否显示正号" value="1" type="boolean" category="number" editable="true" desc="是否显示正号（注：负数必定会显示负号，正数则可选是否显示）" show="showNumber = 1"/>
+        <property name="showHigh" displayName="是否显示前置0" value="1" type="boolean" category="number" editable="true" desc="是否显示前置0（比如，在数字长度最长为4的情况下，123显示前置则会显示为0123）" show="showNumber = 1"/>
+        <property name="numberMode" type="Enum" value="0" category="number" editable="true" enumKeys="字符串,数字图片" enumValues="0,1" default="1" desc="数字显示模式，可选字符串或数字图片" show="showNumber = 1"/>
+        <property name="numberAlign" type="Enum" value="1" category="number" editable="true" enumKeys="左对齐,居中,右对齐" enumValues="0,1,2" default="1" desc="数字对齐方式" show="showNumber = 1"/>
+        <property name="itemBackMode" type="Enum" value="2" category="number" editable="true" enumKeys="背景颜色,背景图片（single）,背景图片（multy）" enumValues="0,1,2" default="0" desc="数字非选中项背景显示模式" show="showNumber = 1"/>
+        <property name="itemActBackMode" type="Enum" value="2" category="number" editable="true" enumKeys="背景颜色,背景图片（single）,背景图片（multy）" enumValues="0,1,2" default="0" desc="数字选中项背景显示模式" show="showNumber = 1"/>
+        <property name="itemActBackColor" type="Color" value="108000" category="number" editable="true" desc="激活项背景颜色" show="itemActBackMode = 0&showNumber = 1"/>
+        <property name="itemBackColor" type="Color" value="508000" category="number" editable="true" desc="非激活项背景颜色" show="itemBackMode = 0&showNumber = 1"/>
+        <property name="itemBackPic1" type="Picture" value="$widgets\sliderbar\p_def_sbar_number_bg.bmp" category="number" editable="false" desc="数字非激活项背景图片" show="itemBackMode > 0&showNumber = 1"/>
+        <property name="itemBackPic2" type="Picture" value="" category="number" editable="false" desc="数字非激活项背景图片" show="itemBackMode > 0&showNumber = 1"/>
+        <property name="itemBackPic3" type="Picture" value="" category="number" editable="false" desc="数字非激活项背景图片" show="itemBackMode > 0&showNumber = 1"/>
+        <property name="itemBackPic4" type="Picture" value="" category="number" editable="false" desc="数字非激活项背景图片" show="itemBackMode > 0&showNumber = 1"/>
+        <property name="itemBackPic5" type="Picture" value="" category="number" editable="false" desc="数字非激活项背景图片" show="itemBackMode > 0&showNumber = 1"/>
+
+        <property name="itemActBackInitPic" type="Picture" value="" category="number" editable="false" desc="数字激活项背景图的原始图片，为纯色背景" show="itemActBackMode > 0&showNumber = 1"/>
+        <property name="itemActBackInitPicBgColor" type="Color" category="number" value="0" editable="false" desc="数字激活项背景图原始图片的背景色" show="itemActBackMode > 0&showNumber = 1"/> 
+        <property name="itemActBackPic1" type="Picture" value="" category="number" editable="false" desc="数字激活项背景图片" show="itemActBackMode > 0&showNumber = 1"/>
+        <property name="itemActBackPic2" type="Picture" value="" category="number" editable="false" desc="数字激活项背景图片" show="itemActBackMode > 0&showNumber = 1"/>
+        <property name="itemActBackPic3" type="Picture" value="" category="number" editable="false" desc="数字激活项背景图片" show="itemActBackMode > 0&showNumber = 1"/>
+        <property name="itemActBackPic4" type="Picture" value="" category="number" editable="false" desc="数字激活项背景图片" show="itemActBackMode > 0&showNumber = 1"/>
+        <property name="itemActBackPic5" type="Picture" value="" category="number" editable="false" desc="数字激活项背景图片" show="itemActBackMode > 0&showNumber = 1"/>
+        <property name="itemFontColor" type="Color" value="12632256" category="number" editable="true" desc="数字非激活项字体颜色" show="numberMode = 0&showNumber = 1"/>
+        <property name="itemActFontColor" type="Color" value="16777215" category="number" editable="true" desc="数字激活项字体颜色" show="numberMode = 0&showNumber = 1"/>
+        
+        <property name="pic0" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="数字0图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic1" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="数字1图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic2" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="数字2图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic3" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="数字3图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic4" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="数字4图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic5" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="数字5图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic6" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="数字6图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic7" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="数字7图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic8" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="数字8图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic9" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="数字9图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="picPositive" displayName="正号" type="Picture" category="number" value="" editable="false" allowEmpty="false"  desc="数字符号正号图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="picNegative" displayName="负号" type="Picture" category="number" value="" editable="false" allowEmpty="false"  desc="数字符号负号图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="picCover" displayName="空白" type="Picture" category="number" value="" editable="false" allowEmpty="false"  desc="数字间隔或背景图片" show="numberMode > 0&showNumber = 1"/>
+        <property name="numberPicW" type="U16"  value="0" category="number" editable="false" desc="数字图片宽度" show="numberMode > 0&showNumber = 1"/>
+        
+    
+        <property name="numBgY" type="U16" value="46" category="number" editable="true" relative ="Top" desc="参数的背景图片Y坐标" show="showNumber = 1"/>    
+        <property name="numX" type="U16" value="46" category="number" editable="true" relative ="Left" desc="多参数时，竖向排列时有效:为参数数字区域 X坐标，Y坐标同外形区域；    单参数时都有效，都必须由用户指定" show="showNumber = 1&paramAmount = 0|showNumber = 1&paramAmount > 0&orientation = 1"/>
+        <property name="numY" type="U16" value="62" category="number" editable="true" relative ="Top" desc="多参数时，横向排列时有效：参数数字区域 Y坐标，X坐标同外形区域；    单参数时都有效，都必须由用户指定" show="showNumber = 1&paramAmount = 0|showNumber = 1&paramAmount > 0&orientation = 0"/>
+        <property name="numWidth" type="U16" value="40" category="number" editable="true" desc="多参数时：竖向排列时有效：为参数数字区域 宽度，高度同外形区域;    单参数时都有效，都必须由用户指定" show="showNumber = 1&paramAmount > 0&orientation = 1|showNumber = 1&paramAmount = 0"/>
+        <property name="numHeight" type="U16" value="20" category="number" editable="true" desc="多参数时，横向排列时有效：参数数字区域 高度，宽度同外形区域；    单参数时都有效，都必须由用户指定" show="showNumber = 1&paramAmount > 0&orientation = 0|showNumber = 1&paramAmount = 0"/>
+        <property name="numberFontSize" displayName="字体大小" type="Enum" editable="false" category="number" value="1" enumKeys="小字体,中字体,大字体" enumValues="0,1,2" default="0" desc="字体大小"  show="showNumber = 1&numberMode = 0"/>
+        
+        <property name="number1" type="U16" value="11" category="number" editable="true" desc="数字" show="showNumber = 1"/>
+        <property name="digit1" type="U16" value="2" category="number" editable="true" desc="参数的最长位数" show="showNumber = 1"/>
+        <property name="number2" type="U16" value="12" category="number" editable="true" desc="数字" show="paramAmount > 0&showNumber = 1"/>
+        <property name="digit2" type="U16" value="2" category="number" editable="true" desc="参数的最长位数" show="paramAmount > 0&showNumber = 1"/>
+        <property name="number3" type="U16" value="12" category="number" editable="true" desc="数字" show="paramAmount > 1&showNumber = 1"/>
+        <property name="digit3" type="U16" value="2" category="number" editable="true" desc="参数的最长位数" show="paramAmount > 1&showNumber = 1"/>
+        <property name="number4" type="U16" value="14" category="number" editable="true" desc="数字" show="paramAmount > 2&showNumber = 1"/>
+        <property name="digit4" type="U16" value="2" category="number" editable="true" desc="参数的最长位数"  show="paramAmount > 2&showNumber = 1"/>
+        <property name="number5" type="U16" value="15" category="number" editable="true" desc="数字" show="paramAmount > 3&showNumber = 1"/>
+        <property name="digit5" type="U16" value="2" category="number" editable="true" desc="参数的最长位数" show="paramAmount > 3&showNumber = 1"/>
+       
+        <property name="unitX" type="U16" value="80" category="unit" editable="true" relative ="Left" desc="多参数时，竖向排列时有效：参数单位字符串 X坐标，Y坐标同外形区域；    单参数时都有效，都必须由用户指定" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 1"/> 
+        <property name="unitY" type="U16" value="113" category="unit" editable="true" relative ="Top" desc="多参数时，横向排列时有效：参数单位字符串 Y坐标，X坐标同外形区域；    单参数时都有效，都必须由用户指定" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 0"/>
+        <property name="unitWidth" type="U16" value="40" category="unit" editable="true" desc="多参数时，竖向排列时有效：参数单位字符串 宽度，高度同外形区域；    单参数时都有效，都必须由用户指定" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 1"/>        
+        <property name="unitHeight" type="U16" value="20" category="unit" editable="true" desc="多参数时，横向排列时有效：参数单位字符串 高度，宽度同外形区域；    单参数时都有效，都必须由用户指定" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 0"/>
+        <property name="unitFontColor" type="Color" value="16777215" category="unit" editable="true" desc="单位字符串显示颜色" show="showUnit = 1"/>
+        <property name="unitFontSize" displayName="字体大小" type="Enum" editable="false" category="unit" value="1" enumKeys="小字体,中字体,大字体" enumValues="0,1,2" default="0" desc="字体大小" show="showUnit = 1"/>
+        <property name="unitAlign" type="Enum" value="1" category="unit" editable="true" enumKeys="左对齐,居中,右对齐" enumValues="0,1,2" default="1" desc="单位对齐方式" show="showUnit = 1"/>
+        
+        <property name="unit1" type="MultiLanguage" value="$1" category="unit" editable="false" desc="单位字符串" show="showUnit = 1"/>
+        <property name="unit2" type="MultiLanguage" value="$2" category="unit" editable="false" desc="单位字符串" show="paramAmount > 0&showUnit = 1"/>
+        <property name="unit3" type="MultiLanguage" value="$3" category="unit" editable="false" desc="单位字符串" show="paramAmount > 1&showUnit = 1"/>
+        <property name="unit4" type="MultiLanguage" value="$4" category="unit" editable="false" desc="单位字符串" show="paramAmount > 2&showUnit = 1"/>
+        <property name="unit5" type="MultiLanguage" value="$5" category="unit" editable="false" desc="单位字符串" show="paramAmount > 3&showUnit = 1"/>
+        
+        
+        <property name="vertical" type="boolean" value="1" category="slider" editable="true" desc="滑动杆方向"  show="showSlider = 1"/>
+        <property name="SliderStyle" type="Enum" default="0" value="0" category="slider" editable="true" enumKeys="填充式,滑动杆,两者都有" enumValues="0,1,2" desc="滑动杆风格"   show="showSlider = 1"/>
+        <property name="sliderBgInitPic" type="Picture" value="" category="slider" editable="false" desc="滑动条非激活项背景图的原始图片，为纯色背景" show="paramAmount > 0&showSlider = 1"/>
+        <property name="sliderBgInitPicBgColor" type="Color" category="slider" value="0" editable="false" desc="数字激活项背景图原始图片的背景色" show="paramAmount > 0&showSlider = 1"/> 
+        <property name="sliderBgPic1" type="Picture" value="$widgets/sliderbar/p_def_sbar_slider_bg.bmp" category="slider" editable="true" allowEmpty="false" desc="滑动条非激活项背景图片"  show="paramAmount > 0&showSlider = 1"/>
+        <property name="sliderBgPic2" type="Picture" value="" category="slider" editable="true" allowEmpty="false" desc="滑动条非激活项背景图片" show="paramAmount > 0&showSlider = 1"/>
+        <property name="sliderBgPic3" type="Picture" value="" category="slider" editable="true" allowEmpty="false" desc="滑动条非激活项背景图片" show="paramAmount > 1&showSlider = 1"/>
+        <property name="sliderBgPic4" type="Picture" value="" category="slider" editable="true" allowEmpty="false" desc="滑动条非激活项背景图片" show="paramAmount > 2&showSlider = 1"/>
+        <property name="sliderBgPic5" type="Picture" value="" category="slider" editable="true" allowEmpty="false" desc="滑动条非激活项背景图片" show="paramAmount > 3&showSlider = 1"/>
+     
+        <property name="sliderActBgInitPic" type="Picture" value="" category="slider" editable="false" desc="滑动条激活项背景图的原始图片，为纯色背景" show="showSlider = 1"/>
+        <property name="sliderActBgInitPicBgColor" type="Color" category="slider" value="0" editable="false" desc="数字激活项背景图原始图片的背景色" show="showSlider = 1"/>            
+        <property name="sliderActBgPic1" type="Picture" value="$widgets/sliderbar/p_def_sbar_slider_bg.bmp" category="slider" editable="true" allowEmpty="false" desc="滑动条激活项背景图片" show="showSlider = 1"/>
+        <property name="sliderActBgPic2" type="Picture" value="" category="slider" editable="true" allowEmpty="false" desc="滑动条激活项背景图片" show="paramAmount > 0&showSlider = 1"/>
+        <property name="sliderActBgPic3" type="Picture" value="" category="slider" editable="true" allowEmpty="false" desc="滑动条激活项背景图片" show="paramAmount > 1&showSlider = 1"/>
+        <property name="sliderActBgPic4" type="Picture" value="" category="slider" editable="true" allowEmpty="false" desc="滑动条激活项背景图片" show="paramAmount > 2&showSlider = 1"/>
+        <property name="sliderActBgPic5" type="Picture" value="" category="slider" editable="true" allowEmpty="false" desc="滑动条激活项背景图片" show="paramAmount > 3&showSlider = 1"/>
+             
+        <property name="sliderBgX" type="U16" value="60"  category="slider" editable="true" relative ="Left" desc="进度条横向时有效：滑动条背景图片X坐标。否则由进度条居中计算所得"  show="showSlider = 1&vertical = 0"/>
+        <property name="sliderBgY" type="U16" value="42"  category="slider" editable="true" relative ="Top" desc="进度条竖向时有效：滑动条背景图片Y坐标。否则由进度条居中计算所得"  show="showSlider = 1&vertical = 1"/>
+         
+        <property name="sliderActFillPic" type="Picture" value="$widgets/sliderbar/p_def_sbar_slider_a.bmp" category="slider" editable="true" allowEmpty="false" desc="滑动条激活项高亮填充图标，高（竖向滑动条）或宽（横向滑动条）应当为1；（注：在多参数中当前正在设置的为激活项，其余为非激活项）" show="SliderStyle != 1&showSlider = 1"/>
+        <property name="sliderFillPic" type="Picture" value="$widgets/sliderbar/p_def_sbar_slider_fill.bmp" category="slider" editable="true" allowEmpty="false" desc="滑动条非激活项高亮填充图标，高（竖向滑动条）或宽（横向滑动条）应当为1；（注：在多参数中当前正在设置的为激活项，其余为非激活项）" show="SliderStyle != 1&showSlider = 1"/>
+        <property name="sliderBgFillPic" type="Picture" value="$widgets/sliderbar/p_def_sbar_slider_ina.bmp" category="slider" editable="true" allowEmpty="false" desc="滑动条背景填充图标，高（竖向滑动条）或宽（横向滑动条）应当为1"  show="showSlider = 1"/>
+        <property name="slider1FillX" type="U16" value="58" category="slider" editable="true" relative ="Left" desc="进度条竖向时有效,滑动点填充图标 起始X坐标"  show="showSlider = 1&vertical = 1"/>
+        <property name="slider1FillY" type="U16" value="58" category="slider" editable="true" relative ="Top" desc="进度条横向时有效,滑动点填充图标 起始X坐标"  show="showSlider = 1&vertical = 0"/>
+        <property name="sliderValueStartX" type="U16" value="119" category="slider" editable="true" relative ="Left" desc="进度条横向时有效：进度条进度起始 X坐标"  show="showSlider = 1&vertical = 0"/>
+        <property name="sliderValueStartY" type="U16" value="119" category="slider" editable="true" relative ="Top" desc="进度条竖向时有效：进度条进度起始Y坐标"  show="showSlider = 1&vertical = 1"/>
+       
+        <property name="sliderCursorPic" type="Picture" value="" category="slider" editable="true" allowEmpty="false" desc="滑动条游标图片" show="SliderStyle != 0&showSlider = 1"/>
+        <property name="sliderUncursorPic" type="Picture" value="" category="slider" editable="true" allowEmpty="false" desc="与滑动条背景一样的滑动条点图片"  show="SliderStyle != 0&showSlider = 1"/> 
+        <property name="slider1CursorX" type="U16" value="58" category="slider" editable="true" relative ="Left" desc="进度条竖向时有效：滑动条游标图片 起始X坐标" show="SliderStyle != 0&showSlider = 1&vertical = 1"/>
+        <property name="slider1CursorY" type="U16" value="58" category="slider" editable="true" relative ="Top" desc="进度条横向时有效：滑动条游标图片 起始Y坐标（位于进度条的最底部）" show="SliderStyle != 0&showSlider = 1&vertical = 0"/>
+        
+        <property name="length" type="U16" value="" category="slider" editable="false" desc="滑动条可滑动范围，单位为像素点"  show="showSlider = 1"/>
+        <property name="slider1MaxValue" type="U16" value="100" category="slider" editable="true" desc="滑动条的最大取值"  show="showSlider = 1"/>
+        <property name="slider1MinValue" type="U16" value="0" category="slider" editable="true" desc="滑动条的最小取值"  show="showSlider = 1"/>
+                
+        <property name="slider2MaxValue" type="U16" value="100" category="slider" editable="true" desc="滑动条的最大取值" show="paramAmount > 0&showSlider = 1"/>
+        <property name="slider2MinValue" type="U16" value="0" category="slider" editable="true" desc="滑动条的最小取值" show="paramAmount > 0&showSlider = 1"/>
+        
+        <property name="slider3MaxValue" type="U16" value="100" category="slider" editable="true"desc="滑动条的最大取值" show="paramAmount > 1&showSlider = 1"/>
+        <property name="slider3MinValue" type="U16" value="0" category="slider" editable="true"desc="滑动条的最小取值" show="paramAmount > 1&showSlider = 1"/>
+        
+        <property name="slider4MaxValue" type="U16" value="100" category="slider" editable="true" desc="滑动条的最大取值" show="paramAmount > 2&showSlider = 1"/>
+        <property name="slider4MinValue" type="U16" value="0" category="slider" editable="true" desc="滑动条的最小取值" show="paramAmount > 2&showSlider = 1"/>
+        
+        <property name="slider5MaxValue" type="U16" value="100" category="slider" editable="true" desc="滑动条的最大取值" show="paramAmount > 3&showSlider = 1"/>
+        <property name="slider5MinValue" type="U16" value="0" category="slider" editable="true" desc="滑动条的最小取值" show="paramAmount > 3&showSlider = 1"/>
+        
+        <property name="isScaleSlider" displayName="是否刻度进度条" value="0" type="boolean" category="slider" editable="true" desc="是否显示进度条刻度"  show="showSlider = 1"/>
+        <property name="isSymmetrySlider" displayName="是否对称正负值模式" value="0" type="boolean" category="slider" editable="true" desc="是否为对称正负值模式"  show="showSlider = 1"/>
+        <property name="scale" type="U16" value="1" category="slider" editable="false" desc="刻度间隔像素点数，即在竖向滑动条中为相邻两个刻度的y坐标差值，横向则为x坐标差值" show="showSlider = 1"/>
+        <property name="sliderBackMode" type="Enum" value="0" category="slider" editable="true" enumKeys="背景图片（single）,背景图片（multy）" enumValues="0,1" default="0" desc="滑动条非激活项背景显示模式"  show="showSlider = 1"/>
+        <property name="sliderActBackMode" type="Enum" value="0" category="slider" editable="true" enumKeys="背景图片（single）,背景图片（multy）" enumValues="0,1" default="0" desc="滑动条激活项背景显示模式"  show="showSlider = 1"/>
+                
+    </properties>
+        
+</widget>

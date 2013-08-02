@@ -1,0 +1,81 @@
+//开机参数
+CFG_KEY_ARRAY = 0[5, 6, 4, 3, 10, 10, 7, 1]; //按键定义
+
+//mainmenu ap参数
+MAINMENU_AP_ID_ARRAY = 0[0, 2, 7, 3, 8, 4, 5, 9, 10]; //有效ap id
+
+//setting ap config参数
+SETTING_AP_ID_LIGHTNESS = 5[1~11,1]; //背光等级1-11
+SETTING_AP_ID_THEME = 0[0~4,1]; //主题，蓝色0，绿色1，灰色2，粉红色3，红色4
+SETTING_AP_ID_SCREEN_SAVER_MODE = 0[0~4,1]; //屏幕保护模式：0-无，1-数字时钟，2-相册图画，3-关闭屏幕，4-演示模式
+SETTING_AP_ID_LIGHT_TIMER = 0[0~60,20];  //背光时间，以半秒为单位； 0-表示常亮 20-表示10秒。。。
+SETTING_AP_ID_SCREEN_SAVER_TIMER = 90[0~180,30]; //屏幕保护时间，以半秒为单位；0表示无屏保
+SETTING_AP_ID_SLEEP_TIMER = 0[0~99,1];  //睡眠时间，以分钟为单位；0表示不睡眠
+SETTING_AP_ID_TIME_FORMAT = 0[0,1]; //时间格式，0表示12小时制，1表示24小时制
+SETTING_AP_ID_DATE_FORMAT = 0[0,1,2,3]; //日期格式，0-DD_MM_YYYY 1-MM_DD_YYYY 2-YYYY_MM_DD 
+SETTING_AP_ID_LANGUAGE_ID = 19[0~23,1]; //语言种类
+SETTING_AP_ID_ONLINE_DEVICE = 0[0,1]; //PC连接首选项，0表示MSC，1表示MTP
+SETTING_AP_ID_AUTORUN_SET = 0[0,1]; //自动运行选项，0表示关闭，1表示开启
+SETTING_AP_ID_SUPPORT_CARD = 0[0,1]; //支持卡选项，0表示不支持卡，1表示支持卡
+SETTING_AP_ID_MUSIC_FROM = 4[0,1,2,3,4]; //音乐来源于，4-default，0-all song，1-album 2-artist， 3-genre
+SETTING_AP_ID_MUSIC_REPEAT_MODE = 0[0,1,2,3]; //循环方式；0-关闭 1-单曲循环 2-全部循环 3-浏览播放
+SETTING_AP_ID_MUSIC_SHUFFLE  = 0[0,16]; //随机播放； 0-关闭 16-开启
+SETTING_AP_ID_FULLSOUND  = 0[0,1]; //fullsound 音效 0-关闭 1-开启 
+SETTING_AP_ID_EQ_SETTING  = 0[0,1,2,3,4,5,6,7]; //EQ音效 0-关闭 1-遥滚 2-放克 3-希普霍普 4-爵士 5-古典 6-电子乐 7-自定义
+SETTING_AP_ID_VOLUME_LIMIT  = 31[0~31,1]; //音量限制 
+SETTING_AP_ID_VOLUME_CURRENT  = 15[0~31,1]; //当前音量
+SETTING_AP_ID_SLIDE_TIME  = 2[2~30,1]; //每张幻灯片播放时间
+SETTING_AP_ID_SLIDE_REPEAT_MODE  = 0[0,2]; //幻灯重复开关；0-关闭 2-全部循环
+SETTING_AP_ID_SLIDE_SHUFFLE  = 0[0,1]; //幻灯随机播放开关；0-关闭 1-开启
+SETTING_AP_ID_SRS  = 0[0,1,2]; //SRS设置；0-关闭 1-wowhd 2-srs user 
+SETTING_AP_ID_VARIABLE_PLAYBACK  = 0[-8~8,1]; //变速播放
+SETTING_AP_ID_POWEROFF_TIMER  = 120[0~240,20]; //省电关机，以半秒为单位；
+SETTING_AP_ID_PLAYING_TIMER  = 60[0~90,30]; //返回正在播放的时间，以半秒为单位；
+SETTING_AP_ID_DARK_LIGHTOFF_TIMER  = 20[0~60,20]; //屏幕变暗到关掉屏幕时间，以半秒为单位，0表示无此功能
+SETTING_AP_ID_SCREEN_LIGHTOFF_TIMER  = 3[0~10,1]; //屏保到关掉屏幕时间，以分钟为单位，0表示无此功能
+SETTING_AP_ID_KEYTONE_ENABLE  = 0[0,1]; //按键音开关，0表示禁止，1表示使能
+
+//photo ap config参数
+PHOTO_AP_ID_THUMBNAIL = 1[0,1]; //缩略图模块是否支持
+PHOTO_AP_ID_REVOLVE   = 1[0,1]; //图片是否自动旋转
+
+//radio ap config参数
+RADIO_AP_ID_BAND = 0[0,1,2];    //电台默认波段，0表示普通波段，1表示日本波段，2表示欧洲波段
+RADIO_AP_ID_SEEKMODE = 0[0,1];  //默认搜台模式，0表示硬件seek模式，1表示软件seek模式
+
+//fmengine ap config参数
+FMENGINE_AP_ID_SEEKTH = 8[0~127,1];  //搜台门限，范围及默认值视模组而定
+FMENGINE_AP_ID_PAMODE = 0[0,1];      //PA输出模式，0表示非直驱，1表示直驱
+//record ap参数
+RECORD_INPUT_SOURCE = 0[0,1,2];              //录音来源:0:mic-in;1:fm-in;2:line-in
+RECORD_FORMAT_TYPE = 0[0,1,2];                 //录音格式:0-wav; 1-mp3, 2-act
+RECORD_WAV_ENCODE_TYPE = 0[0,1];             //wav编码格式:0-pcm; 1-adpcm
+RECORD_WAV_BITRATE = 6[5~9,1];                 //wav比特率:5:256kbps; 6:512kbps; 7:768kbps; 8:1024kbps; 9:1536kbps; 
+RECORD_MP3_BITRATE = 1[1~4,1];                 //mp3比特率:1:32kbps; 2:64kbps; 3:128kbps; 4:192kbps;
+RECORD_TRACK_MODE = 0[0,1];                  //自动分曲模式:0-关闭;1-开启
+RECORD_AVR_MODE = 0[0,1];                    //avr模式:0-关闭;1-开启
+RECORD_GAIN_INPUT_LINEIN = 2[0~7,1];         //录音line-in增益:0:-12db,1:-3db,2:0db,3:1.5db,4:3db,5:4.5db,6:6db,7:7.5db
+RECORD_GAIN_ADC_LINEIN = 47[0~63,1];         //ADC line-in增益:0:-70.5db, 每级递增1.5db
+RECORD_GAIN_INPUT_MIC = 7[0~7,1];            //录音mic-in增益:0:26db,1:30db,2:31.5db,3:33db,4:34.5db,5:36db,6:37.5db,7:39db
+RECORD_GAIN_ADC_MIC = 51[0~63,1];            //ADC mic-in增益:0:-70.5db, 每级递增1.5db
+RECORD_TRACK_LEVEL_BREAKSONG = 80[0~128,1];  //自动分曲电压门槛值:0表示采用初始录音的噪声平均值，非零则-0.5dB一级
+RECORD_TRACK_LEVEL_AVR = 65[0~128,1];        //avr电压门槛值:0表示采用初始录音的噪声平均值，非零则-0.5dB一级
+RECORD_TRACK_DELAY = 3[0~10,1];              //avr延时时间:单位：s
+
+//usb
+USB_VID = "0x10D6";
+USB_PID = "0x1101";
+INF_UDISK_LABEL = "USB DISK AA";                   //最大11字符
+INF_USB_VENDOR = "ACTIONS";                        //最大8字符
+INF_USB_PRODUCTID = "HS USB FlashDisk";            //最大16字符
+INF_DEVICE_PRODUCER = "Actions Semiconductor";     //最大32字符
+INF_INQUIRY_INFORMATION_FOB = "ACTIONS USB DISK FOB 2.00"; //最大58个字符,分别表示vendor、product、product revision信息，
+                                                           //每条8字节，不足用空格补齐。
+INF_INQUIRY_INFORMATION_CDROM = "ACTIONS USB DISK CDROM  1.00"; //最大58个字符，分别表示vendor、product、product revision信息
+                                                                //分别为8字节、16字节、4字节，不足用空格补齐
+INF_CARD_DISPLAY = "YES";                          //是否显示卡盘，YES：显示，NO:不显示,最大3字符
+
+//music
+MUSIC_ID3_SUPPORT = 1[0,1];       //支持ID3获取功能
+MUSIC_LRC_SUPPORT = 1[0,1];       //支持歌词显示功能
+MUSIC_ALBUM_ART_SUPPORT = 1[0,1]; //支持专辑图片显示功能

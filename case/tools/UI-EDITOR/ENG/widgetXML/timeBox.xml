@@ -1,0 +1,78 @@
+﻿<widget name="timebox" type="widget" adapter="ATimeBoxAdapter"
+			icon="widgets/clock.png" >
+
+     <categories>
+     <category name = "basic"/>
+     <category name = "first"/>
+     <category name = "second"/>
+     <category name = "middle"/>
+     </categories>
+
+	<properties>
+		<property name="x" type="U16" value=""  editable="true" relative ="Left" desc="x coordinate of the left-top corner of the widget"/>
+		<property name="y" type="U16" value=""  editable="true" relative ="Top" desc="y coordinate of the left-top corner of the widget"/>
+		<property name="width" type="U16"   value="92" editable="true" desc="width of the widget"/>
+		<property name="height" type="U16"   value="8" editable="true" desc="height of the widget"/>
+		<property name="timeX" type="U16" value="0" category="basic" editable="true"  relative ="Left" desc="x coordinate of the left-top corner of the time rect"/>
+		<property name="timeY" type="U16" value="0" category="basic" editable="true"  relative = "Top" desc="y coordinate of the left-top corner of the time rect"/>
+		<property name="timeWidth" type="U16" value="92" category="basic" editable="true" desc="width of the time rect"/>
+		<property name="timeHeight" type="U16" value="8" category="basic" editable="true" desc="height of the time rect"/>
+
+		<property name="visible" type="boolean" value="1" category="basic"  editable="true" desc="whether the widget is visible"/>
+		
+		<property name="useBgPic" type="boolean" displayName="hether bgPic will be used" category="basic" value="1" editable="true" desc="whether bgPic will be used,if not so,background will be filled by pure color" />
+		<property name="stringBkColor" type="Color" value="16777215" category="basic" editable="true" desc="background color of string"  show="useBgPic = 0"/>
+		<property name="bgPic" type="Picture" value="" category="basic" editable="true" desc="background picture" storeType="1" show="useBgPic = 1"/>
+		<property name="bgPicX" type="U16" value="0" editable="true"  relative ="Left" desc="x coordinate of the left-top corner of bgPic"/>
+		<property name="bgPicY" type="U16" value="0" editable="true"  relative ="Top" desc="y coordinate of the left-top corner of bgPic"/>		
+		<property name="bgPicWidth" type="U16" visible="false" value="0" editable="false" desc="width of bgPic"/>
+		<property name="bgPicHeight" type="U16" visible="false" value="0" editable="false" desc="height of bgPic"/>
+           <property name="FontSize" displayName="Font size" type="Enum" editable="false" category="basic" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size"/>
+	
+           <property name="DisplayMode" type="Enum" editable="false" value="1" category="basic" enumKeys="String,Num Picture" enumValues="0,1" desc="display mode"/>
+		<property name="Composition" type="Enum" editable="false" value="1" category="basic" enumKeys="1 groups of time,2 groups of time" enumValues="0,1" desc="time composition"/>
+		<property name="align" type="Enum" editable="false" value="left to right" category="basic" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" desc="align type"/>
+	     <property name="stringColor" type="Color" value="0" category="basic" editable="true" desc="text color,only effective in String mode" show="DisplayMode = 0"/>
+		<property name="incX" type="U16" category="Picture" value="10" editable="false" desc="width of num pic"/>
+		<property name="partitionIncX" type="U16" category="Picture" value="10" editable="false" desc="width of partition pic"/>
+
+
+		<property name="pic0" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num0.bmp" allowEmpty="false" desc="pic of num 0" show="DisplayMode > 0"/>
+		<property name="pic1" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num1.bmp" allowEmpty="false" desc="pic of num 1" show="DisplayMode > 0"/>
+		<property name="pic2" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num2.bmp" allowEmpty="false" desc="pic of num 2" show="DisplayMode > 0"/>
+		<property name="pic3" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num3.bmp" allowEmpty="false" desc="pic of num 3" show="DisplayMode > 0"/>
+		<property name="pic4" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num4.bmp" allowEmpty="false" desc="pic of num 4" show="DisplayMode > 0"/>
+		<property name="pic5" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num5.bmp" allowEmpty="false" desc="pic of num 5" show="DisplayMode > 0"/>
+		<property name="pic6" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num6.bmp" allowEmpty="false" desc="pic of num 6" show="DisplayMode > 0"/>
+		<property name="pic7" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num7.bmp" allowEmpty="false" desc="pic of num 7" show="DisplayMode > 0"/>
+		<property name="pic8" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num8.bmp" allowEmpty="false" desc="pic of num 8" show="DisplayMode > 0"/>
+		<property name="pic9" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num9.bmp" allowEmpty="false" desc="pic of num 9" show="DisplayMode > 0"/> 
+ 		<property name="picNULL" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num_null.bmp" allowEmpty="true" desc="pic of null" show="DisplayMode > 0"/> 
+ 		<property name="picColon" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_colon.bmp" allowEmpty="false" desc="pic of colon" show="DisplayMode > 0"/>
+ 		<property name="picSlash" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_slash.bmp" allowEmpty="false" desc="pic of slash" show="DisplayMode > 0"/>
+ 		<property name="picDash" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_dash.bmp" allowEmpty="true" desc="pic of dash" show="DisplayMode > 0"/>
+ 		<property name="picSpace" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_space.bmp" allowEmpty="true" desc="pic of white space" show="DisplayMode > 0"/> 
+           <property name="numBkColor" type="Color" category="basic" value="0"  editable="true" desc="background color of num pic"  />
+           
+		<property name="number1" type="U16" value="11" category="first" editable="true" desc="the first value of time 1" />	
+		<property name="number2" type="U16" value="11" category="first" editable="true" desc="the second value of time 1" />	
+		<property name="number3" type="U16" value="11" category="first" editable="true" desc="the third value of time 1" />	
+		<property name="digits1" type="U16" value="2" category="first" editable="true" desc="count of digits of number1"/>
+           <property name="showHigh1" type="boolean" value="1" category="first"  editable="true" desc="whether number1 has high zero"/>
+		<property name="showFirstPartition" type="boolean" value="1" category="first" editable="true" desc="whether the partition symbol of time 1 is visible"/>
+		<property name="FirstPartitionStr" type="Enum" editable="false" value="0" category="first" enumKeys="Colon Sep :,Slash Sep /,Dash Sep -,Whitespace Sep  " enumValues="0,1,2,3" desc="partition symbol of time 1(in String mode)" show="showFirstPartition = 1"/>
+           
+		<property name="showMiddlePartition" type="boolean" value="1" category="middle" editable="true" desc="whether the partition symbol between two gourps of time  is visible" show="Composition > 0"/>
+		<property name="MiddlePartitionStr" type="Enum" editable="false" value="1" category="middle" enumKeys="Colon Sep :,Slash Sep /,Dash Sep -,Whitespace Sep  " enumValues="0,1,2,3" desc="partition symbol between two gourps of time(in String mode)" show="Composition > 0&showMiddlePartition = 1"/>
+
+		<property name="number4" type="U16" value="11" category="second" editable="true" desc="the first value of time 2" show="Composition > 0"/>	
+		<property name="number5" type="U16" value="11" category="second" editable="true" desc="the second value of time 2" show="Composition > 0"/>	
+		<property name="number6" type="U16" value="11" category="second" editable="true" desc="the third value of time 2" show="Composition > 0"/>	
+		<property name="digits2" type="U16" value="2" category="second" editable="true" desc="count of digits of number4" show="Composition > 0"/>
+           <property name="showHigh2" type="boolean" value="1" category="second"  editable="true" desc="whether number4 has high zero" show="Composition > 0"/>
+		<property name="showSecondPartition" type="boolean" value="1" category="second" editable="true" desc="whether the partition symbol of time 2 is visible" show="Composition > 0"/>
+		<property name="SecondPartitionStr" type="Enum" editable="false" value="1" category="second" enumKeys="Colon Sep :,Slash Sep /,Dash Sep -,Whitespace Sep  " enumValues="0,1,2,3" desc="partition symbol of time 2(in String mode)" show="Composition > 0&showSecondPartition = 1"/>
+		
+	</properties>
+		
+</widget>

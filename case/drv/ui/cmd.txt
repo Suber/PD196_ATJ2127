@@ -1,0 +1,4 @@
+make > error 2>&1
+sde-objdump -t drv_ui.exe |grep ".data"
+sde-readelf -S drv_ui.exe
+sde-nm kernel.exe | grep memcpy

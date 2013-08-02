@@ -1,0 +1,46 @@
+﻿<widget name="textBox" type="widget" adapter="JLabelAdapter"
+			icon="widgets/text.png" >
+
+     <categories>
+     <category name = "basic"/>
+     </categories>
+     
+	<properties>		
+		<property name="x" type="U16" value="" editable="true"  relative ="Left" desc="文字框左上角x座標"/>
+		<property name="y" type="U16" value="" editable="true"  relative ="Top" desc="文字框左上角y座標"/>
+		<property name="width" type="U16" value="70" editable="true" desc="控制項寬度"/>
+		<property name="height" type="U16" value="20"  editable="true" desc="控制項高度"/>
+		<property name="textX" type="U16" value="0" editable="true" category="basic" relative ="Left" desc="文字框左上角x座標"/>
+		<property name="textY" type="U16" value="0" editable="true" category="basic" relative ="Top" desc="文字框左上角y座標"/>		
+		<property name="textWidth" type="U16" value="70" category="basic" editable="true" desc="文字框寬度"/>
+		<property name="textHeight" type="U16" value="20" category="basic" editable="true" desc="文字框高度"/>
+		<property name="bgPicX" type="U16" value="0" category="basic" editable="true"  relative ="Left" desc="背景圖片左上角x座標"/>
+		<property name="bgPicY" type="U16" value="0" category="basic" editable="true"  relative ="Top" desc="背景圖片左上角y座標"/>		
+		<property name="text" type="MultiLanguage" value="null" category="basic" editable="false" desc="文本內容"/>
+		<property name="fontHeight" type="U16" displayName="字體高度" category="basic" value="16" editable="true" desc="字體高度"/>
+		<property name="foreground" type="Color" displayName="字體顏色" category="basic" value="16711680" editable="true" desc="字體顏色"/>
+		<property name="background" type="Color" displayName="背景顏色" category="basic" value="16777215" editable="true" desc="背景顏色,當mode值為normal時才有效"  show="mode = 0"/>
+		<property name="bgPic" type="Picture" value="" category="basic" editable="true" desc="背景圖片,當mode值為transparent時才有效"  show="mode > 0"/>
+		<property name="useBgPic" type="boolean" displayName="是否使用背景圖" category="basic" value="1" editable="true" desc="是否使用背景圖" show="mode > 0"/>
+		<property name="bgPicWidth" type="U16" visible="false" value="0" editable="false" desc="背景圖寬"/>
+		<property name="bgPicHeight" type="U16" visible="false" value="0" editable="false" desc="背景圖高"/>
+		<property name="visible" type="boolean" value="1" category="basic" editable="true" desc="控制項可見"/>
+		<property name="mode" type="Enum" editable="false" category="basic" value="1" enumKeys="normal,transparent" enumValues="0,1" default="0" desc="背景模式，若需要顯示背景圖片，請置成transparent，若要顯示背景色，請置成normal"/>
+		<property name="align" displayName="對齊方式" type="Enum" editable="false" category="basic" value="0" enumKeys="左對齊,居中,右對齊" enumValues="0,1,2" default="0" desc="對齊方式"/>
+		<property name="ShowMultiline" displayName="長字串顯示模式" type="Enum" editable="false" category="basic" value="0" enumKeys="多行,滾屏,截斷,省略號" enumValues="0,1,2,3" default="0" desc="長字串顯示模式"/>
+		<property name="ArabRgtAlign" displayName="阿拉伯語右對齊" type="Enum" editable="false" category="basic" value="0" enumKeys="不取消,取消" enumValues="0,1" default="0" desc="阿拉伯語右對齊"/>
+		<property name="FontSize" displayName="字體大小" type="Enum" editable="false" category="basic" value="1" enumKeys="小字體,中字體,大字體" enumValues="0,1,2" default="0" desc="字體大小"/>
+		<!--<property name="verticalAlignment" type="verticalAlignment" editable="true" />
+		<property name="horizontalAlignment" type="horizontalAlignment" editable="true" />
+		<property name="transparency" type="U8" editable="true" />
+		<property name="scroll" type="boolean" editable="true" />
+		<property name="pixel" type="U16" editable="true" />
+		<property name="space" type="U16" editable="true" />
+		<property name="direction" displayName="scrollDirection" type="Enum" editable="true" enumKeys="left to right,right to left" enumValues="0,-1" />
+		-->
+	</properties>
+		
+</widget>
+
+<!-- property name="defaultIcon" displayName="Icon"  type="Icon" editable="true" -->
+<!-- property name="border" type="Border" editable="true" -->

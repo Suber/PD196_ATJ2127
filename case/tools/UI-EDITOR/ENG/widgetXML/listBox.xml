@@ -1,0 +1,231 @@
+﻿<widget name="listBox" type="widget" adapter="AListBoxAdapter"
+            icon="widgets/list.png" >
+
+     <categories>
+     <category name = "basic"/>
+     <category name = "item"/>
+     <category name = "slider"/>
+     <category name = "title"/>
+     <category name = "ratio"/>
+     </categories>
+     
+    <properties>
+        <property name="x" type="U16" value="" editable="true" relative ="Left" desc="x coordinate of the left-top corner of the widget"/>
+        <property name="y" type="U16" value="" editable="true" relative ="Top" desc="y coordinate of the left-top corner of the widget"/>
+        <property name="width" type="U16" value="" editable="true" desc="width of the widget"/>
+        <property name="height" type="U16" value="" editable="true"  desc="height of the widget"/>
+        <property name="visible" type="boolean" value="1" category="basic" editable="true"  desc="whether the widget is visible"/>
+
+        <property name="total" type="U16" value="12" category="basic" editable="true" desc="the amount of the count of list itmes,set by user. this number is usually larger than onePageNum"/>
+        <property name="onePageNum" type="U16" value="6" category="basic" editable="true" desc="Count of list itmes per Page"/>
+        <property name="current" type="U16" default="1" value="1" category="basic" editable="true" desc="index of the active item currently,index starts from 1"/>
+        <property name="select" type="U16" default="1" value="2" category="basic" editable="true" desc="index of the selected item currently,index starts from 1(selected item is different from active item,selected item means the item which is taking effect,while active item means the item user is viewing currenty)"/>                     
+        
+        <property name="bgPicX" type="U16" value="0" category="basic" editable="true" relative ="Left" desc="x coordinate of the left-top corner of bgPic"/>
+        <property name="bgPicY" type="U16" value="0" category="basic" editable="true" relative ="Top" desc="y coordinate of the left-top corner of bgPic"/>
+        <property name="bgPic" type="Picture" value="$widgets\background\p_def_background.bmp" category="basic" editable="false" desc="background picture" AsbgPic="true"/>
+        <property name="bgPicWidth" type="U16" visible="false" value="" editable="false" desc="width of bgPic"/>
+        <property name="bgPicHeight" type="U16" visible="false" value="" editable="false" desc="height of bgPic"/>     
+                
+        <property name="incY" type="U16" category="item" value="24" editable="true" desc="the Subtraction result of y coordinate of two items nearby "/>
+        <property name="itemBgPicX" type="U16" category="item" value="0" editable="true" relative ="Left" desc="x coordinate of the first item's background pic"/>
+        <property name="itemBgPicY" type="U16" category="item" value="16" editable="true" relative ="Top" desc="y coordinate of the first item's background pic"/>
+        <property name="showItemBg" type="boolean" category="basic" value="1" editable="true" desc="whether the background for items is visible"/>
+                      
+        <property name="itemFontSize" displayName="Font size" type="Enum" editable="false" category="item" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size of inactive items"/>        
+        <property name="itemActFontSize" displayName="Font size" type="Enum" editable="false" category="item" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size of active item"/>
+        <property name="itemLeftAlign" displayName="align type of inactive items" type="Enum" editable="false" category="item" value="0" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" default="0" desc="align type of inactive items"/>
+        <property name="itemActLeftAlign" displayName="align type of active items" type="Enum" editable="false" category="item" value="0" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" default="0" desc="align type of active items"/>
+    
+        <property name="itemMultilineMode" displayName="display mode of Long text of inactive items" type="Enum" editable="false" category="item" value="0" enumKeys="Multiline,Roll-screen,Truncation,Ellipsis" enumValues="0,1,2,3" default="0" desc="display mode of Long text of inactive items"/>
+        <property name="itemActMultilineMode" displayName="display mode of Long text of active item" type="Enum" editable="false" category="item" value="0" enumKeys="Multiline,Roll-screen,Truncation,Ellipsis" enumValues="0,1,2,3" default="0" desc="display mode of Long text of active item"/>
+
+        <property name="BgPicForAllItems" type="Picture" category="item" value="$widgets\listbox\p_def_list_allback.bmp" editable="false" desc="Background pic for all list items,which can just cover all itmes and not cover other parts" />
+        <property name="BgPicForAllItemsWidth" type="U16" visible="false" value="" editable="false" desc="width of BgPicForAllItems"/>
+        <property name="BgPicForAllItemsHeight" type="U16" visible="false" value="" editable="false" desc="height of BgPicForAllItems"/>
+        <property name="itemBgType" type="Enum" editable="false" value="2" category="item" enumKeys="Background Color,Background Pic(single),Background Pic(multy)" enumValues="0,1,2" desc="background mode of inactive items" show="showItemBg = 1"/>
+        <property name="itemBgColor" type="Color" category="item" value="16777215" editable="true" desc="background color of inactive items" show="showItemBg = 1&itemBgType = 0"/>
+        <property name="itemBgPic0" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina0.bmp" editable="false" desc="background pic 0 of inactive items" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic1" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina1.bmp" editable="false" desc="background pic 1 of inactive items" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic2" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina2.bmp" editable="false" desc="background pic 2 of inactive items" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic3" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina3.bmp" editable="false" desc="background pic 3 of inactive items" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic4" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina4.bmp" editable="false" desc="background pic 4 of inactive items" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic5" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_ina5.bmp" editable="false" desc="background pic 5 of inactive items" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic6" type="Picture" category="item" value="" editable="false" desc="background pic 6 of inactive items6" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic7" type="Picture" category="item" value="" editable="false" desc="background pic 7 of inactive items" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic8" type="Picture" category="item" value="" editable="false" desc="background pic 8 of inactive items" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic9" type="Picture" category="item" value="" editable="false" desc="background pic 9 of inactive items" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic10" type="Picture" category="item" value="" editable="false" desc="background pic 10 of inactive items" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPic11" type="Picture" category="item" value="" editable="false" desc="background pic 11 of inactive items" show="showItemBg = 1&itemBgType > 0"/>
+        <property name="itemBgPicWidth" type="U16" visible="false" value="" editable="false" desc="width of inactive items"/>
+        <property name="itemBgPicHeight" type="U16" visible="false" value="" editable="false" desc="height of inactive items"/>
+            
+        
+        <property name="itemActBgType" type="Enum" editable="false" value="1" category="item" enumKeys="Background Color,Background Pic(single),Background Pic(multy)" enumValues="0,1,2" desc="background mode of active items" show="showItemBg = 1"/>
+        <property name="itemActBgColor" type="Color" category="item" value="16777215" editable="true"  desc="background color of active items" show="showItemBg = 1&itemActBgType = 0"/>        
+        <property name="itemActBgPic0" type="Picture" category="item" value="$widgets\listbox\p_def_list_item_a.bmp" editable="false" desc="background pic 0 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic1" type="Picture" category="item" value="" editable="false" desc="background pic 1 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic2" type="Picture" category="item" value="" editable="false" desc="background pic 2 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic3" type="Picture" category="item" value="" editable="false" desc="background pic 3 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic4" type="Picture" category="item" value="" editable="false" desc="background pic 4 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic5" type="Picture" category="item" value="" editable="false" desc="background pic 5 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic6" type="Picture" category="item" value="" editable="false" desc="background pic 6 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic7" type="Picture" category="item" value="" editable="false" desc="background pic 7 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic8" type="Picture" category="item" value="" editable="false" desc="background pic 8 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic9" type="Picture" category="item" value="" editable="false" desc="background pic 9 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic10" type="Picture" category="item" value="" editable="false" desc="background pic 10 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        <property name="itemActBgPic11" type="Picture" category="item" value="" editable="false" desc="background pic 11 of active item" show="showItemBg = 1&itemActBgType > 0" storeType="1"/>
+        
+        
+        <property name="itemHeadPicX" type="U16" category="item" value="13" editable="true" relative ="Left" desc="x coordinate of the head pic of the first item"/>
+        <property name="itemHeadPicY" type="U16" category="item" value="24" editable="true" relative ="Top" desc="y coordinate of the head pic of the first item"/>
+        <property name="itemHeadType" type="Enum" editable="false" value="0" category="item" enumKeys="invisible,Background Pic(single),Background Pic(multy)" enumValues="0,1,2" desc="display mode of head-pic of selected ( inactive) item"/>
+        <property name="itemHeadPic" type="Picture" category="item" value="" editable="true" desc="original picture of head-pic of inactive items,with pure color background" show="itemHeadType > 0"/>
+        <property name="itemHeadPicBkColor" type="Color" category="item" value="0" editable="false" desc="background color of itemHeadPic" show="itemHeadType > 0"/> 
+        <property name="itemHeadPic0" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina.bmp" editable="false" desc="head-pic 0 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPic1" type="Picture" category="item" value="" editable="false" desc="head-pic 1 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPic2" type="Picture" category="item" value="" editable="false" desc="head-pic 2 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPic3" type="Picture" category="item" value="" editable="false" desc="head-pic 3 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPic4" type="Picture" category="item" value="" editable="false" desc="head-pic 4 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPic5" type="Picture" category="item" value="" editable="false" desc="head-pic 5 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPic6" type="Picture" category="item" value="" editable="false" desc="head-pic 6 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPic7" type="Picture" category="item" value="" editable="false" desc="head-pic 7 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPic8" type="Picture" category="item" value="" editable="false" desc="head-pic 8 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPic9" type="Picture" category="item" value="" editable="false" desc="head-pic 9 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPic10" type="Picture" category="item" value="" editable="false" desc="head-pic 10 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPic11" type="Picture" category="item" value="" editable="false" desc="head-pic 11 of inactive items" show="itemHeadType > 0"/>
+        <property name="itemHeadPicWidth" type="U16" visible="false" value="" editable="false" desc="width of itemHeadPic"/>
+        <property name="itemHeadPicHeight" type="U16" visible="false" value="" editable="false" desc="height of itemHeadPic"/>
+          
+        <property name="itemActHeadType" type="Enum" editable="false" value="0" category="item" enumKeys="invisible,Background Pic(single),Background Pic(multy)" enumValues="0,1,2" desc="display mode of head-pic of selected ( active) item"/>
+        <property name="itemActHeadPic0" type="Picture" category="item" value="" editable="false" desc="head-pic 0 of active item" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic1" type="Picture" category="item" value="" editable="false" desc="head-pic 1 of active item" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic2" type="Picture" category="item" value="" editable="false" desc="head-pic 2 of active item" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic3" type="Picture" category="item" value="" editable="false" desc="head-pic 3 of active item" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic4" type="Picture" category="item" value="" editable="false" desc="head-pic 4 of active item" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic5" type="Picture" category="item" value="" editable="false" desc="head-pic 5 of active item" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic6" type="Picture" category="item" value="" editable="false" desc="head-pic 6 of active item" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic7" type="Picture" category="item" value="" editable="false" desc="head-pic 7 of active item" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic8" type="Picture" category="item" value="" editable="false" desc="head-pic 8 of active item" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic9" type="Picture" category="item" value="" editable="false" desc="head-pic 9 of active item" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic10" type="Picture" category="item" value="" editable="false" desc="head-pic 10 of active item" show="itemActHeadType > 0"/>
+        <property name="itemActHeadPic11" type="Picture" category="item" value="" editable="false" desc="head-pic 11 of active item" show="itemActHeadType > 0"/>
+        
+                 
+        <property name="itemTextX" type="U16" category="item" value="5" editable="true" relative ="Left" desc="x coordinate of itemText of the first item"/>
+        <property name="itemTextY" type="U16" category="item" value="20" editable="true" relative ="Top" desc="y coordinate of itemText of the first item"/>
+        <property name="itemColor" type="Color" category="item" value="12632256" editable="true" desc="Font color of itemText of inactive items"/>
+        <property name="itemActColor" type="Color" category="item" value="16777215" editable="true" desc="Font color of itemText of active item"/>
+        <property name="itemTextWidth" type="U16" category="item" value="95" editable="true" desc="width of itemText"/>
+        <property name="itemTextHeight" type="U16" category="item" value="16" editable="true" desc="height of itemText"/>
+        
+        <property name="itemTailPicX" type="U16" category="item" value="105" editable="true" relative ="Left" desc="x coordinate of the tail pic of the first item"/>
+        <property name="itemTailPicY" type="U16" category="item" value="24" editable="true" relative ="Top" desc="y coordinate of the tail pic of the first item"/>
+        
+        <property name="itemTailType" type="Enum" editable="false" value="2" category="item" enumKeys="invisible,Background Pic(single),Background Pic(multy)" enumValues="0,1,2" desc="display mode of tail-pic of selected (inactive) item"/>
+        <property name="itemTailPic" type="Picture" category="item" value="" editable="false" desc="original picture of tail-pic of inactive items,with pure color background" show="itemTailType > 0"/>
+        <property name="itemTailPicBkColor" type="Color" category="item" value="0" editable="false" desc="background color of itemTailPic" show="itemTailType > 0"/> 
+        <property name="itemTailPic0" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_0.bmp" editable="false" desc="tail-pic 0 of inactive items" show="itemTailType > 0"/>
+        <property name="itemTailPic1" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_1.bmp" editable="false" desc="tail-pic 1 of inactive items" show="itemTailType > 0"/>
+        <property name="itemTailPic2" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_2.bmp" editable="false" desc="tail-pic 2 of inactive items" show="itemTailType > 0"/>   
+        <property name="itemTailPic3" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_3.bmp" editable="false" desc="tail-pic 3 of inactive items" show="itemTailType > 0"/>
+        <property name="itemTailPic4" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_4.bmp" editable="false" desc="tail-pic 4 of inactive items" show="itemTailType > 0"/>
+        <property name="itemTailPic5" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_ina_5.bmp" editable="false" desc="tail-pic 5 of inactive items" show="itemTailType > 0"/>       
+        <property name="itemTailPic6" type="Picture" category="item" value="" editable="false" desc="tail-pic 6 of inactive items" show="itemTailType > 0"/>
+        <property name="itemTailPic7" type="Picture" category="item" value="" editable="false" desc="tail-pic 7 of inactive items" show="itemTailType > 0"/>
+        <property name="itemTailPic8" type="Picture" category="item" value="" editable="false" desc="tail-pic 8 of inactive items" show="itemTailType > 0"/>       
+        <property name="itemTailPic9" type="Picture" category="item" value="" editable="false" desc="tail-pic 9 of inactive items" show="itemTailType > 0"/>
+        <property name="itemTailPic10" type="Picture" category="item" value="" editable="false" desc="tail-pic 10 of inactive items" show="itemTailType > 0"/>
+        <property name="itemTailPic11" type="Picture" category="item" value="" editable="false" desc="tail-pic 11 of inactive items" show="itemTailType > 0"/> 
+        <property name="itemTailPicWidth" type="U16" visible="false" value="0" editable="false" desc="width of itemTailPic"/>
+        <property name="itemTailPicHeight" type="U16" visible="false" value="0" editable="false" desc="height of itemTailPic"/>
+         
+        <property name="itemActTailType" type="Enum" editable="false" value="1" category="item" enumKeys="invisible,Background Pic(single),Background Pic(multy)" enumValues="0,1,2" desc="display mode of tail-pic of selected (active) item"/>
+        <property name="itemActTailPic0" type="Picture" category="item" value="$widgets\listbox\p_def_list_back_a.bmp" editable="false" desc="tail-pic 0 of active item" show="itemActTailType > 0"/>
+        <property name="itemActTailPic1" type="Picture" category="item" value="" editable="false" desc="tail-pic 1 of active item" show="itemActTailType > 0"/>
+        <property name="itemActTailPic2" type="Picture" category="item" value="" editable="false" desc="tail-pic 2 of active item" show="itemActTailType > 0"/>
+        <property name="itemActTailPic3" type="Picture" category="item" value="" editable="false" desc="tail-pic 3 of active item" show="itemActTailType > 0"/>
+        <property name="itemActTailPic4" type="Picture" category="item" value="" editable="false" desc="tail-pic 4 of active item" show="itemActTailType > 0"/>
+        <property name="itemActTailPic5" type="Picture" category="item" value="" editable="false" desc="tail-pic 5 of active item" show="itemActTailType > 0"/>
+        <property name="itemActTailPic6" type="Picture" category="item" value="" editable="false" desc="tail-pic 6 of active item" show="itemActTailType > 0"/>
+        <property name="itemActTailPic7" type="Picture" category="item" value="" editable="false" desc="tail-pic 7 of active item" show="itemActTailType > 0"/>
+        <property name="itemActTailPic8" type="Picture" category="item" value="" editable="false" desc="tail-pic 8 of active item" show="itemActTailType > 0"/>
+        <property name="itemActTailPic9" type="Picture" category="item" value="" editable="false" desc="tail-pic 9 of active item" show="itemActTailType > 0"/>
+        <property name="itemActTailPic10" type="Picture" category="item" value="" editable="false" desc="tail-pic 10 of active item" show="itemActTailType > 0"/>
+        <property name="itemActTailPic11" type="Picture" category="item" value="" editable="false" desc="tail-pic 11 of active item" show="itemActTailType > 0"/>
+        
+
+        <property name="showTitle"  type="boolean" category="basic" value="0" editable="true" desc="whether title is visible"/>
+        <property name="titleX" type="U16" category="title" value="0" editable="true" relative ="Left" desc="x coordinate of title rect" show="showTitle > 0"/>
+        <property name="titleY" type="U16" category="title" value="18" editable="true" relative ="Top" desc="y coordinate of title rect" show="showTitle > 0"/>  
+        <property name="titleWidth" type="U16" category="title" value="128" editable="true" desc="width of title rect" show="showTitle > 0"/>
+        <property name="titleHeight" type="U16" category="title" value="16" editable="true" desc="height of title rect" show="showTitle > 0"/>    
+        <property name="titleColor" type="Color" category="title" value="16777215" editable="true" desc="Font color of title" show="showTitle > 0"/>
+        <property name="titleFontSize" displayName="Font size" type="Enum" editable="false" category="title" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size of title text" show="showTitle > 0"/>
+        <property name="titleAlign" type="Enum" editable="false" value="1" category="title" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" desc="align type of title text" show="showTitle > 0"/>
+
+        <property name="showProgress"  type="boolean" category="basic" value="1" editable="true" desc="whether the progressbar is visible"/>         
+        
+        <property name="length" type="U16" category="slider" value="100" editable="true" desc="lenght of progressbar" show="showProgress > 0"/>
+        
+        <property name="progBgPicX" type="U16" category="slider" value="125" editable="true" relative ="Left" desc="x coordinate of the background pic of progressbar" show="showProgress > 0"/>
+        <property name="progBgPicY" type="U16" category="slider" value="16" editable="true" relative ="Top" desc="y coordinate of the background pic of progressbar" show="showProgress > 0"/>
+        
+    
+        <property name="progBgPic" type="Picture" category="slider" value="$widgets\listbox\p_def_list_slider_bg.bmp" editable="false" desc="background pic of progressbar" show="showProgress > 0"/>
+        <property name="progBgPicWidth" type="U16" visible="false" value="" editable="false"  desc="width of progBgPic" show="showProgress > 0"/>
+        <property name="progBgPicHeight" type="U16" visible="false" value="" editable="false" desc="height of progBgPic" show="showProgress > 0"/>
+        <property name="progPicX" type="U16" category="slider" value="125" editable="true" relative ="Left" desc="x coordinate of the cursor of progressbar" show="showProgress > 0"/>
+        <property name="progPicY" type="U16" category="slider" value="16" editable="true" relative ="Top" desc="y coordinate of the cursor of progressbar" show="showProgress > 0"/>
+        <property name="progPic" type="Picture" category="slider" value="$widgets\listbox\p_def_list_slider_tag.bmp" editable="false" desc="cursor pic of progressbar" show="showProgress > 0"/>
+        <property name="unprogPic" type="Picture" category="slider" value="$widgets\listbox\p_def_list_slider_tag_clr.bmp" editable="false" desc="pic for clear cursor pic of progressbar" show="showProgress > 0"/>
+        <property name="progPicWidth" type="U16" visible="false" value="0" editable="false" desc="width of progPic"/>
+        <property name="progPicHeight" type="U16" visible="false" value="0" editable="false" desc="height of progPic"/>
+        <property name="progLen" type="U8"  value="1" editable="true"  desc="length of cursor length" show="showProgress > 0"/>
+            
+        <property name="showRatio"  type="boolean" category="basic" value="1" editable="true" desc="whether the ratio is visible"/>  
+        <property name="RatioDisplayMode" type="Enum" editable="false" value="String" category="ratio" enumKeys="String,Picture" enumValues="0,1" desc="‘display mode of ratio" show="showRatio = 1"/>
+        <property name="stringColor" type="Color" value="16777215" category="ratio" editable="true" desc="Font Color of number and partition,effective only in String mode" show="RatioDisplayMode = 0&showRatio = 1"/>
+        <property name="stringBkColor" type="Color" value="0" category="ratio" editable="true" desc="Background Color of number and delimiter,effective only in String mode" show="RatioDisplayMode = 0&showRatio = 1"/>
+        <property name="RatioFontSize" displayName="Font size" type="Enum" editable="false" category="ratio" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size of Ratio" show="RatioDisplayMode = 0&showRatio = 1"/>
+
+        <property name="RatioX" type="U16" value="0" category="ratio" editable="true" relative ="Left" desc="x coordinate of Ratio rect"  show="showRatio = 1"/>
+        <property name="RatioY" type="U16" value="2" category="ratio" editable="true" relative ="Top" desc="y coordinate of Ratio rect"  show="showRatio = 1"/>
+        <property name="RatioIndexCnt" type="U16" value="2" category="ratio" editable="true" desc="digit number of ratio index"  show="showRatio = 1"/>
+        <property name="RatioTotalCnt" type="U16" value="2" category="ratio" editable="true" desc="digit number of ratio total"  show="showRatio = 1"/>
+        <property name="RatioIndexshowHigh" type="boolean" value="1" category="ratio" editable="true" desc="whether the ratio index has high zero"  show="showRatio = 1"/>
+        <property name="RatioTotalshowHigh" type="boolean" value="1" category="ratio" editable="true" desc="whether the ratio total has high zero"  show="showRatio = 1"/>
+        <property name="RatioIndexNum" type="S32" value="2" category="ratio" editable="true" desc="value of ratio index"  show="showRatio = 1"/>
+        <property name="RatioTotalNum" type="S32" value="4" category="ratio" editable="true" desc="value of ratio tatal"  show="showRatio = 1"/>
+        <property name="RatioWidth" type="U16" visible="false" value="128" category="ratio" editable="true" desc="width of ratio rect"  show="showRatio = 1"/>
+        <property name="RatioHeight" type="U16" visible="false" value="16" category="ratio" editable="true" desc="height of ratio rect"  show="showRatio = 1"/>
+        <property name="RatioAlign" type="Enum" editable="false" value="1" category="ratio" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" desc="‘align type of ratio"  show="showRatio = 1"/>
+        
+        <property name="RatioUseBgPic" type="boolean" displayName="whether the ratio has background pic" category="ratio" value="1" editable="true" desc="whether the ratio has background pic"  show="showRatio = 1"/>
+        <property name="RatioBgPic" type="Picture" value="$widgets\listbox\p_def_list_ratio_bg.bmp" category="ratio" editable="true" desc="background pic of ratio"  show="showRatio = 1" storeType = "1"/>
+        <property name="RatioBgPicX" type="U16" value="30" editable="true" category="ratio" relative ="Left" desc="x coordinate of the background pic" show="showRatio = 1"/>
+        <property name="RatioBgPicY" type="U16" value="0" editable="true" category="ratio" relative ="Top" desc="y coordinate of the background pic" show="showRatio = 1"/>      
+        <property name="RatioBgPicWidth" type="U16" visible="false" value="0" editable="false" desc="width of RatioBgPic"/>
+        <property name="RatioBgPicHeight" type="U16" visible="false" value="0" editable="false" desc="height of RatioBgPic"/>
+
+        <property name="partitionPic" displayName="partition pic" value="" type="Picture" category="ratio" editable="false" desc="partition pic" show="RatioDisplayMode > 0&showRatio = 1"/>
+            
+        <property name="pic0" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="pic of num 0" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic1" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="pic of num 1" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic2" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="pic of num 2" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic3" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="pic of num 3" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic4" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="pic of num 4" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic5" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="pic of num 5" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic6" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="pic of num 6" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic7" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="pic of num 7" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic8" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="pic of num 8" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic9" type="Picture" category="ratio" editable="false" value="" allowEmpty="false" desc="pic of num 9" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="picCover" displayName="pic of null" type="Picture" category="ratio" value="" editable="false" allowEmpty="false"  desc="pic of null" show="RatioDisplayMode > 0&showRatio = 1"/> 
+        <property name="pic0Width" type="U16" visible="false" category="ratio" value="" editable="false" desc="width of num pic" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="pic0Height" type="U16" visible="false" value="" editable="false" desc="height of num pic"/>        
+        <property name="partitionPicWidth" type="U16" visible="false" category="ratio" value="" editable="false" desc="width of partition pic" show="RatioDisplayMode > 0&showRatio = 1"/>
+        <property name="partitionPicHeight" type="U16" visible="false" value="" editable="false" desc="height of partition pic"/>
+        <property name="numBkColor" type="Color" value="0"  category="ratio" editable="true" desc="background color of num pic"  show="RatioDisplayMode > 0&showRatio = 1"/>      
+    </properties>
+        
+</widget>

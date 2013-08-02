@@ -1,0 +1,87 @@
+<widget name="paramBox" type="widget" adapter="AImageAdapter"
+			icon="widgets/picregion.png" >
+
+	<signPic>
+		<property name="name" type="String" value="signpic.bmp"/>
+		<property name="x" type="U16" value="@signPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@signPicY"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@sinPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@sinPicHeight"  desc="图片高度"/>
+           <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</signPic>
+	
+	<partitionPic1>
+		<property name="name" type="String" value="part1.bmp"/>
+		<property name="x" type="U16" value="@partitionPic1X"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@partitionPic1Y"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@partitionPic1Width"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@partitionPic1Height"  desc="图片高度"/>
+          <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</partitionPic1>
+	
+	<partitionPic2>
+		<property name="name" type="String" value="part2.bmp"/>
+		<property name="x" type="U16" value="@partitionPic2X"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@partitionPic2Y"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@partitionPic2Width"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@partitionPic2Height"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</partitionPic2>
+	
+	<itemBackPic1>
+		<property name="name" type="String" value="itemina0.bmp"/>
+		<property name="x" type="U16" value="特殊处理"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="特殊处理"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="特殊处理"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="特殊处理"  desc="图片高度"/>
+           <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBackPic1>
+	
+	<itemBackPic2>
+		<property name="name" type="String" value="itemina1.bmp"/>
+		<property name="x" type="U16" value="特殊处理"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="特殊处理"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="特殊处理"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="特殊处理"  desc="图片高度"/>
+          <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBackPic2>
+	
+	<itemBackPic3>
+		<property name="name" type="String" value="itemina2.bmp"/>
+		<property name="x" type="U16" value="特殊处理"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="特殊处理"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="特殊处理"  desc="图片宽度"/>
+      	<property name="height" type="U16" value="特殊处理"  desc="图片高度"/>
+           <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBackPic3>
+	
+     <itemActBackPic1>
+		<property name="name" type="String" value="itema0.bmp"/>
+		<property name="x" type="U16" value="特殊处理"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="特殊处理"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="特殊处理"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="特殊处理"  desc="图片高度"/>
+           <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemActBackPic1>
+	
+	<itemActBackPic2>
+		<property name="name" type="String" value="itema1.bmp"/>
+		<property name="x" type="U16" value="特殊处理"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="特殊处理"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="特殊处理"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="特殊处理"  desc="图片高度"/>
+          <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemActBackPic2>
+	
+	<itemActBackPic3>
+		<property name="name" type="String" value="itema2.bmp"/>
+		<property name="x" type="U16" value="特殊处理"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="特殊处理"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="特殊处理"  desc="图片宽度"/>
+      	<property name="height" type="U16" value="特殊处理"  desc="图片高度"/>
+           <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemActBackPic3>
+		
+</widget>
+
+1、添加条件，判断是否截取背景图；

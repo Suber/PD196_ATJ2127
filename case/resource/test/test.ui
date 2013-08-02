@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="test" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="user1.sty" />
+    <property name="prj_res_head_file" value="test_res.h" />
+    <property name="prj_res_str_dir" value="test\" />
+    <property name="prj_sty_file" value="user1.sty" />
+    <property name="prj_sty_head_file" value="test_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="12" />
+        <property name="Font_large" value="13" />
+        <scene>
+            <property name="name" value="scene00" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup01" />
+                <property name="id" value="1" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="$(screenWidth)" />
+                <property name="height" value="$(screenHeight)" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="test_play_bg" />
+                    <property name="id" value="1" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\test_background.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="test_play_count" />
+                    <property name="id" value="2" />
+                    <property name="x" value="135" />
+                    <property name="y" value="30" />
+                    <property name="width" value="18" />
+                    <property name="height" value="28" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\pic\test_count_0.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\pic\test_count_1.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\pic\test_count_2.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\pic\test_count_3.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="4" value=".\pic\test_count_4.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="5" value=".\pic\test_count_5.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="6" value=".\pic\test_count_6.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="7" value=".\pic\test_count_7.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="8" value=".\pic\test_count_8.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="9" value=".\pic\test_count_9.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="test_play_str" />
+                    <property name="id" value="3" />
+                    <property name="x" value="120" />
+                    <property name="y" value="198" />
+                    <property name="width" value="128" />
+                    <property name="height" value="40" />
+                    <property name="textX" value="-40" />
+                    <property name="textY" value="-128" />
+                    <property name="textWidth" value="128" />
+                    <property name="textHeight" value="40" />
+                    <property name="bgPicX" value="-40" />
+                    <property name="bgPicY" value="-108" />
+                    <property name="text" value="s_test_str" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="test_play_state" />
+                    <property name="id" value="4" />
+                    <property name="x" value="104" />
+                    <property name="y" value="131" />
+                    <property name="width" value="80" />
+                    <property name="height" value="18" />
+                    <property name="textX" value="0" />
+                    <property name="textY" value="-1" />
+                    <property name="textWidth" value="80" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="s_test_play" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\test_play_state_bg.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="80" />
+                    <property name="bgPicHeight" value="17" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\pic\test_background.bmp" />
+        <picture value=".\pic\test_count_0.bmp" />
+        <picture value=".\pic\test_count_1.bmp" />
+        <picture value=".\pic\test_count_2.bmp" />
+        <picture value=".\pic\test_count_3.bmp" />
+        <picture value=".\pic\test_count_4.bmp" />
+        <picture value=".\pic\test_count_5.bmp" />
+        <picture value=".\pic\test_count_6.bmp" />
+        <picture value=".\pic\test_count_7.bmp" />
+        <picture value=".\pic\test_count_8.bmp" />
+        <picture value=".\pic\test_count_9.bmp" />
+        <txt value=".\test_res.xls" />
+        <string value="s_test_str" />
+        <string value="s_test_menu_root" />
+        <string value="s_test_menu_root_2" />
+        <string value="s_test_menu_1" />
+        <string value="s_test_menu_2" />
+        <string value="s_test_menu_3" />
+        <string value="s_test_menu_head" />
+        <string value="s_test_menu_on" />
+        <string value="s_test_menu_off" />
+        <string value="s_test_play" />
+        <string value="s_test_stop" />
+    </resource>
+</ui-rad>

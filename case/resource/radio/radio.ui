@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="radio" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="radio.sty" />
+    <property name="prj_res_head_file" value="radio_res.h" />
+    <property name="prj_res_str_dir" value="radio\" />
+    <property name="prj_sty_file" value="radio.sty" />
+    <property name="prj_sty_head_file" value="radio_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <property name="prj_ver" value="V100" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="14" />
+        <property name="Font_large" value="16" />
+        <scene>
+            <property name="name" value="scene00" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup01" />
+                <property name="id" value="1" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="$(screenWidth)" />
+                <property name="height" value="$(screenHeight)" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="PICBOX_PLAY_BG" />
+                    <property name="id" value="1" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\radio\radio_bg.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="PICBOX_VOL" />
+                    <property name="id" value="2" />
+                    <property name="x" value="158" />
+                    <property name="y" value="10" />
+                    <property name="width" value="25" />
+                    <property name="height" value="19" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\radio\vol_bg.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\radio\fm_mute.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="PICBOX_FREQ_BG" />
+                    <property name="id" value="5" />
+                    <property name="x" value="104" />
+                    <property name="y" value="53" />
+                    <property name="width" value="81" />
+                    <property name="height" value="18" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\BgPicDoc\PICBOX_FREQ_BG_bg0.bmp" type="1" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="TEXTBOX_PRESET_NUM" />
+                    <property name="id" value="6" />
+                    <property name="x" value="258" />
+                    <property name="y" value="168" />
+                    <property name="width" value="40" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-126" />
+                    <property name="textY" value="-91" />
+                    <property name="textWidth" value="24" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-133" />
+                    <property name="bgPicY" value="-93" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\radio\preset_bg1.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="40" />
+                    <property name="bgPicHeight" value="20" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="TEXTBOX_NO_PRESET" />
+                    <property name="id" value="7" />
+                    <property name="x" value="293" />
+                    <property name="y" value="135" />
+                    <property name="width" value="40" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-161" />
+                    <property name="textY" value="-58" />
+                    <property name="textWidth" value="24" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-168" />
+                    <property name="bgPicY" value="-60" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\radio\preset_bg2.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="40" />
+                    <property name="bgPicHeight" value="20" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="TEXTBOX_PRESET_INFOR" />
+                    <property name="id" value="8" />
+                    <property name="x" value="271" />
+                    <property name="y" value="139" />
+                    <property name="width" value="92" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-170" />
+                    <property name="textY" value="-27" />
+                    <property name="textWidth" value="92" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-170" />
+                    <property name="bgPicY" value="-29" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\TEXTBOX_PRESET_INFOR_bg.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="92" />
+                    <property name="bgPicHeight" value="20" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="ProgressBar">
+                    <property name="name" value="PBAR_BAND" />
+                    <property name="id" value="15" />
+                    <property name="x" value="75" />
+                    <property name="y" value="34" />
+                    <property name="width" value="18" />
+                    <property name="height" value="103" />
+                    <property name="visible" value="1" />
+                    <property name="total" value="100" />
+                    <property name="current" value="0" />
+                    <property name="length" value="100" />
+                    <property name="ProgressBarStyle" value="1" />
+                    <property name="horizontal" value="0" />
+                    <property name="bgPicX" value="8" />
+                    <property name="bgPicY" value="8" />
+                    <property name="bgPic" value=".\radio\bandbar.bmp" />
+                    <property name="useTransparentBg" value="0" />
+                    <property name="bgPicWidth" value="4" />
+                    <property name="bgPicHeight" value="103" />
+                    <property name="progStartX" value="8" />
+                    <property name="fillPicY" value="20" />
+                    <property name="progStartY" value="110" />
+                    <property name="fillPicX" value="13" />
+                    <property name="fillPic" value="$widgets/progress/p_def_progress_a.bmp" />
+                    <property name="unfillPic" value="$widgets/progress/p_def_progress_ina.bmp" />
+                    <property name="progPicWidth" value="1" />
+                    <property name="progPicHeight" value="3" />
+                    <property name="unprogPicWidth" value="1" />
+                    <property name="unprogPicHeight" value="3" />
+                    <property name="tagPic" value=".\radio\tune_bar.bmp" />
+                    <property name="tagPicWidth" value="13" />
+                    <property name="tagPicHeight" value="3" />
+                    <property name="tagPicY" value="19" />
+                    <property name="tagPicX" value="13" />
+                    <property name="scale" value="1" />
+                    <property name="WidgetbgPic" value=".\BgPicDoc\PBAR_BAND_bg.bmp" storetype="1" />
+                </element>
+                <element class="numBox">
+                    <property name="name" value="NumBox_freq" />
+                    <property name="id" value="16" />
+                    <property name="x" value="237" />
+                    <property name="y" value="71" />
+                    <property name="width" value="59" />
+                    <property name="height" value="18" />
+                    <property name="numX" value="-133" />
+                    <property name="numY" value="-18" />
+                    <property name="numWidth" value="59" />
+                    <property name="numHeight" value="18" />
+                    <property name="visible" value="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPic" value=".\BgPicDoc\NumBox_freq_bg.bmp" storetype="1" />
+                    <property name="bgPicX" value="-133" />
+                    <property name="bgPicY" value="-18" />
+                    <property name="bgPicWidth" value="59" />
+                    <property name="bgPicHeight" value="18" />
+                    <property name="DisplayMode" value="1" />
+                    <property name="Composition" value="0" />
+                    <property name="number1" value="1234567890" />
+                    <property name="digits1" value="0" />
+                    <property name="number2" value="1234567890" />
+                    <property name="digits2" value="10" />
+                    <property name="stringColor" value="0" />
+                    <property name="stringBkColor" value="16777215" />
+                    <property name="FontSize" value="1" />
+                    <property name="align" value="2" />
+                    <property name="showPartition" value="1" />
+                    <property name="partitionPic" value=".\radio\FMNUMZDOT.bmp" />
+                    <property name="DecimalDigits" value="2" />
+                    <property name="showSign" value="0" />
+                    <property name="pic0" value=".\radio\FMNUM0.bmp" />
+                    <property name="pic1" value=".\radio\FMNUM1.bmp" />
+                    <property name="pic2" value=".\radio\FMNUM2.bmp" />
+                    <property name="pic3" value=".\radio\FMNUM3.bmp" />
+                    <property name="pic4" value=".\radio\FMNUM4.bmp" />
+                    <property name="pic5" value=".\radio\FMNUM5.bmp" />
+                    <property name="pic6" value=".\radio\FMNUM6.bmp" />
+                    <property name="pic7" value=".\radio\FMNUM7.bmp" />
+                    <property name="pic8" value=".\radio\FMNUM8.bmp" />
+                    <property name="pic9" value=".\radio\FMNUM9.bmp" />
+                    <property name="picPositive" value="" />
+                    <property name="picNegative" value="" />
+                    <property name="picCover" value=".\radio\FMNUMNULL.bmp" />
+                    <property name="pic0Width" value="11" />
+                    <property name="pic0Height" value="18" />
+                    <property name="incX" value="11" />
+                    <property name="partitionIncX" value="4" />
+                    <property name="numBkColor" value="0" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="scene01" />
+            <property name="id" value="1" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup1" />
+                <property name="id" value="1" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="TextBox">
+                    <property name="name" value="TEXTBOX_TIP_INFOR" />
+                    <property name="id" value="9" />
+                    <property name="x" value="199" />
+                    <property name="y" value="87" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="textX" value="-119" />
+                    <property name="textY" value="-77" />
+                    <property name="textWidth" value="128" />
+                    <property name="textHeight" value="160" />
+                    <property name="bgPicX" value="-119" />
+                    <property name="bgPicY" value="-77" />
+                    <property name="text" value="set_tips" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\radio\radio_bg.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="128" />
+                    <property name="bgPicHeight" value="160" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="scene02" />
+            <property name="id" value="2" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup2" />
+                <property name="id" value="2" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="PICBOX_SEARCH_BG" />
+                    <property name="id" value="11" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\radio\radio_bg.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="PICBOX_SEARCH" />
+                    <property name="id" value="12" />
+                    <property name="x" value="124" />
+                    <property name="y" value="47" />
+                    <property name="width" value="38" />
+                    <property name="height" value="38" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\radio\loading_0.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\radio\loading_7.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\radio\loading_6.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\radio\loading_5.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="4" value=".\radio\loading_4.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="5" value=".\radio\loading_3.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="6" value=".\radio\loading_2.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="7" value=".\radio\loading_1.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="TEXTBOX_SEARCH" />
+                    <property name="id" value="13" />
+                    <property name="x" value="265" />
+                    <property name="y" value="144" />
+                    <property name="width" value="109" />
+                    <property name="height" value="16" />
+                    <property name="textX" value="-176" />
+                    <property name="textY" value="-41" />
+                    <property name="textWidth" value="109" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-176" />
+                    <property name="bgPicY" value="-41" />
+                    <property name="text" value="search1" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\TEXTBOX_SEARCH_bg.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="109" />
+                    <property name="bgPicHeight" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="ProgressBar">
+                    <property name="name" value="PBAR_SEARCH" />
+                    <property name="id" value="14" />
+                    <property name="x" value="183" />
+                    <property name="y" value="165" />
+                    <property name="width" value="118" />
+                    <property name="height" value="3" />
+                    <property name="visible" value="1" />
+                    <property name="total" value="118" />
+                    <property name="current" value="50" />
+                    <property name="length" value="118" />
+                    <property name="ProgressBarStyle" value="0" />
+                    <property name="horizontal" value="1" />
+                    <property name="bgPicX" value="-98" />
+                    <property name="bgPicY" value="-42" />
+                    <property name="bgPic" value=".\radio\prog_bg.bmp" />
+                    <property name="useTransparentBg" value="0" />
+                    <property name="bgPicWidth" value="118" />
+                    <property name="bgPicHeight" value="3" />
+                    <property name="progStartX" value="-98" />
+                    <property name="fillPicY" value="-42" />
+                    <property name="progStartY" value="8" />
+                    <property name="fillPicX" value="20" />
+                    <property name="fillPic" value=".\radio\prog_0.bmp" />
+                    <property name="unfillPic" value="" />
+                    <property name="progPicWidth" value="1" />
+                    <property name="progPicHeight" value="3" />
+                    <property name="unprogPicWidth" value="1" />
+                    <property name="unprogPicHeight" value="6" />
+                    <property name="tagPic" value=".\radio\prog_0.bmp" />
+                    <property name="tagPicWidth" value="1" />
+                    <property name="tagPicHeight" value="3" />
+                    <property name="tagPicY" value="-42" />
+                    <property name="tagPicX" value="19" />
+                    <property name="scale" value="1" />
+                    <property name="WidgetbgPic" value=".\BgPicDoc\PBAR_SEARCH_bg.bmp" storetype="1" />
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\radio\bandbar.bmp" />
+        <picture value=".\radio\FMNUM0.bmp" />
+        <picture value=".\radio\FMNUM1.bmp" />
+        <picture value=".\radio\FMNUM2.bmp" />
+        <picture value=".\radio\FMNUM3.bmp" />
+        <picture value=".\radio\FMNUM4.bmp" />
+        <picture value=".\radio\FMNUM5.bmp" />
+        <picture value=".\radio\FMNUM6.bmp" />
+        <picture value=".\radio\FMNUM7.bmp" />
+        <picture value=".\radio\FMNUM8.bmp" />
+        <picture value=".\radio\FMNUM9.bmp" />
+        <picture value=".\radio\FMNUMNULL.bmp" />
+        <picture value=".\radio\FMNUMZDOT.bmp" />
+        <picture value=".\radio\FM_FM.bmp" />
+        <picture value=".\radio\fm_icon.bmp" />
+        <picture value=".\radio\fm_larrow.bmp" />
+        <picture value=".\radio\fm_mute.bmp" />
+        <picture value=".\radio\fm_rarrow.bmp" />
+        <picture value=".\radio\loading_0.bmp" />
+        <picture value=".\radio\loading_1.bmp" />
+        <picture value=".\radio\loading_2.bmp" />
+        <picture value=".\radio\loading_3.bmp" />
+        <picture value=".\radio\loading_4.bmp" />
+        <picture value=".\radio\loading_5.bmp" />
+        <picture value=".\radio\loading_6.bmp" />
+        <picture value=".\radio\loading_7.bmp" />
+        <picture value=".\radio\preset_bg1.bmp" />
+        <picture value=".\radio\preset_bg2.bmp" />
+        <picture value=".\radio\prog_0.bmp" />
+        <picture value=".\radio\prog_bg.bmp" />
+        <picture value=".\radio\radio_bg.bmp" />
+        <picture value=".\radio\radio_bg1.bmp" />
+        <picture value=".\radio\tune_bar.bmp" />
+        <picture value=".\radio\vol_bg.bmp" />
+        <txt value=".\radio_res.xls" />
+        <string value="fm_rad" />
+        <string value="pre_set1" />
+        <string value="aut_tun" />
+        <string value="man_tun" />
+        <string value="sav_pre" />
+        <string value="search1" />
+        <string value="delone" />
+        <string value="delall" />
+        <string value="recfile" />
+        <string value="user_set" />
+        <string value="tune_pre" />
+        <string value="use_ant" />
+        <string value="sta_fmrec" />
+        <string value="con_save" />
+        <string value="suc_save" />
+        <string value="con_clear" />
+        <string value="suc_clear" />
+        <string value="band_sel" />
+        <string value="band_cu" />
+        <string value="band_jp" />
+        <string value="band_eu" />
+        <string value="fmerror" />
+        <string value="aut_tun1" />
+        <string value="delone1" />
+        <string value="recfile1" />
+        <string value="delall2" />
+        <string value="preset_deled" />
+        <string value="save_preset" />
+        <string value="main_menu" />
+        <string value="list_option" />
+        <string value="play_option" />
+    </resource>
+</ui-rad>

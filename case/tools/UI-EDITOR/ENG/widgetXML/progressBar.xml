@@ -1,0 +1,54 @@
+﻿<widget name="progress" type="widget" adapter="AProgressAdapter"
+            icon="widgets/progress.png" >
+            
+     <categories>
+     <category name = "basic"/>
+     </categories>
+
+    <properties>
+        <property name="x" type="U16" value=""  editable="true" relative ="Left" desc="x coordinate of the left-top corner of the widget"/>
+        <property name="y" type="U16" value=""  editable="true" relative ="Top" desc="y coordinate of the left-top corner of the widget"/>
+        <property name="width" type="U16" value="112"  editable="true" desc="width of the widget"/>
+        <property name="height" type="U16" value="5"  editable="true" desc="height of the widget"/>
+        <property name="visible" type="boolean" value="1" category="basic" editable="true" desc="whether the widget is visible"/>
+        
+        <property name="total" type="U16" value="100" category="basic" editable="true" desc="range of progress"/>
+        <property name="current" type="U16" value="50" category="basic" editable="true" desc="current position of progress"/>
+        <property name="length" type="U16" value="100" category="basic" editable="true" desc="the progress total length caculated by Pixel"/>
+        
+        <property name="ProgressBarStyle" type="Enum" editable="false" value="0" category="basic" enumKeys="filled type,sliding rod,both" enumValues="0,1,2" desc="progress type"/>
+        <property name="horizontal" type="boolean" value="1" category="basic"  editable="true" desc="if the bar is horizontal"/>    
+           
+        <property name="bgPicX" type="U16" value="8" category="basic"  editable="true" relative ="Left" desc="x coordinate of the left-top corner of bgPic"/>
+        <property name="bgPicY" type="U16" value="20" category="basic" editable="true" relative ="Top" desc="y coordinate of the left-top corner of bgPic"/>
+        <property name="bgPic" type="Picture" value="$widgets/progress/p_def_progress_bg.bmp" category="basic" editable="true" allowEmpty="FALSE" desc="background picture of progressbar"/>
+        <property name="useTransparentBg" type="boolean"  category="basic" value="0" editable="true" desc="use transparent background"/>
+        <property name="bgPicWidth" type="U16" value=""  visible="false" editable="true" desc="width of bgPic"/>
+        <property name="bgPicHeight" type="U16" value=""  visible="false" editable="true" desc="height of bgPic"/>
+        
+        <property name="progStartX" type="U16" value="8" category="basic" editable="true" relative ="Left" desc="effective when progressbar is horizontal: x coordinate of the cursor starts position" show="horizontal = 1"/>
+        <property name="fillPicY" type="U16" value="20" category="basic" editable="true" relative ="Top" desc="effective when progressbar is horizontal: y coordinate of the fillPic starts position" show="horizontal = 1"/>
+        <property name="progStartY" type="U16" value="8" category="basic" editable="true" relative ="Top" desc="effective when progressbar is vertical: y coordinate of the cursor starts position"  show="horizontal = 0"/>
+        <property name="fillPicX" type="U16" value="20" category="basic" editable="true" relative ="Left" desc="effective when progressbar is vertical: x coordinate of the fillPic starts position" show="horizontal = 0"/>
+
+        <property name="fillPic" type="Picture" value="$widgets/progress/p_def_progress_a.bmp" category="basic" editable="true" allowEmpty="false" desc="picture for compose progress, width equals to 1"  show="ProgressBarStyle != 1"/>
+        <property name="unfillPic" type="Picture" value="$widgets/progress/p_def_progress_ina.bmp" category="basic" editable="true" allowEmpty="false" desc="picture for clear fillpic, width equals to 1"  show="ProgressBarStyle != 1"/>        
+        
+        <property name="progPicWidth" type="U16" value=""  visible="false" editable="false" desc="width of fillPic"/>
+        <property name="progPicHeight" type="U16" value=""  visible="false" editable="false" desc="height of fillPic"/>
+        <property name="unprogPicWidth" type="U16" value=""  visible="false" editable="false" desc="width of unfillPic"/>
+        <property name="unprogPicHeight" type="U16" value=""  visible="false" editable="false" desc="height of unfillPic"/>
+        
+        <property name="tagPic" type="Picture" value="$widgets/progress/p_def_progress_tag.bmp" category="basic" editable="true" allowEmpty="false" desc="cursor picture"  show="ProgressBarStyle != 0"/>
+        <property name="tagPicWidth" type="U16" value=""  visible="false" editable="false" desc="width of tagPic"/>
+        <property name="tagPicHeight" type="U16" value=""  visible="false" editable="false" desc="height of tagPic"/>
+        <property name="tagPicY" type="U16" value="19" category="basic" editable="true" relative ="Top" desc="effective when progressbar is horizontal,y coordinate of the tagPic" show="ProgressBarStyle != 0&horizontal = 1"/>
+        <property name="tagPicX" type="U16" value="19" category="basic" editable="true" relative ="Left" desc="effective of progressbar is vertical,x coordinate of the tagPic" show="ProgressBarStyle != 0&horizontal = 0"/>
+
+        <property name="scale" type="U16" value="1" category="basic" editable="false" desc="scale of progress"/>
+        
+        <property name="WidgetbgPic" type="Picture" value="" category="basic" editable="true"  storeType="1"  allowEmpty="false" desc="realtime background pic of widget"/>
+        
+    </properties>
+        
+</widget>

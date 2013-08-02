@@ -1,0 +1,78 @@
+﻿<widget name="timebox" type="widget" adapter="ATimeBoxAdapter"
+			icon="widgets/clock.png" >
+
+     <categories>
+     <category name = "basic"/>
+     <category name = "first"/>
+     <category name = "second"/>
+     <category name = "middle"/>
+     </categories>
+
+	<properties>
+		<property name="x" type="U16" value=""  editable="true" relative ="Left" desc="控件左上角x坐标"/>
+		<property name="y" type="U16" value=""  editable="true" relative ="Top" desc="控件左上角y坐标"/>
+		<property name="width" type="U16"   value="92" editable="true" desc="控件宽度"/>
+		<property name="height" type="U16"   value="8" editable="true" desc="控件高度"/>
+		<property name="timeX" type="U16" value="0" category="basic" editable="true"  relative ="Left" desc="时间区域左上角x坐标"/>
+		<property name="timeY" type="U16" value="0" category="basic" editable="true"  relative = "Top" desc="时间区域左上角y坐标"/>
+		<property name="timeWidth" type="U16" value="92" category="basic" editable="true" desc="时间区域宽度"/>
+		<property name="timeHeight" type="U16" value="8" category="basic" editable="true" desc="时间区域高度"/>
+
+		<property name="visible" type="boolean" value="1" category="basic"  editable="true" desc="控件是否显示"/>
+		
+		<property name="useBgPic" type="boolean" displayName="是否使用背景图" category="basic" value="1" editable="true" desc="是否使用背景图,若为否，则使用背景颜色填充" />
+		<property name="stringBkColor" type="Color" value="16777215" category="basic" editable="true" desc="数字和分隔符的背景颜色"  show="useBgPic = 0"/>
+		<property name="bgPic" type="Picture" value="" category="basic" editable="true" desc="背景图片" storeType="1" show="useBgPic = 1"/>
+		<property name="bgPicX" type="U16" value="0" editable="true"  relative ="Left" desc="背景图片左上角x坐标"/>
+		<property name="bgPicY" type="U16" value="0" editable="true"  relative ="Top" desc="背景图片左上角y坐标"/>		
+		<property name="bgPicWidth" type="U16" visible="false" value="0" editable="false" desc="背景图宽"/>
+		<property name="bgPicHeight" type="U16" visible="false" value="0" editable="false" desc="背景图高"/>
+           <property name="FontSize" displayName="字体大小" type="Enum" editable="false" category="basic" value="1" enumKeys="小字体,中字体,大字体" enumValues="0,1,2" default="0" desc="字体大小"/>
+	
+           <property name="DisplayMode" type="Enum" editable="false" value="1" category="basic" enumKeys="字符串,数字图片" enumValues="0,1" desc="显示模式"/>
+		<property name="Composition" type="Enum" editable="false" value="1" category="basic" enumKeys="显示1组时间,显示2组时间" enumValues="0,1" desc="组成方式"/>
+		<property name="align" type="Enum" editable="false" value="left to right" category="basic" enumKeys="左对齐,居中,右对齐" enumValues="0,1,2" desc="对齐方式"/>
+	     <property name="stringColor" type="Color" value="0" category="basic" editable="true" desc="数字和分隔符的颜色，仅在字符串模式有效" show="DisplayMode = 0"/>
+		<property name="incX" type="U16" category="Picture" value="10" editable="false" desc="数字图片的宽度"/>
+		<property name="partitionIncX" type="U16" category="Picture" value="10" editable="false" desc="分隔符图片的宽度"/>
+
+
+		<property name="pic0" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num0.bmp" allowEmpty="false" desc="数字0图片" show="DisplayMode > 0"/>
+		<property name="pic1" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num1.bmp" allowEmpty="false" desc="数字1图片" show="DisplayMode > 0"/>
+		<property name="pic2" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num2.bmp" allowEmpty="false" desc="数字2图片" show="DisplayMode > 0"/>
+		<property name="pic3" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num3.bmp" allowEmpty="false" desc="数字3图片" show="DisplayMode > 0"/>
+		<property name="pic4" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num4.bmp" allowEmpty="false" desc="数字4图片" show="DisplayMode > 0"/>
+		<property name="pic5" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num5.bmp" allowEmpty="false" desc="数字5图片" show="DisplayMode > 0"/>
+		<property name="pic6" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num6.bmp" allowEmpty="false" desc="数字6图片" show="DisplayMode > 0"/>
+		<property name="pic7" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num7.bmp" allowEmpty="false" desc="数字7图片" show="DisplayMode > 0"/>
+		<property name="pic8" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num8.bmp" allowEmpty="false" desc="数字8图片" show="DisplayMode > 0"/>
+		<property name="pic9" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num9.bmp" allowEmpty="false" desc="数字9图片" show="DisplayMode > 0"/> 
+ 		<property name="picNULL" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_num_null.bmp" allowEmpty="true" desc="数字清除图片" show="DisplayMode > 0"/> 
+ 		<property name="picColon" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_colon.bmp" allowEmpty="false" desc="冒号分隔符图片" show="DisplayMode > 0"/>
+ 		<property name="picSlash" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_slash.bmp" allowEmpty="false" desc="斜杠分隔符图片" show="DisplayMode > 0"/>
+ 		<property name="picDash" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_dash.bmp" allowEmpty="true" desc="短横线分隔符图片" show="DisplayMode > 0"/>
+ 		<property name="picSpace" type="Picture" category="basic" editable="false" value="$widgets\timebox\p_def_timebox_space.bmp" allowEmpty="true" desc="空白分隔符图片" show="DisplayMode > 0"/> 
+           <property name="numBkColor" type="Color" category="basic" value="0"  editable="true" desc="数字图片的背景色，为纯色。用于实现数字的背景透明显示"  />
+           
+		<property name="number1" type="U16" value="11" category="first" editable="true" desc="第一组时间的第一项数值" />	
+		<property name="number2" type="U16" value="11" category="first" editable="true" desc="第一组时间的第二项数值" />	
+		<property name="number3" type="U16" value="11" category="first" editable="true" desc="第一组时间的第三项数值" />	
+		<property name="digits1" type="U16" value="2" category="first" editable="true" desc="第一组时间第一个数值的位数"/>
+           <property name="showHigh1" type="boolean" value="1" category="first"  editable="true" desc="第一组时间第一个数值的高位是否补0"/>
+		<property name="showFirstPartition" type="boolean" value="1" category="first" editable="true" desc="第一组时间的分隔符"/>
+		<property name="FirstPartitionStr" type="Enum" editable="false" value="冒号分隔符 :" category="first" enumKeys="冒号分隔符 :,斜杠分隔符 /,短横线分隔符 -,空白分隔符  " enumValues="0,1,2,3" desc="第一组时间的分隔符(字符串模式）" show="showFirstPartition = 1"/>
+           
+		<property name="showMiddlePartition" type="boolean" value="1" category="middle" editable="true" desc="中间连接处的分隔符" show="Composition > 0"/>
+		<property name="MiddlePartitionStr" type="Enum" editable="false" value="斜杠分隔符 /" category="middle" enumKeys="冒号分隔符 :,斜杠分隔符 /,短横线分隔符 -,空白分隔符  " enumValues="0,1,2,3" desc="中间连接处的分隔符(字符串模式）" show="Composition > 0&showMiddlePartition = 1"/>
+
+		<property name="number4" type="U16" value="11" category="second" editable="true" desc="第二组时间的第一项数值" show="Composition > 0"/>	
+		<property name="number5" type="U16" value="11" category="second" editable="true" desc="第二组时间的第二项数值" show="Composition > 0"/>	
+		<property name="number6" type="U16" value="11" category="second" editable="true" desc="第二组时间的第三项数值" show="Composition > 0"/>	
+		<property name="digits2" type="U16" value="2" category="second" editable="true" desc="第二组时间第一个数值的位数" show="Composition > 0"/>
+           <property name="showHigh2" type="boolean" value="1" category="second"  editable="true" desc="第二组时间第一个数值的高位是否补0" show="Composition > 0"/>
+		<property name="showSecondPartition" type="boolean" value="1" category="second" editable="true" desc="第二组时间的分隔符" show="Composition > 0"/>
+		<property name="SecondPartitionStr" type="Enum" editable="false" value="斜杠分隔符 /" category="second" enumKeys="冒号分隔符 :,斜杠分隔符 /,短横线分隔符 -,空白分隔符  " enumValues="0,1,2,3" desc="第二组时间的分隔符(字符串模式）" show="Composition > 0&showSecondPartition = 1"/>
+		
+	</properties>
+		
+</widget>

@@ -1,0 +1,78 @@
+﻿<widget name="dialogbox" type="widget" adapter="ADialogBoxAdapter"
+            icon="widgets/dialog.png" >
+
+     <categories>
+     <category name = "basic"/>
+     <category name = "item1"/>
+     <category name = "item2"/>
+     <category name = "item3"/>
+     </categories>
+
+    <properties>
+        <property name="x" type="U16" value=""  editable="true" relative ="Left" desc="控件左上角x坐标"/>
+        <property name="y" type="U16" value="" editable="true" relative ="Top" desc="控件左上角y坐标"/>
+        <property name="width" type="U16" value=""  editable="true" desc="控件宽度"/>
+        <property name="height" type="U16" value=""  editable="true" desc="控件高度"/>
+        <property name="visible" type="boolean" value="1" category="basic"  editable="true" desc="控件是否显示"/>
+        <property name="bgPic" type="Picture" value="$widgets\background\p_def_background.bmp" category="basic" editable="false" desc="背景图片" AsbgPic="true" />
+        <property name="bgPicX" type="U16" value="0" category="basic" editable="true" relative ="Left" desc="背景图片左上角x坐标"/>
+        <property name="bgPicY" type="U16" value="0" category="basic" editable="true" relative ="Top" desc="背景图片左上角y坐标"/>
+        <property name="bgPicWidth" type="U16" visible="false" value="" editable="false" />
+        <property name="bgPicHeight" type="U16" visible="false" value="" editable="false" />    
+
+        <property name="ShowItems" type="boolean" value="1" category="basic" editable="true" desc="是否显示选项列表"/>
+        <property name="ShowTypePic" type="boolean" value="0" category="basic" editable="true" desc="是否显示类型图标"/>
+
+        <property name="typePicInit" type="Picture" value="" category="basic" editable="false" desc="类型图片的原始图片，为纯色背景" show="ShowTypePic = 1"/>
+        <property name="typePicInitBgColor" type="Color" category="basic" value="0" editable="false" desc="类型图片原始图片的背景色" show="ShowTypePic = 1"/> 
+        <property name="typePic" type="Picture" value="" category="basic" editable="false" desc="类型图片"  show="ShowTypePic = 1"/>
+        <property name="typePicX" type="U16" value="5" category="basic" editable="true" relative ="Left" desc="类型图片左上角x坐标"  show="ShowTypePic = 1"/>
+        <property name="typePicY" type="U16" value="5" category="basic" editable="true" relative ="Top" desc="类型图片左上角y坐标"  show="ShowTypePic = 1"/>
+        <property name="typePicWidth" type="U16" visible="false" value="" editable="false" />
+        <property name="typePicHeight" type="U16" visible="false" value="" editable="false" />  
+        <property name="descText" type="MultiLanguage" value="对话框说明" category="basic" editable="false" desc="对话框说明字符串内容"/>
+        <property name="descX" type="U16" value="4" category="basic" editable="true" relative ="Left" desc="对话框说明字符串显示框左上角x坐标"/>
+        <property name="descY" type="U16" value="5" category="basic" editable="true" relative ="Top" desc="对话框说明字符串显示框左上角y坐标"/>
+        <property name="descWidth" type="U16" value="120" category="basic" editable="true" desc="对话框说明字符串显示框宽度"/>
+        <property name="descHeight" type="U16" value="80" category="basic" editable="true" desc="对话框说明字符串显示框高度"/>
+        <property name="descAlign" type="Enum" value="1" category="basic" editable="true" enumKeys="左对齐,居中,右对齐" enumValues="0,1,2" default="1" desc="说明字符串对齐方式"/>
+        <property name="descFontSize" displayName="字体大小" type="Enum" editable="false" category="basic" value="1" enumKeys="小字体,中字体,大字体" enumValues="0,1,2" default="0" desc="说明字符串字体大小"/>
+        <property name="descFontColor" type="Color" value="16777215" category="basic" editable="true" desc="说明字符串字体颜色"/>
+        <property name="itemFontColor" type="Color" value="12632256" category="basic" editable="true" desc="非选中项字体颜色" show="ShowItems = 1"/>
+        <property name="itemActFontColor" type="Color" value="16777215" category="basic" editable="true" desc="选中项字体颜色"  show="ShowItems = 1"/>
+        <property name="itemCount" type="Enum" value="2" category="basic" editable="false" enumKeys="0,1,2,3" enumValues="0,1,2,3" default="0" desc="选项总数目"  show="ShowItems = 1"/>
+        <property name="current" type="Enum" default="1" value="1" category="basic" editable="false" enumKeys="0,1,2,3" enumValues="0,1,2,3" desc="当前选中项"  show="ShowItems = 1"/>  
+        <property name="itemBackMode" type="Enum" value="2" category="basic" editable="true" enumKeys="背景颜色,背景图片(single),背景图片(multy)" enumValues="0,1,2" default="0" desc="非选中项背景显示模式"  show="ShowItems = 1"/>
+        <property name="itemBackColor" type="Color" value="504000" category="basic" editable="true" desc="非选中项背景颜色"  show="itemBackMode = 0"  show="ShowItems = 1"/>
+        <property name="itemActBackMode" type="Enum" value="1" category="basic" editable="true" enumKeys="背景颜色,背景图片（single）,背景图片（multy）" enumValues="0,1,2" default="0" desc="选中项背景显示模式"  show="ShowItems = 1"/>
+        <property name="itemActBackColor" type="Color" value="108000" category="basic" editable="true" desc="选中项背景颜色" show="itemActBackMode = 0&ShowItems = 1"/>
+        <property name="itemAlign" type="Enum" value="1" category="basic" editable="true" enumKeys="左对齐,居中,右对齐" enumValues="0,1,2" default="1" desc="选项上字符串对齐方式"  show="ShowItems = 1"/>
+        <property name="itemFontSize" displayName="字体大小" type="Enum" editable="false" category="basic" value="1" enumKeys="小字体,中字体,大字体" enumValues="0,1,2" default="0" desc="选项上字符串字体大小"  show="ShowItems = 1"/>
+
+        <property name="item1Text" type="MultiLanguage" value="选项1" category="item1" editable="false" desc="选项字符串" show="itemCount > 0&ShowItems = 1"/>
+        <property name="item1X" type="U16" value="0" category="item1" editable="true" relative ="Left" desc="选项区域左上角x坐标" show="itemCount > 0&ShowItems = 1"/>
+        <property name="item1Y" type="U16" value="112" category="item1" editable="true" relative ="Top" desc="选项区域左上角y坐标" show="itemCount > 0&ShowItems = 1"/>
+        <property name="item1Width" type="U16" value="128" category="item1" editable="true" desc="选项区域宽度" show="itemCount > 0&ShowItems = 1"/>
+        <property name="item1Height" type="U16" value="24" category="item1" editable="true" desc="选项区域高度" show="itemCount > 0&ShowItems = 1"/>
+        <property name="itemBackPic1" type="Picture" value="$widgets\dialogbox\p_def_dialog_ina0.bmp" category="item1" editable="false" desc="非选中项背景图片" show="itemCount > 0&itemBackMode > 0&ShowItems = 1"/>
+        <property name="itemActBackPic1" type="Picture" value="$widgets\dialogbox\p_def_dialog_a.bmp" category="item1" editable="false" desc="选中项背景图片" show="itemCount > 0&itemActBackMode > 0&ShowItems = 1"/>
+
+        <property name="item2Text" type="MultiLanguage" value="选项2" category="item2" editable="false" desc="选项字符串" show="itemCount > 1&ShowItems = 1"/>
+        <property name="item2X" type="U16" value="0" category="item2" editable="true" relative ="Left" desc="选项区域左上角x坐标" show="itemCount > 1&ShowItems = 1"/>
+        <property name="item2Y" type="U16" value="136" category="item2" editable="true" relative ="Top" desc="选项区域左上角y坐标" show="itemCount > 1&ShowItems = 1"/>
+        <property name="item2Width" type="U16" value="128" category="item2" editable="true" desc="选项区域宽度" show="itemCount > 1&ShowItems = 1"/>
+        <property name="item2Height" type="U16" value="24" category="item2" editable="true" desc="选项区域高度" show="itemCount > 1&ShowItems = 1"/>
+        <property name="itemBackPic2" type="Picture" value="$widgets\dialogbox\p_def_dialog_ina1.bmp" category="item2" editable="false" desc="非选中项背景图片" show="itemCount > 1&itemBackMode > 0&ShowItems = 1"/>
+        <property name="itemActBackPic2" type="Picture" value="$widgets\dialogbox\p_def_dialog_a.bmp" category="item2" editable="false" desc="选中项背景图片" show="itemCount > 1&itemActBackMode > 0&ShowItems = 1"/>
+
+        <property name="item3Text" type="MultiLanguage" value="选项3" category="item3" editable="false" desc="选项字符串" show="itemCount > 2&ShowItems = 1"/>
+        <property name="item3X" type="U16" value="0" category="item3" editable="true" relative ="Left" desc="选项区域左上角x坐标" show="itemCount > 2&ShowItems = 1"/>
+        <property name="item3Y" type="U16" value="136" category="item3" editable="true" relative ="Top" desc="选项区域左上角y坐标" show="itemCount > 2&ShowItems = 1"/>
+        <property name="item3Width" type="U16" value="128" category="item3" editable="true" desc="选项区域宽度" show="itemCount > 2&ShowItems = 1"/>
+        <property name="item3Height" type="U16" value="24" category="item3" editable="true" desc="选项区域高度" show="itemCount > 2&ShowItems = 1"/>
+        <property name="itemBackPic3" type="Picture" value="" category="item3" editable="false" desc="非选中项背景图片" show="itemCount > 2&itemBackMode > 0&ShowItems = 1"/>
+        <property name="itemActBackPic3" type="Picture" value="" category="item3" editable="false" desc="选中项背景图片" show="itemCount > 2&itemActBackMode > 0&ShowItems = 1"/>
+ 
+    </properties>
+        
+</widget>

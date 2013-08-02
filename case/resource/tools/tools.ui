@@ -1,0 +1,913 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="tools" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="tools.sty" />
+    <property name="prj_res_head_file" value="tools_res.h" />
+    <property name="prj_res_str_dir" value="tools\" />
+    <property name="prj_sty_file" value="tools.sty" />
+    <property name="prj_sty_head_file" value="tools_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <property name="prj_ver" value="V100" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="14" />
+        <property name="Font_large" value="16" />
+        <scene>
+            <property name="name" value="tools_calendar" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup0" />
+                <property name="id" value="0" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="calendar_bg" />
+                    <property name="id" value="1" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\tools_pics\tools_calendar\p_calendar_bg.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_week7" />
+                    <property name="id" value="8" />
+                    <property name="x" value="80" />
+                    <property name="y" value="48" />
+                    <property name="width" value="18" />
+                    <property name="height" value="18" />
+                    <property name="textX" value="0" />
+                    <property name="textY" value="2" />
+                    <property name="textWidth" value="18" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="s_week7" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16711680" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_week1" />
+                    <property name="id" value="9" />
+                    <property name="x" value="100" />
+                    <property name="y" value="48" />
+                    <property name="width" value="18" />
+                    <property name="height" value="18" />
+                    <property name="textX" value="0" />
+                    <property name="textY" value="2" />
+                    <property name="textWidth" value="18" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="s_week1" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16711680" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_week2" />
+                    <property name="id" value="10" />
+                    <property name="x" value="120" />
+                    <property name="y" value="47" />
+                    <property name="width" value="18" />
+                    <property name="height" value="19" />
+                    <property name="textX" value="0" />
+                    <property name="textY" value="3" />
+                    <property name="textWidth" value="18" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="s_week2" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16711680" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_week3" />
+                    <property name="id" value="11" />
+                    <property name="x" value="136" />
+                    <property name="y" value="47" />
+                    <property name="width" value="18" />
+                    <property name="height" value="19" />
+                    <property name="textX" value="0" />
+                    <property name="textY" value="3" />
+                    <property name="textWidth" value="18" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="s_week3" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16711680" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_week4" />
+                    <property name="id" value="12" />
+                    <property name="x" value="153" />
+                    <property name="y" value="48" />
+                    <property name="width" value="18" />
+                    <property name="height" value="18" />
+                    <property name="textX" value="0" />
+                    <property name="textY" value="2" />
+                    <property name="textWidth" value="18" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="s_week4" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16711680" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_week5" />
+                    <property name="id" value="13" />
+                    <property name="x" value="172" />
+                    <property name="y" value="46" />
+                    <property name="width" value="18" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="0" />
+                    <property name="textY" value="4" />
+                    <property name="textWidth" value="18" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="s_week5" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16711680" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_week6" />
+                    <property name="id" value="14" />
+                    <property name="x" value="189" />
+                    <property name="y" value="45" />
+                    <property name="width" value="18" />
+                    <property name="height" value="21" />
+                    <property name="textX" value="0" />
+                    <property name="textY" value="5" />
+                    <property name="textWidth" value="18" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="s_week6" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16711680" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_lunar_1" />
+                    <property name="id" value="16" />
+                    <property name="x" value="80" />
+                    <property name="y" value="28" />
+                    <property name="width" value="16" />
+                    <property name="height" value="22" />
+                    <property name="textX" value="0" />
+                    <property name="textY" value="2" />
+                    <property name="textWidth" value="16" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16744448" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_lunar_2" />
+                    <property name="id" value="17" />
+                    <property name="x" value="98" />
+                    <property name="y" value="29" />
+                    <property name="width" value="16" />
+                    <property name="height" value="21" />
+                    <property name="textX" value="-1" />
+                    <property name="textY" value="1" />
+                    <property name="textWidth" value="16" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16744448" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_lunar_3" />
+                    <property name="id" value="18" />
+                    <property name="x" value="115" />
+                    <property name="y" value="27" />
+                    <property name="width" value="16" />
+                    <property name="height" value="23" />
+                    <property name="textX" value="-2" />
+                    <property name="textY" value="3" />
+                    <property name="textWidth" value="16" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16744448" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_lunar_yr" />
+                    <property name="id" value="19" />
+                    <property name="x" value="131" />
+                    <property name="y" value="27" />
+                    <property name="width" value="16" />
+                    <property name="height" value="23" />
+                    <property name="textX" value="-2" />
+                    <property name="textY" value="3" />
+                    <property name="textWidth" value="16" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="s_cal_yr" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16744448" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_lunar_mn" />
+                    <property name="id" value="20" />
+                    <property name="x" value="147" />
+                    <property name="y" value="28" />
+                    <property name="width" value="16" />
+                    <property name="height" value="22" />
+                    <property name="textX" value="-2" />
+                    <property name="textY" value="2" />
+                    <property name="textWidth" value="16" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16744448" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_lunar_m" />
+                    <property name="id" value="21" />
+                    <property name="x" value="163" />
+                    <property name="y" value="29" />
+                    <property name="width" value="16" />
+                    <property name="height" value="21" />
+                    <property name="textX" value="-2" />
+                    <property name="textY" value="1" />
+                    <property name="textWidth" value="16" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="s_cal_mn" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16744448" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="cal_lunar_dy" />
+                    <property name="id" value="23" />
+                    <property name="x" value="179" />
+                    <property name="y" value="28" />
+                    <property name="width" value="32" />
+                    <property name="height" value="22" />
+                    <property name="textX" value="-3" />
+                    <property name="textY" value="2" />
+                    <property name="textWidth" value="32" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16744448" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="2" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="timeBox">
+                    <property name="name" value="calendar_data" />
+                    <property name="id" value="24" />
+                    <property name="x" value="81" />
+                    <property name="y" value="11" />
+                    <property name="width" value="128" />
+                    <property name="height" value="18" />
+                    <property name="timeX" value="-1" />
+                    <property name="timeY" value="-1" />
+                    <property name="timeWidth" value="128" />
+                    <property name="timeHeight" value="18" />
+                    <property name="visible" value="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="stringBkColor" value="8388608" />
+                    <property name="bgPic" value=".\tools_pics\tools_calendar\p_calendar_bar1.bmp" storetype="1" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="FontSize" value="1" />
+                    <property name="DisplayMode" value="数字图片" />
+                    <property name="Composition" value="0" />
+                    <property name="align" value="1" />
+                    <property name="stringColor" value="16777215" />
+                    <property name="incX" value="10" />
+                    <property name="partitionIncX" value="4" />
+                    <property name="pic0" value="$widgets\timebox\H1_num0.bmp" />
+                    <property name="pic1" value="$widgets\timebox\H1_num1.bmp" />
+                    <property name="pic2" value="$widgets\timebox\H1_num2.bmp" />
+                    <property name="pic3" value="$widgets\timebox\H1_num3.bmp" />
+                    <property name="pic4" value="$widgets\timebox\H1_num4.bmp" />
+                    <property name="pic5" value="$widgets\timebox\H1_num5.bmp" />
+                    <property name="pic6" value="$widgets\timebox\H1_num6.bmp" />
+                    <property name="pic7" value="$widgets\timebox\H1_num7.bmp" />
+                    <property name="pic8" value="$widgets\timebox\H1_num8.bmp" />
+                    <property name="pic9" value="$widgets\timebox\H1_num9.bmp" />
+                    <property name="picNULL" value="$widgets\timebox\H1_numNULL.bmp" />
+                    <property name="picColon" value="$widgets\timebox\p_def_timebox_colon.bmp" />
+                    <property name="picSlash" value="$widgets\timebox\p_def_timebox_slash.bmp" />
+                    <property name="picDash" value="$widgets\timebox\p_def_timebox_dash.bmp" />
+                    <property name="picSpace" value="$widgets\timebox\p_def_timebox_space.bmp" />
+                    <property name="numBkColor" value="0" />
+                    <property name="number1" value="11" />
+                    <property name="number2" value="11" />
+                    <property name="number3" value="11" />
+                    <property name="digits1" value="2" />
+                    <property name="showHigh1" value="1" />
+                    <property name="showFirstPartition" value="1" />
+                    <property name="FirstPartitionStr" value=":" />
+                    <property name="showMiddlePartition" value="1" />
+                    <property name="MiddlePartitionStr" value=":" />
+                    <property name="number4" value="11" />
+                    <property name="number5" value="11" />
+                    <property name="number6" value="11" />
+                    <property name="digits2" value="2" />
+                    <property name="showHigh2" value="1" />
+                    <property name="showSecondPartition" value="1" />
+                    <property name="SecondPartitionStr" value=":" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="green_bg" />
+            <property name="id" value="1" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup1" />
+                <property name="id" value="1" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="TOOLS_BG" />
+                    <property name="id" value="26" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\tools_pics\p_tools_bg.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="tools_fm" />
+            <property name="id" value="2" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup2" />
+                <property name="id" value="2" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="picbox_freq_bg" />
+                    <property name="id" value="27" />
+                    <property name="x" value="104" />
+                    <property name="y" value="53" />
+                    <property name="width" value="81" />
+                    <property name="height" value="18" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\tools_pics\tools_alarm\p_freq_bg.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="picbox_fm_icon" />
+                    <property name="id" value="28" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="20" />
+                    <property name="height" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\tools_pics\tools_alarm\p_fm_icon.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="stopwatch" />
+            <property name="id" value="3" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup3" />
+                <property name="id" value="3" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="stopwatch_bg" />
+                    <property name="id" value="29" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\tools_pics\tools_stopwatch\p_sw_bg.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\tools_pics\p_tools_bg.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FMNUM0.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FMNUM1.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FMNUM2.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FMNUM3.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FMNUM4.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FMNUM5.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FMNUM6.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FMNUM7.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FMNUM8.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FMNUM9.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FMNUMDOT.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_FM_FM.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_fm_icon.bmp" />
+        <picture value=".\tools_pics\tools_alarm\p_freq_bg.bmp" />
+        <picture value=".\tools_pics\tools_calendar\calendar_num0.bmp" />
+        <picture value=".\tools_pics\tools_calendar\calendar_num1.bmp" />
+        <picture value=".\tools_pics\tools_calendar\calendar_num2.bmp" />
+        <picture value=".\tools_pics\tools_calendar\calendar_num3.bmp" />
+        <picture value=".\tools_pics\tools_calendar\calendar_num4.bmp" />
+        <picture value=".\tools_pics\tools_calendar\calendar_num5.bmp" />
+        <picture value=".\tools_pics\tools_calendar\calendar_num6.bmp" />
+        <picture value=".\tools_pics\tools_calendar\calendar_num7.bmp" />
+        <picture value=".\tools_pics\tools_calendar\calendar_num8.bmp" />
+        <picture value=".\tools_pics\tools_calendar\calendar_num9.bmp" />
+        <picture value=".\tools_pics\tools_calendar\p_calendar_bar1.bmp" />
+        <picture value=".\tools_pics\tools_calendar\p_calendar_bar2.bmp" />
+        <picture value=".\tools_pics\tools_calendar\p_calendar_bar3.bmp" />
+        <picture value=".\tools_pics\tools_calendar\p_calendar_bg.bmp" />
+        <picture value=".\tools_pics\tools_calendar\p_calendar_hfbg.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc0.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc1.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc2.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc3.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc4.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc5.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc6.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc7.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc8.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc9.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc_10.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_greenc_11.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_sw_act_bg.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_sw_bg.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_sw_inact_bg.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watch1.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watch2.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watch3.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watch4.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watch5.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchb0.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchb1.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchb2.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchb3.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchb4.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchb5.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchb6.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchb7.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchb8.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchb9.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc0.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc1.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc2.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc3.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc4.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc5.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc6.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc7.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc8.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc9.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc_10.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchc_11.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchs1.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchs2.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchs3.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchs4.bmp" />
+        <picture value=".\tools_pics\tools_stopwatch\p_watchs5.bmp" />
+        <txt value=".\tools_res.xls" />
+        <string value="s_tools" />
+        <string value="s_calender" />
+        <string value="s_stopwatch" />
+        <string value="s_alarm" />
+        <string value="s_Dataexch" />
+        <string value="s_fwupdata" />
+        <string value="S_TOOLS_OPTION" />
+        <string value="s_ALARM_1" />
+        <string value="s_ALARM_2" />
+        <string value="s_alarm_rec" />
+        <string value="s_alarm_fm" />
+        <string value="s_ALARM1_ONOFF" />
+        <string value="s_ALARM1_ON" />
+        <string value="s_ALARM1_OFF" />
+        <string value="s_alarm1_time" />
+        <string value="s_alarm1_cyc" />
+        <string value="s_alarm1_music" />
+        <string value="s_alarm1_vol" />
+        <string value="s_alarm1_cyc_once" />
+        <string value="s_alarm1_cyc_days" />
+        <string value="s_alarm1_cyc_week" />
+        <string value="s_alarm1_cyc_work" />
+        <string value="s_ring1_sd" />
+        <string value="s_ring1_disk" />
+        <string value="s_ring1_card" />
+        <string value="s_aufm_ONOFF" />
+        <string value="s_aufm_ON" />
+        <string value="s_aufm_OFF" />
+        <string value="s_start_time" />
+        <string value="s_end_time" />
+        <string value="s_aufm_cyc" />
+        <string value="s_aufm_fq" />
+        <string value="s_aufm_vol" />
+        <string value="s_record_onoff" />
+        <string value="s_record_off" />
+        <string value="s_record_on" />
+        <string value="s_aufm_cyc_once" />
+        <string value="s_aufm_cyc_days" />
+        <string value="s_aufm_cyc_week" />
+        <string value="s_aufm_cyc_work" />
+        <string value="s_datamen1" />
+        <string value="s_datamen2" />
+        <string value="s_datamen3" />
+        <string value="s_copylocal" />
+        <string value="s_copycard" />
+        <string value="s_overfile" />
+        <string value="s_overdir" />
+        <string value="s_chosfile" />
+        <string value="s_chosfold" />
+        <string value="s_chosfol2" />
+        <string value="s_orgdata" />
+        <string value="s_dstfold" />
+        <string value="s_samefold" />
+        <string value="s_pchosorg" />
+        <string value="s_pchosdst" />
+        <string value="s_copyfail" />
+        <string value="s_copyok" />
+        <string value="s_stem_1" />
+        <string value="s_stem_2" />
+        <string value="s_stem_3" />
+        <string value="s_stem_4" />
+        <string value="s_stem_5" />
+        <string value="s_stem_6" />
+        <string value="s_stem_7" />
+        <string value="s_stem_8" />
+        <string value="s_stem_9" />
+        <string value="s_stem_10" />
+        <string value="s_branch1" />
+        <string value="s_branch2" />
+        <string value="s_branch3" />
+        <string value="s_branch4" />
+        <string value="s_branch5" />
+        <string value="s_branch6" />
+        <string value="s_branch7" />
+        <string value="s_branch8" />
+        <string value="s_branch9" />
+        <string value="s_branch10" />
+        <string value="s_branch11" />
+        <string value="s_branch12" />
+        <string value="s_day_1" />
+        <string value="s_day_2" />
+        <string value="s_day_3" />
+        <string value="s_day_4" />
+        <string value="s_day_5" />
+        <string value="s_day_6" />
+        <string value="s_day_7" />
+        <string value="s_day_8" />
+        <string value="s_day_9" />
+        <string value="s_day_10" />
+        <string value="s_day_11" />
+        <string value="s_day_12" />
+        <string value="s_day_13" />
+        <string value="s_day_14" />
+        <string value="s_day_15" />
+        <string value="s_day_16" />
+        <string value="s_day_17" />
+        <string value="s_day_18" />
+        <string value="s_day_19" />
+        <string value="s_day_20" />
+        <string value="s_day_21" />
+        <string value="s_day_22" />
+        <string value="s_day_23" />
+        <string value="s_day_24" />
+        <string value="s_day_25" />
+        <string value="s_day_26" />
+        <string value="s_day_27" />
+        <string value="s_day_28" />
+        <string value="s_day_29" />
+        <string value="s_day_30" />
+        <string value="s_day_31" />
+        <string value="s_chinam_1" />
+        <string value="s_chinam_2" />
+        <string value="s_chinam_3" />
+        <string value="s_chinam_4" />
+        <string value="s_chinam_5" />
+        <string value="s_chinam_6" />
+        <string value="s_chinam_7" />
+        <string value="s_chinam_8" />
+        <string value="s_chinam_9" />
+        <string value="s_chinam_10" />
+        <string value="s_chinam_11" />
+        <string value="s_chinam_12" />
+        <string value="s_chinay_1" />
+        <string value="s_chinay_2" />
+        <string value="s_chinay_3" />
+        <string value="s_chinay_4" />
+        <string value="s_chinay_5" />
+        <string value="s_chinay_6" />
+        <string value="s_chinay_7" />
+        <string value="s_chinay_8" />
+        <string value="s_chinay_9" />
+        <string value="s_chinay_10" />
+        <string value="s_chinay_11" />
+        <string value="s_chinay_12" />
+        <string value="s_week1" />
+        <string value="s_week2" />
+        <string value="s_week3" />
+        <string value="s_week4" />
+        <string value="s_week5" />
+        <string value="s_week6" />
+        <string value="s_week7" />
+        <string value="s_cal_yr" />
+        <string value="s_cal_mn" />
+        <string value="s_princ_1" />
+        <string value="s_princ_2" />
+        <string value="s_princ_3" />
+        <string value="s_princ_4" />
+        <string value="s_princ_5" />
+        <string value="s_princ_6" />
+        <string value="s_princ_7" />
+        <string value="s_princ_8" />
+        <string value="s_princ_9" />
+        <string value="s_princ_10" />
+        <string value="s_princ_11" />
+        <string value="s_princ_12" />
+        <string value="s_secti_1" />
+        <string value="s_secti_2" />
+        <string value="s_secti_3" />
+        <string value="s_secti_4" />
+        <string value="s_secti_5" />
+        <string value="s_secti_6" />
+        <string value="s_secti_7" />
+        <string value="s_secti_8" />
+        <string value="s_secti_9" />
+        <string value="s_secti_10" />
+        <string value="s_secti_11" />
+        <string value="s_secti_12" />
+        <string value="s_new_year" />
+        <string value="s_sweet_d" />
+        <string value="s_women_d" />
+        <string value="s_plant_d" />
+        <string value="s_fools_d" />
+        <string value="s_youth_d" />
+        <string value="s_labor_d" />
+        <string value="s_mother_d" />
+        <string value="s_nurse_d" />
+        <string value="s_child_d" />
+        <string value="s_father_d" />
+        <string value="s_party_d" />
+        <string value="s_army_d" />
+        <string value="s_teach_d" />
+        <string value="s_event918" />
+        <string value="s_nation_d" />
+        <string value="s_Chris_d" />
+        <string value="s_day_11" />
+        <string value="s_day_55" />
+        <string value="s_day_815" />
+        <string value="s_hall_eve" />
+        <string value="s_day_77" />
+        <string value="s_day_99" />
+        <string value="S_TIME_AMPM" />
+        <string value="S_TIME_HH" />
+        <string value="S_TIME_MM" />
+        <string value="S_TIME_AM" />
+        <string value="S_TIME_PM" />
+        <string value="S_SETTIME_FAIL" />
+        <string value="s_select_file_upgrade" />
+        <string value="s_autoupgrade" />
+    </resource>
+</ui-rad>

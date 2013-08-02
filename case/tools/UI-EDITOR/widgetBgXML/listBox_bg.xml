@@ -1,0 +1,350 @@
+<widget name="listBox" type="widget" adapter="AImageAdapter"
+			icon="widgets/picregion.png" >
+
+    
+	<BgPicForAllItems>
+		<property name="name" type="String" value="allitems.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY * @onePageNum"  desc="图片高度"/>
+          <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</BgPicForAllItems>
+	
+	<itemBgPic0>
+		<property name="name" type="String" value="itemina0.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 0"  desc="相对控件矩形框右上角y坐标"/>
+      	<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic0>
+	
+	<itemBgPic1>
+		<property name="name" type="String" value="itemina1.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 1"  desc="相对控件矩形框右上角y坐标"/>
+      	<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic1>
+	
+	<itemBgPic2>
+		<property name="name" type="String" value="itemina2.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 2"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic2>
+	
+	<itemBgPic3>
+		<property name="name" type="String" value="itemina3.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 3"  desc="相对控件矩形框右上角y坐标"/>
+      	<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic3>
+	
+	<itemBgPic4>
+		<property name="name" type="String" value="itemina4.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 4"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic4>
+	
+	<itemBgPic5>
+		<property name="name" type="String" value="itemina5.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 5"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic5>
+	
+	<itemBgPic6>
+		<property name="name" type="String" value="itemina6.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 6"  desc="相对控件矩形框右上角y坐标"/>
+      	<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic6>
+	
+	<itemBgPic7>
+		<property name="name" type="String" value="itemina7.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 7"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic7>
+	
+	<itemBgPic8>
+		<property name="name" type="String" value="itemina8.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 8"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic8>
+	
+	<itemBgPic9>
+		<property name="name" type="String" value="itemina9.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 9"  desc="相对控件矩形框右上角y坐标"/>
+      	<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic9>
+	
+	<itemBgPic10>
+		<property name="name" type="String" value="itemina10.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 10"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic10>
+	
+	<itemBgPic11>
+		<property name="name" type="String" value="itemina11.bmp"/>
+		<property name="x" type="U16" value="@itemBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemBgPicY + @incY * 11"  desc="相对控件矩形框右上角y坐标"/>
+      	<property name="width" type="U16" value="@itemBgPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@incY"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemBgPic11>
+	
+	<itemHeadPic0>
+		<property name="name" type="String" value="headina0.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 0"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic0>
+	
+	<itemHeadPic1>
+		<property name="name" type="String" value="headina1.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 1"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic1>
+	
+	<itemHeadPic2>
+		<property name="name" type="String" value="headina2.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 2"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+      	<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic2>
+	
+	<itemHeadPic3>
+		<property name="name" type="String" value="headina3.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 3"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic3>
+	
+	<itemHeadPic4>
+		<property name="name" type="String" value="headina4.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 4"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic4>
+	
+	<itemHeadPic5>
+		<property name="name" type="String" value="headina5.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 5"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic5>
+	
+	<itemHeadPic6>
+		<property name="name" type="String" value="headina6.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 6"  desc="相对控件矩形框右上角y坐标"/>
+      	<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic6>
+	
+	<itemHeadPic7>
+		<property name="name" type="String" value="headina7.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 7"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic7>
+	
+	<itemHeadPic8>
+		<property name="name" type="String" value="headina8.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 8"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic8>
+	
+	<itemHeadPic9>
+		<property name="name" type="String" value="headina9.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 9"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic9>
+	
+	<itemHeadPic10>
+		<property name="name" type="String" value="headina10.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 10"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic10>
+	
+	<itemHeadPic11>
+		<property name="name" type="String" value="headina11.bmp"/>
+		<property name="x" type="U16" value="@itemHeadPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemHeadPicY + @incY * 11"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemHeadPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemHeadPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemHeadPic11>
+	
+	<itemTailPic0>
+		<property name="name" type="String" value="tailina0.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 0"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic0>
+	
+	<itemTailPic1>
+		<property name="name" type="String" value="tailina1.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 1"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic1>
+	
+	<itemTailPic2>
+		<property name="name" type="String" value="tailina2.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 2"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic2>
+	
+	<itemTailPic3>
+		<property name="name" type="String" value="tailina3.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 3"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic3>
+	
+	<itemTailPic4>
+		<property name="name" type="String" value="tailina4.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 4"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic4>
+	
+	<itemTailPic5>
+		<property name="name" type="String" value="tailina5.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 5"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic5>
+	
+	<itemTailPic6>
+		<property name="name" type="String" value="tailina6.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 6"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic6>
+	
+	<itemTailPic7>
+		<property name="name" type="String" value="tailina7.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 7"  desc="相对控件矩形框右上角y坐标"/>
+      	<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+      	<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic7>
+	
+	<itemTailPic8>
+		<property name="name" type="String" value="tailina8.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 8"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic8>
+	
+	<itemTailPic9>
+		<property name="name" type="String" value="tailina9.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 9"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic9>
+	
+	<itemTailPic10>
+		<property name="name" type="String" value="tailina10.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 10"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic10>
+	
+	<itemTailPic11>
+		<property name="name" type="String" value="tailina11.bmp"/>
+		<property name="x" type="U16" value="@itemTailPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@itemTailPicY + @incY * 11"  desc="相对控件矩形框右上角y坐标"/>
+ 		<property name="width" type="U16" value="@itemTailPicWidth"  desc="图片宽度"/>
+ 		<property name="height" type="U16" value="@itemTailPicHeight"  desc="图片高度"/>
+        <property name="picType"  type="Enum"  value="1" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</itemTailPic11>
+	
+	<RatioBgPic>
+		<property name="name" type="Picture" value="ratio.bmp"/>
+		<property name="x" type="U16" value="@RatioBgPicX"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="@RatioBgPicY"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@RatioWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@RatioHeight"  desc="图片高度"/>
+           <property name="picType"  type="Enum"  value="0" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</RatioBgPic>
+		
+</widget>
+
+1、添加条件，判断是否截取背景图；
+2、透明图片，透明颜色为3种：0x0000黑色，0xffff白色，0x5555不透明

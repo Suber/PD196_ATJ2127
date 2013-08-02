@@ -1,0 +1,40 @@
+/**************************************************************************
+*                                                                         *
+*   PROJECT     : MIPS port for UCOS-II                                   *
+*                                                                         *
+*   MODULE      : bank a&b link.xn                                        *
+*                                                                         *
+*   AUTHOR      : wuyueqian                                               *
+*                                                                         *
+*   PROCESSOR   : MIPS 4KEc (32 bit RISC) - Actions board                 *
+*                                                                         *
+*   Tool-chain  : Cygnus                                                  *
+*                                                                         *
+*                                                                         *
+*   Linker script file                                                    *
+*                                                                         *
+**************************************************************************/
+
+/*定义GROUP BANK INDEX 和其他地址变量*/
+INPUT(link_base.xn)
+INPUT(sdk_link_base.xn)
+
+WELCOME_START_ADDR = 0xbfc1e000;
+
+OUTPUT_ARCH(mips)
+
+ENTRY(disp_starting)
+
+SECTIONS
+{    
+    .text WELCOME_START_ADDR  : 
+    {
+        welcome.o(.text )/*不能改变*/
+        *.o(.text .rodata)
+        *.o(.data)
+        *(.bss)
+        *(.sbss)
+        *(.common)
+        *(common)
+    }        
+}

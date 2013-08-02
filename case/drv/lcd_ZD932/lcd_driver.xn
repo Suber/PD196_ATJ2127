@@ -1,0 +1,123 @@
+/**************************************************************************
+*                                                                         *
+*   PROJECT     : MIPS port for UCOS-II                                   *
+*                                                                         *
+*   MODULE      : bank a&b link.xn                                        *
+*                                                                         *
+*   AUTHOR      : wuyueqian                                               *
+*                                                                         *
+*   PROCESSOR   : MIPS 4KEc (32 bit RISC) - Actions board                 *
+*                                                                         *
+*   Tool-chain  : Cygnus                                                  *
+*                                                                         *
+*                                                                         *
+*   Linker script file                                                    *
+*                                                                         *
+**************************************************************************/
+/************************common memory map*********************************
+*-------------------------------code--------------------------------------*
+*---rcode1  : 0xbfc20f00-0xbfc2157f                     length:0x680      *
+*---rcode_r : 0xbfc21580-0xbfc2187f     ui driver       length:0x300      *
+*---rcode2  : 0xbfc21880-0xbfc219ff                     length:0x180      *
+*---bank a  :(0x17**0000+0x24c00)-(0x17**0000+0x24fff)  length:0x400      *
+*---bank b  :(0x27**0000+0x25000)-(0x27**0000+0x257ff)  length:0x800      *
+*---bank c  :(0x37**0000+0x21a00)-(0x37**0000+0x21dff)  length:0x400      *
+*---说明                                                                  *
+*---1 最高4bit 表示bank a/b/c，次高4bit 表示驱动号
+*---2 **高6bit 为bank号，比如0x17064c00中0x06高6bit为0x01，故为 bank 1    *
+*-------------------------------data--------------------------------------*
+*--rdata    : 0x9fc19e80-0x9fc19eff                     length:0x80       *
+***************************************************************************/
+
+/*定义GROUP BANK INDEX 和其他地址变量*/
+INPUT(link_base.xn)
+INPUT(sdk_link_base.xn)
+
+/*UI group index，驱动开发人员需选择*/
+BANK_GROUP_INDEX = DRV_GROUP_LCD;
+
+/*2.从地址map图中获取UI模块的常驻代码段物理地址，只需写低14位，驱动开发人员需填写*/
+SRAM_TEXT_ADDR = SRAM_LCD_RCODE_ADDR;
+SRAM_DATA_ADDR = SRAM_LCD_DATA_ADDR;
+
+
+/*3.转换为链接地址,不能修改*/
+RCODE_TEXT_ADDR = RCODE_ADDR_BASE + SRAM_TEXT_ADDR;
+RDATA_DATA_ADDR = RDATA_ADDR_BASE + SRAM_DATA_ADDR;
+
+KERNEL_BANK_A_ADDR_BASE = (KERNEL_BANK_A << 28) + (BANK_GROUP_INDEX << 24) + SRAM_BANK_A_ADDR;
+KERNEL_BANK_B_ADDR_BASE = (KERNEL_BANK_B << 28) + (BANK_GROUP_INDEX << 24) + SRAM_BANK_B_ADDR;
+KERNEL_BANK_C_ADDR_BASE = (KERNEL_BANK_C << 28) + (BANK_GROUP_INDEX << 24) + SRAM_BANK_C_ADDR;
+
+/*bank的实际空间大小,不能修改*/
+KERNEL_BANK_A_SIZE = SRAM_BANK_A_SIZE;
+KERNEL_BANK_B_SIZE = SRAM_BANK_B_SIZE;
+KERNEL_BANK_C_SIZE = SRAM_BANK_C_SIZE;
+
+/*.text 段总大小减去 api.a(.text)的总大小，防止 api.a(.text) 链接在 *fill* 后导致溢出几个字节的情况*/
+SRAM_LCD_RCODE_SIZE_FILL = SRAM_LCD_RCODE_SIZE - 4;
+/*输出段开头以4字节对齐， .bss 段总大小减4，防止 .data 段大小不是4整倍时溢出几个字节的情况*/
+SRAM_LCD_DATA_SIZE_FILL = SRAM_LCD_DATA_SIZE - 4;
+
+/*系统允许的bank的最大空间大小，不能修改*/
+KERNEL_BANK_SPACE = BANK_SPACE;
+
+OUTPUT_ARCH(mips)
+
+ENTRY(lcd_driver_op)
+
+SECTIONS
+{
+    .text RCODE_TEXT_ADDR  : 
+    {
+        /*4.填写rcode输入节*/
+        rcode_lcd_op_entry.o(.text .rodata)
+        rcode_lcd_functions.o(.text .rodata)
+        rcode_lcd_functions_1.o(.text .rodata)
+        rcode_lcd_functions_3.o(.text .rodata)
+        . = 0x680;
+        /*预留0x300该ui驱动使用*/
+        . = 0x980;
+        rcode_lcd_functions_2.o(.text .rodata)
+        api.a(.text)
+        . = SRAM_LCD_RCODE_SIZE_FILL;
+    }
+    
+    .data RDATA_DATA_ADDR   :  AT(ADDR(.text) + SIZEOF(.text)) 
+    {
+        /*5.填写rdata输入节，所以文件产生的.data都被链接到这里*/
+        *.o(.data)
+    }
+    .bss :
+    {
+        *(.bss)
+        *(.sbss)
+        *(.common)
+        *(common)
+        . = SRAM_LCD_DATA_SIZE_FILL - SIZEOF(.data);
+    }    
+
+    /*6.链接bank a代码*/
+    . = KERNEL_BANK_A_ADDR_BASE;
+    BANK_A_0    : 
+    {
+        bank_a_lcd_init.o(.text .rodata)  
+        . = KERNEL_BANK_A_SIZE;
+    }=0x0 
+    
+    /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_1   : 
+    {
+       bank_a_lcd_functions.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }=0x0
+    
+    /*假设还有一个bank a，文件名为bank_a_ui_xx.c*/
+    . += (KERNEL_BANK_SPACE - KERNEL_BANK_A_SIZE);
+     BANK_A_2   : 
+    {
+       lcd_hardware_init.o(.text .rodata) 
+        . = KERNEL_BANK_A_SIZE;
+    }=0x0
+}

@@ -1,0 +1,13 @@
+   text	   data	    bss	    dec	    hex	filename
+  0x660	    0x1	    0x8	   1641	    669	./obj/codec_WM8904.o
+  0x384	  0x2f8	    0x0	   1660	    67c	./obj/mengine_audible_deal.o
+  0x184	  0x200	    0x0	    900	    384	./obj/mengine_audible_sys.o
+  0x424	    0x0	    0x0	   1060	    424	./obj/mengine_control.o
+  0x7f0	    0x0	    0x0	   2032	    7f0	./obj/mengine_event.o
+  0x4fc	    0x0	    0x0	   1276	    4fc	./obj/mengine_event_audible.o
+  0x758	    0x0	    0x0	   1880	    758	./obj/mengine_event_param.o
+  0x3e4	    0x4	    0x0	   1000	    3e8	./obj/mengine_event_volume.o
+  0x544	   0x14	  0x1cc	   1828	    724	./obj/mengine_main.o
+  0x7a8	    0x0	    0x0	   1960	    7a8	./obj/mengine_message_done.o
+  0x7e4	   0x18	    0x0	   2044	    7fc	./obj/mengine_play_deal.o
+  0x6f8	    0x0	    0x0	   1784	    6f8	./obj/rom_I2C.o

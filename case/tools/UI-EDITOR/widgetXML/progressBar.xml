@@ -1,0 +1,56 @@
+﻿<widget name="progress" type="widget" adapter="AProgressAdapter"
+            icon="widgets/progress.png" >
+            
+     <categories>
+     <category name = "basic"/>
+     </categories>
+
+    <properties>
+        <property name="x" type="U16" value=""  editable="true" relative ="Left" desc="控件左上角x坐标"/>
+        <property name="y" type="U16" value=""  editable="true" relative ="Top" desc="控件左上角y坐标"/>
+        <property name="width" type="U16" value="112"  editable="true" desc="控件宽度"/>
+        <property name="height" type="U16" value="5"  editable="true" desc="控件高度"/>
+        <property name="visible" type="boolean" value="1" category="basic" editable="true" desc="控件是否显示"/>
+        
+        <property name="total" type="U16" value="100" category="basic" editable="true" desc="进度总范围"/>
+        <property name="current" type="U16" value="50" category="basic" editable="true" desc="当前进度值"/>
+        <property name="length" type="U16" value="100" category="basic" editable="true" desc="该进度条上进度可显示的象素总长，当前进度显示的象素长度 = length * current/total"/>
+        
+        <property name="ProgressBarStyle" type="Enum" editable="false" value="0" category="basic" enumKeys="填充式,滑杆式,两者皆有" enumValues="0,1,2" desc="进度条类型"/>
+        <property name="horizontal" type="boolean" value="1" category="basic"  editable="true" desc="是否水平方向"/>    
+           
+        <property name="bgPicX" type="U16" value="8" category="basic"  editable="true" relative ="Left" desc="进度条背景图X坐标"/>
+        <property name="bgPicY" type="U16" value="20" category="basic" editable="true" relative ="Top" desc="进度条背景图Y坐标"/>
+        <property name="bgPic" type="Picture" value="$widgets/progress/p_def_progress_bg.bmp" category="basic" editable="true" allowEmpty="FALSE" desc="进度条背景图"/>
+        <property name="useTransparentBg" type="boolean"  category="basic" value="0" editable="true" desc="使用透明背景"/>
+        <property name="bgPicWidth" type="U16" value=""  visible="false" editable="true" desc="进度条背景图宽"/>
+        <property name="bgPicHeight" type="U16" value=""  visible="false" editable="true" desc="进度条背景图高"/>
+        
+        <property name="progStartX" type="U16" value="8" category="basic" editable="true" relative ="Left" desc="进度条横向时有效：进度条游标图片显示 起始X坐标" show="horizontal = 1"/>
+        <property name="fillPicY" type="U16" value="20" category="basic" editable="true" relative ="Top" desc="进度条横向时有效：进度填充图片 Y坐标" show="horizontal = 1"/>
+        <property name="progStartY" type="U16" value="8" category="basic" editable="true" relative ="Top" desc="进度条竖向时有效：进度条游标图片显示 起始Y坐标"  show="horizontal = 0"/>
+        <property name="fillPicX" type="U16" value="20" category="basic" editable="true" relative ="Left" desc="进度条竖向时有效：进度填充图标 X坐标" show="horizontal = 0"/>
+
+        <property name="fillPic" type="Picture" value="$widgets/progress/p_def_progress_a.bmp" category="basic" editable="true" allowEmpty="false" desc="用于拼接进度的图片，宽应当为1"  show="ProgressBarStyle != 1"/>
+        <property name="unfillPic" type="Picture" value="$widgets/progress/p_def_progress_ina.bmp" category="basic" editable="true" allowEmpty="false" desc="用于清除进度的图片，宽应当为1"  show="ProgressBarStyle != 1"/>        
+        
+
+        
+        <property name="progPicWidth" type="U16" value=""  visible="false" editable="false" desc="进度高亮的图片的宽度"/>
+        <property name="progPicHeight" type="U16" value=""  visible="false" editable="false" desc="进度高亮的图片的高度"/>
+        <property name="unprogPicWidth" type="U16" value=""  visible="false" editable="false" desc="清除进度的图片的宽度"/>
+        <property name="unprogPicHeight" type="U16" value=""  visible="false" editable="false" desc="清除进度的图片的宽度"/>
+        
+        <property name="tagPic" type="Picture" value="$widgets/progress/p_def_progress_tag.bmp" category="basic" editable="true" allowEmpty="false" desc="进度条游标图片"  show="ProgressBarStyle != 0"/>
+        <property name="tagPicWidth" type="U16" value=""  visible="false" editable="false" desc="进度条游标图片的宽度"/>
+        <property name="tagPicHeight" type="U16" value=""  visible="false" editable="false" desc="进度条游标图片的高度"/>
+        <property name="tagPicY" type="U16" value="19" category="basic" editable="true" relative ="Top" desc="进度条横向时有效：进度条游标图片显示 Y坐标" show="ProgressBarStyle != 0&horizontal = 1"/>
+        <property name="tagPicX" type="U16" value="19" category="basic" editable="true" relative ="Left" desc="进度条竖向时有效：进度条游标图片显示 X坐标" show="ProgressBarStyle != 0&horizontal = 0"/>
+
+        <property name="scale" type="U16" value="1" category="basic" editable="false" desc="进度条的每格宽度(步长)"/>
+        
+        <property name="WidgetbgPic" type="Picture" value="" category="basic" editable="true"  storeType="1"  allowEmpty="false" desc="控件的实时背景图"/>
+        
+    </properties>
+        
+</widget>

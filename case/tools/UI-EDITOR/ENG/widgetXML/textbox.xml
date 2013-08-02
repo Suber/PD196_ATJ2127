@@ -1,0 +1,46 @@
+﻿<widget name="textBox" type="widget" adapter="JLabelAdapter"
+			icon="widgets/text.png" >
+
+     <categories>
+     <category name = "basic"/>
+     </categories>
+     
+	<properties>		
+		<property name="x" type="U16" value="" editable="true"  relative ="Left" desc="x coordinate of the left-top corner of the widget"/>
+		<property name="y" type="U16" value="" editable="true"  relative ="Top" desc="x coordinate of the left-top corner of the widget"/>
+		<property name="width" type="U16" value="70" editable="true" desc="width of the widget"/>
+		<property name="height" type="U16" value="20"  editable="true" desc="height of the widget"/>
+		<property name="textX" type="U16" value="0" editable="true" category="basic" relative ="Left" desc="x coordinate of the left-top corner of the text rect"/>
+		<property name="textY" type="U16" value="0" editable="true" category="basic" relative ="Top" desc="y coordinate of the left-top corner of the text rect"/>		
+		<property name="textWidth" type="U16" value="70" category="basic" editable="true" desc="width of text rect"/>
+		<property name="textHeight" type="U16" value="20" category="basic" editable="true" desc="height of text rect"/>
+		<property name="bgPicX" type="U16" value="0" category="basic" editable="true"  relative ="Left" desc="x coordinate of the left-top corner of bgPic"/>
+		<property name="bgPicY" type="U16" value="0" category="basic" editable="true"  relative ="Top" desc="y coordinate of the left-top corner of bgPic"/>		
+		<property name="text" type="MultiLanguage" value="null" category="basic" editable="false" desc="text content"/>
+		<property name="fontHeight" type="U16" displayName="Font height" category="basic" value="16" editable="true" desc="Font height"/>
+		<property name="foreground" type="Color" displayName="Font color" category="basic" value="16711680" editable="true" desc="Font color"/>
+		<property name="background" type="Color" displayName="background color" category="basic" value="16777215" editable="true" desc="background color,effective only when mode = normal"  show="mode = 0"/>
+		<property name="bgPic" type="Picture" value="" category="basic" editable="true" desc="background picture,effective only when mode = transparent"  show="mode > 0"/>
+		<property name="useBgPic" type="boolean" displayName="if bgPic will be used" category="basic" value="1" editable="true" desc="if bgPic will be used" show="mode > 0"/>
+		<property name="bgPicWidth" type="U16" visible="false" value="0" editable="false" desc="width of bgPic"/>
+		<property name="bgPicHeight" type="U16" visible="false" value="0" editable="false" desc="height of bgPic"/>
+		<property name="visible" type="boolean" value="1" category="basic" editable="true" desc="whether the widget is visible"/>
+		<property name="mode" type="Enum" editable="false" category="basic" value="1" enumKeys="normal,transparent" enumValues="0,1" default="0" desc="background mode, set it to be transparen if you want to use bgPic, while set it to be normal when you want to use background color"/>
+		<property name="align" displayName="align type" type="Enum" editable="false" category="basic" value="0" enumKeys="Left Align,Center Align,Right Align" enumValues="0,1,2" default="0" desc="align type"/>
+		<property name="ShowMultiline" displayName="long text display mode" type="Enum" editable="false" category="basic" value="0" enumKeys="Multiline,Roll-screen,Truncation,Ellipsis" enumValues="0,1,2,3" default="0" desc="long text display mode"/>
+		<property name="ArabRgtAlign" displayName="Arab right align" type="Enum" editable="false" category="basic" value="0" enumKeys="Not cancel,cancel" enumValues="0,1" default="0" desc="Arab right align"/>
+		<property name="FontSize" displayName="Font size" type="Enum" editable="false" category="basic" value="1" enumKeys="small,middle,large" enumValues="0,1,2" default="0" desc="Font size"/>
+		<!--<property name="verticalAlignment" type="verticalAlignment" editable="true" />
+		<property name="horizontalAlignment" type="horizontalAlignment" editable="true" />
+		<property name="transparency" type="U8" editable="true" />
+		<property name="scroll" type="boolean" editable="true" />
+		<property name="pixel" type="U16" editable="true" />
+		<property name="space" type="U16" editable="true" />
+		<property name="direction" displayName="scrollDirection" type="Enum" editable="true" enumKeys="left to right,right to left" enumValues="0,-1" />
+		-->
+	</properties>
+		
+</widget>
+
+<!-- property name="defaultIcon" displayName="Icon"  type="Icon" editable="true" -->
+<!-- property name="border" type="Border" editable="true" -->

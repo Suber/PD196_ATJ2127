@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="playlist" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="playlist.sty" />
+    <property name="prj_res_head_file" value="playlist_res.h" />
+    <property name="prj_res_str_dir" value="playlist\" />
+    <property name="prj_sty_file" value="playlist.sty" />
+    <property name="prj_sty_head_file" value="playlist_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="14" />
+        <property name="Font_large" value="16" />
+        <scene>
+            <property name="name" value="playlist_loading" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup0" />
+                <property name="id" value="0" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="playlist_background" />
+                    <property name="id" value="4" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="160" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\plist_pic\p_plist_bg.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="PictureBox">
+                    <property name="name" value="playlist_load_cycle" />
+                    <property name="id" value="1" />
+                    <property name="x" value="124" />
+                    <property name="y" value="47" />
+                    <property name="width" value="38" />
+                    <property name="height" value="38" />
+                    <property name="visible" value="1" />
+                    <element class="layer">
+                        <property name="0" value=".\plist_pic\p_plist_loading_0.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="1" value=".\plist_pic\p_plist_loading_1.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="2" value=".\plist_pic\p_plist_loading_2.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="3" value=".\plist_pic\p_plist_loading_3.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="4" value=".\plist_pic\p_plist_loading_4.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="5" value=".\plist_pic\p_plist_loading_5.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="6" value=".\plist_pic\p_plist_loading_6.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                        <property name="7" value=".\plist_pic\p_plist_loading_7.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="playlist_percent" />
+                    <property name="id" value="2" />
+                    <property name="x" value="133" />
+                    <property name="y" value="119" />
+                    <property name="width" value="110" />
+                    <property name="height" value="16" />
+                    <property name="textX" value="-44" />
+                    <property name="textY" value="-11" />
+                    <property name="textWidth" value="110" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-44" />
+                    <property name="bgPicY" value="-11" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\playlist_percent_bg.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="110" />
+                    <property name="bgPicHeight" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="playlist_string" />
+                    <property name="id" value="5" />
+                    <property name="x" value="289" />
+                    <property name="y" value="138" />
+                    <property name="width" value="110" />
+                    <property name="height" value="16" />
+                    <property name="textX" value="-200" />
+                    <property name="textY" value="-48" />
+                    <property name="textWidth" value="110" />
+                    <property name="textHeight" value="16" />
+                    <property name="bgPicX" value="-200" />
+                    <property name="bgPicY" value="-48" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\BgPicDoc\playlist_string_bg.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="110" />
+                    <property name="bgPicHeight" value="16" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="1" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="ProgressBar">
+                    <property name="name" value="playlist_progress" />
+                    <property name="id" value="3" />
+                    <property name="x" value="86" />
+                    <property name="y" value="138" />
+                    <property name="width" value="118" />
+                    <property name="height" value="3" />
+                    <property name="visible" value="1" />
+                    <property name="total" value="120" />
+                    <property name="current" value="50" />
+                    <property name="length" value="118" />
+                    <property name="ProgressBarStyle" value="0" />
+                    <property name="horizontal" value="1" />
+                    <property name="bgPicX" value="-2" />
+                    <property name="bgPicY" value="-11" />
+                    <property name="bgPic" value=".\plist_pic\p_plist_prog_bg.bmp" />
+                    <property name="bgPicWidth" value="118" />
+                    <property name="bgPicHeight" value="3" />
+                    <property name="progStartX" value="-2" />
+                    <property name="fillPicY" value="-11" />
+                    <property name="progStartY" value="8" />
+                    <property name="fillPicX" value="20" />
+                    <property name="fillPic" value=".\plist_pic\p_plist_prog_0.bmp" />
+                    <property name="unfillPic" value="" />
+                    <property name="progPicWidth" value="1" />
+                    <property name="progPicHeight" value="3" />
+                    <property name="unprogPicWidth" value="1" />
+                    <property name="unprogPicHeight" value="6" />
+                    <property name="tagPic" value="" />
+                    <property name="tagPicWidth" value="1" />
+                    <property name="tagPicHeight" value="3" />
+                    <property name="tagPicY" value="-11" />
+                    <property name="tagPicX" value="19" />
+                    <property name="scale" value="1" />
+                    <property name="WidgetbgPic" value=".\BgPicDoc\playlist_progress_bg.bmp" storetype="1" />
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\plist_pic\p_plist_bg.bmp" />
+        <picture value=".\plist_pic\p_plist_loading_0.bmp" />
+        <picture value=".\plist_pic\p_plist_loading_1.bmp" />
+        <picture value=".\plist_pic\p_plist_loading_2.bmp" />
+        <picture value=".\plist_pic\p_plist_loading_3.bmp" />
+        <picture value=".\plist_pic\p_plist_loading_4.bmp" />
+        <picture value=".\plist_pic\p_plist_loading_5.bmp" />
+        <picture value=".\plist_pic\p_plist_loading_6.bmp" />
+        <picture value=".\plist_pic\p_plist_loading_7.bmp" />
+        <picture value=".\plist_pic\p_plist_prog_0.bmp" />
+        <picture value=".\plist_pic\p_plist_prog_bg.bmp" />
+        <txt value=".\plist_res.xls" />
+        <string value="s_plist_search" />
+        <string value="s_plist_complete" />
+        <string value="s_plist_c_disk_err" />
+        <string value="s_plist_h_disk_err" />
+        <string value="s_plist_u_disk_err" />
+        <string value="s_plist_c_space_err" />
+        <string value="s_plist_h_space_err" />
+        <string value="s_plist_u_space_err" />
+        <string value="s_plist_c_creat_fail" />
+        <string value="s_plist_h_creat_fail" />
+        <string value="s_plist_u_creat_fail" />
+    </resource>
+</ui-rad>

@@ -1,0 +1,1488 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--Actions IDE, Rapid Application Development-->
+<ui-rad type="application-9x">
+    <property name="prj_name" value="MainMenu" />
+    <property name="prj_language" value="19" />
+    <property name="prj_screen_width" value="320" />
+    <property name="prj_screen_height" value="240" />
+    <property name="prj_case_path" value="..\..\" />
+    <property name="prj_sdk_path" value="../../psp_rel" />
+    <property name="prj_res_file" value="MainMenu.sty" />
+    <property name="prj_res_head_file" value="MainMenu_res.h" />
+    <property name="prj_res_str_dir" value="MainMenu\" />
+    <property name="prj_sty_file" value="MainMenu.sty" />
+    <property name="prj_sty_head_file" value="MainMenu_sty.h" />
+    <property name="prj_build_res_type" value="0x1" />
+    <property name="icon" value="" />
+    <property name="snapshot" value="" />
+    <property name="prj_ver" value="V100" />
+    <style>
+        <property name="name" value="style0" />
+        <property name="width" value="320" />
+        <property name="height" value="240" />
+        <property name="fontHeight" value="16" />
+        <property name="x" value="80" />
+        <property name="y" value="10" />
+        <property name="Font_small" value="8" />
+        <property name="Font_middle" value="12" />
+        <property name="Font_large" value="13" />
+        <scene>
+            <property name="name" value="MUSIC" />
+            <property name="id" value="0" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup0" />
+                <property name="id" value="0" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_MUSIC_PIC" />
+                    <property name="id" value="1" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_music.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_MUSIC_TEXT" />
+                    <property name="id" value="2" />
+                    <property name="x" value="95" />
+                    <property name="y" value="139" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-13" />
+                    <property name="textY" value="-9" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-15" />
+                    <property name="bgPicY" value="-9" />
+                    <property name="text" value="music_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_MUSIC_INFO" />
+                    <property name="id" value="3" />
+                    <property name="x" value="84" />
+                    <property name="y" value="154" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-2" />
+                    <property name="textY" value="-4" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-4" />
+                    <property name="bgPicY" value="-4" />
+                    <property name="text" value="total_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="AUDIBLE" />
+            <property name="id" value="1" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup1" />
+                <property name="id" value="1" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_AUDIBLE_PIC" />
+                    <property name="id" value="4" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_audible.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_AUDIBLE_TEXT" />
+                    <property name="id" value="5" />
+                    <property name="x" value="87" />
+                    <property name="y" value="140" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-5" />
+                    <property name="textY" value="-10" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-7" />
+                    <property name="bgPicY" value="-10" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_AUDIBLE_INFO" />
+                    <property name="id" value="6" />
+                    <property name="x" value="106" />
+                    <property name="y" value="159" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-24" />
+                    <property name="textY" value="-9" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-26" />
+                    <property name="bgPicY" value="-9" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="VIDEO" />
+            <property name="id" value="2" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup2" />
+                <property name="id" value="2" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_VIDEO_PIC" />
+                    <property name="id" value="7" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_video.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_VIDEO_TEXT" />
+                    <property name="id" value="8" />
+                    <property name="x" value="86" />
+                    <property name="y" value="136" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-4" />
+                    <property name="textY" value="-6" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-6" />
+                    <property name="bgPicY" value="-6" />
+                    <property name="text" value="video_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_VIDEO_INFO" />
+                    <property name="id" value="9" />
+                    <property name="x" value="90" />
+                    <property name="y" value="155" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-8" />
+                    <property name="textY" value="-5" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-10" />
+                    <property name="bgPicY" value="-5" />
+                    <property name="text" value="total_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="PHOTO" />
+            <property name="id" value="3" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup3" />
+                <property name="id" value="3" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_PHOTO_PIC" />
+                    <property name="id" value="10" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_photos.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_PHOTO_TEXT" />
+                    <property name="id" value="11" />
+                    <property name="x" value="101" />
+                    <property name="y" value="139" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-19" />
+                    <property name="textY" value="-9" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-21" />
+                    <property name="bgPicY" value="-9" />
+                    <property name="text" value="picture_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_PHOTO_INFO" />
+                    <property name="id" value="12" />
+                    <property name="x" value="92" />
+                    <property name="y" value="159" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-10" />
+                    <property name="textY" value="-9" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-12" />
+                    <property name="bgPicY" value="-9" />
+                    <property name="text" value="total_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="READER" />
+            <property name="id" value="4" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup4" />
+                <property name="id" value="4" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_READER_PIC" />
+                    <property name="id" value="13" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_ebook.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_READER_TEXT" />
+                    <property name="id" value="14" />
+                    <property name="x" value="93" />
+                    <property name="y" value="144" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-11" />
+                    <property name="textY" value="-14" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-13" />
+                    <property name="bgPicY" value="-14" />
+                    <property name="text" value="ebook_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_READER_INFO" />
+                    <property name="id" value="15" />
+                    <property name="x" value="93" />
+                    <property name="y" value="152" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-11" />
+                    <property name="textY" value="-2" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-13" />
+                    <property name="bgPicY" value="-2" />
+                    <property name="text" value="total_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="BROWSER" />
+            <property name="id" value="5" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup5" />
+                <property name="id" value="5" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_BROWSER_PIC" />
+                    <property name="id" value="16" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_folder.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_BROWSER_TEXT" />
+                    <property name="id" value="17" />
+                    <property name="x" value="92" />
+                    <property name="y" value="135" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-10" />
+                    <property name="textY" value="-5" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-12" />
+                    <property name="bgPicY" value="-5" />
+                    <property name="text" value="folder_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_BROWSER_INFO" />
+                    <property name="id" value="18" />
+                    <property name="x" value="88" />
+                    <property name="y" value="158" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-6" />
+                    <property name="textY" value="-8" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-8" />
+                    <property name="bgPicY" value="-8" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="VOICE" />
+            <property name="id" value="6" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup6" />
+                <property name="id" value="6" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_VOICE_PIC" />
+                    <property name="id" value="19" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_voice.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_VOICE_TEXT" />
+                    <property name="id" value="20" />
+                    <property name="x" value="87" />
+                    <property name="y" value="136" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-5" />
+                    <property name="textY" value="-6" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-7" />
+                    <property name="bgPicY" value="-6" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_VOICE_INFO" />
+                    <property name="id" value="21" />
+                    <property name="x" value="90" />
+                    <property name="y" value="157" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-8" />
+                    <property name="textY" value="-7" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-10" />
+                    <property name="bgPicY" value="-7" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="RECORD" />
+            <property name="id" value="7" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup7" />
+                <property name="id" value="7" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_RECORD_PIC" />
+                    <property name="id" value="22" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_record.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_RECORD_TEXT" />
+                    <property name="id" value="23" />
+                    <property name="x" value="84" />
+                    <property name="y" value="134" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-2" />
+                    <property name="textY" value="-4" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-4" />
+                    <property name="bgPicY" value="-4" />
+                    <property name="text" value="record_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_RECORD_INFO" />
+                    <property name="id" value="24" />
+                    <property name="x" value="87" />
+                    <property name="y" value="155" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-5" />
+                    <property name="textY" value="-5" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-7" />
+                    <property name="bgPicY" value="-5" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="RADIO" />
+            <property name="id" value="8" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup8" />
+                <property name="id" value="8" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_RADIO_PIC" />
+                    <property name="id" value="25" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_radio.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_RADIO_TEXT" />
+                    <property name="id" value="26" />
+                    <property name="x" value="102" />
+                    <property name="y" value="132" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-20" />
+                    <property name="textY" value="-2" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-22" />
+                    <property name="bgPicY" value="-2" />
+                    <property name="text" value="radio_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_RADIO_INFO" />
+                    <property name="id" value="27" />
+                    <property name="x" value="93" />
+                    <property name="y" value="157" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-11" />
+                    <property name="textY" value="-7" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-13" />
+                    <property name="bgPicY" value="-7" />
+                    <property name="text" value="total_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="TOOLS" />
+            <property name="id" value="9" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup9" />
+                <property name="id" value="9" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_TOOLS_PIC" />
+                    <property name="id" value="28" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_tools.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_TOOLS_TEXT" />
+                    <property name="id" value="29" />
+                    <property name="x" value="93" />
+                    <property name="y" value="136" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-11" />
+                    <property name="textY" value="-6" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-13" />
+                    <property name="bgPicY" value="-6" />
+                    <property name="text" value="tools_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_TOOLS_INFO" />
+                    <property name="id" value="30" />
+                    <property name="x" value="87" />
+                    <property name="y" value="155" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-5" />
+                    <property name="textY" value="-5" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-7" />
+                    <property name="bgPicY" value="-5" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="SETTING" />
+            <property name="id" value="10" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup10" />
+                <property name="id" value="10" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_SETTING_PIC" />
+                    <property name="id" value="31" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_setting.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_SETTING_TEXT" />
+                    <property name="id" value="32" />
+                    <property name="x" value="92" />
+                    <property name="y" value="136" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-10" />
+                    <property name="textY" value="-6" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-12" />
+                    <property name="bgPicY" value="-6" />
+                    <property name="text" value="setting_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_SETTING_INFO" />
+                    <property name="id" value="33" />
+                    <property name="x" value="88" />
+                    <property name="y" value="157" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-6" />
+                    <property name="textY" value="-7" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-8" />
+                    <property name="bgPicY" value="-7" />
+                    <property name="text" value="date_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="NOWPLAY" />
+            <property name="id" value="11" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup11" />
+                <property name="id" value="11" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_PLAYING_PIG" />
+                    <property name="id" value="34" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_now_playing.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_NOWPLAY_TEXT" />
+                    <property name="id" value="35" />
+                    <property name="x" value="87" />
+                    <property name="y" value="136" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-5" />
+                    <property name="textY" value="-6" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-7" />
+                    <property name="bgPicY" value="-6" />
+                    <property name="text" value="nowplaying_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_NOWPLAY_INFO" />
+                    <property name="id" value="36" />
+                    <property name="x" value="87" />
+                    <property name="y" value="159" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-5" />
+                    <property name="textY" value="-9" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-7" />
+                    <property name="bgPicY" value="-9" />
+                    <property name="text" value="track_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_bottom.bmp" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="LASTPLAY" />
+            <property name="id" value="12" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup12" />
+                <property name="id" value="12" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="TextBox">
+                    <property name="name" value="STY_LASTPLAY_TEXT" />
+                    <property name="id" value="38" />
+                    <property name="x" value="129" />
+                    <property name="y" value="103" />
+                    <property name="width" value="126" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-47" />
+                    <property name="textY" value="27" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="-49" />
+                    <property name="bgPicY" value="27" />
+                    <property name="text" value="lastplay_s" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16777215" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value=".\pigs\Mainmenu_middle.bmp" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="USER1" />
+            <property name="id" value="13" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup13" />
+                <property name="id" value="13" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_USER1_PIC" />
+                    <property name="id" value="39" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_audible.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_USER1_TEXT" />
+                    <property name="id" value="40" />
+                    <property name="x" value="194" />
+                    <property name="y" value="124" />
+                    <property name="width" value="124" />
+                    <property name="height" value="31" />
+                    <property name="textX" value="-112" />
+                    <property name="textY" value="11" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16711680" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_USER1_INFO" />
+                    <property name="id" value="41" />
+                    <property name="x" value="200" />
+                    <property name="y" value="167" />
+                    <property name="width" value="124" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-118" />
+                    <property name="textY" value="-12" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16711680" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" storetype="1" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="1" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="USER2" />
+            <property name="id" value="14" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup14" />
+                <property name="id" value="14" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_USER2_PIC" />
+                    <property name="id" value="42" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_audible.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_USER2_TEXT" />
+                    <property name="id" value="43" />
+                    <property name="x" value="129" />
+                    <property name="y" value="141" />
+                    <property name="width" value="124" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-47" />
+                    <property name="textY" value="-6" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16711680" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_USER2_INFO" />
+                    <property name="id" value="44" />
+                    <property name="x" value="154" />
+                    <property name="y" value="179" />
+                    <property name="width" value="124" />
+                    <property name="height" value="24" />
+                    <property name="textX" value="-72" />
+                    <property name="textY" value="-24" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16711680" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+        <scene>
+            <property name="name" value="USER3" />
+            <property name="id" value="15" />
+            <property name="width" value="320" />
+            <property name="height" value="240" />
+            <property name="bgPic" value="" />
+            <property name="background" value="ffffff" />
+            <element class="resgroup_resource">
+                <property name="name" value="resgroup15" />
+                <property name="id" value="15" />
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+                <property name="abs_x" value="0" />
+                <property name="abs_y" value="0" />
+                <property name="width" value="100" />
+                <property name="height" value="200" />
+                <property name="background" value="15658734" />
+                <property name="transparency" value="255" />
+                <property name="opaque" value="0" />
+                <property name="visible" value="1" />
+                <element class="PictureBox">
+                    <property name="name" value="STY_USER3_PIC" />
+                    <property name="id" value="45" />
+                    <property name="x" value="80" />
+                    <property name="y" value="10" />
+                    <property name="width" value="128" />
+                    <property name="height" value="120" />
+                    <property name="visible" value="1" />
+                    <property name="screenshotBgPic" value="" />
+                    <element class="layer">
+                        <property name="0" value=".\pigs\Mainmenu_audible.bmp" type="0" forePicPath="" forePicBkColor="0" />
+                    </element>
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_USER3_TEXT" />
+                    <property name="id" value="46" />
+                    <property name="x" value="124" />
+                    <property name="y" value="130" />
+                    <property name="width" value="124" />
+                    <property name="height" value="25" />
+                    <property name="textX" value="-44" />
+                    <property name="textY" value="5" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16711680" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+                <element class="TextBox">
+                    <property name="name" value="STY_USER3_INFO" />
+                    <property name="id" value="47" />
+                    <property name="x" value="136" />
+                    <property name="y" value="165" />
+                    <property name="width" value="124" />
+                    <property name="height" value="20" />
+                    <property name="textX" value="-54" />
+                    <property name="textY" value="-10" />
+                    <property name="textWidth" value="124" />
+                    <property name="textHeight" value="20" />
+                    <property name="bgPicX" value="0" />
+                    <property name="bgPicY" value="0" />
+                    <property name="text" value="null" />
+                    <property name="fontHeight" value="16" />
+                    <property name="foreground" value="16711680" />
+                    <property name="background" value="16777215" />
+                    <property name="bgPic" value="" />
+                    <property name="useBgPic" value="1" />
+                    <property name="bgPicWidth" value="0" />
+                    <property name="bgPicHeight" value="0" />
+                    <property name="visible" value="1" />
+                    <property name="mode" value="1" />
+                    <property name="align" value="0" />
+                    <property name="ShowMultiline" value="0" />
+                    <property name="ArabRgtAlign" value="0" />
+                    <property name="FontSize" value="1" />
+                </element>
+            </element>
+        </scene>
+    </style>
+    <resource>
+        <picture value="NULL" />
+        <picture value=".\pigs\Mainmenu_audible.bmp" />
+        <picture value=".\pigs\Mainmenu_bottom.bmp" />
+        <picture value=".\pigs\Mainmenu_ebook.bmp" />
+        <picture value=".\pigs\Mainmenu_folder.bmp" />
+        <picture value=".\pigs\Mainmenu_middle.bmp" />
+        <picture value=".\pigs\Mainmenu_music.bmp" />
+        <picture value=".\pigs\Mainmenu_now_playing.bmp" />
+        <picture value=".\pigs\Mainmenu_photos.bmp" />
+        <picture value=".\pigs\Mainmenu_radio.bmp" />
+        <picture value=".\pigs\Mainmenu_record.bmp" />
+        <picture value=".\pigs\Mainmenu_setting.bmp" />
+        <picture value=".\pigs\Mainmenu_tools.bmp" />
+        <picture value=".\pigs\Mainmenu_video.bmp" />
+        <picture value=".\pigs\Mainmenu_voice.bmp" />
+        <txt value=".\Mainmenu.xls" />
+        <string value="music_s" />
+        <string value="video_s" />
+        <string value="picture_s" />
+        <string value="radio_s" />
+        <string value="record_s" />
+        <string value="folder_s" />
+        <string value="setting_s" />
+        <string value="ebook_s" />
+        <string value="tools_s" />
+        <string value="nowplaying_s" />
+        <string value="lastplay_s" />
+        <string value="theme_s" />
+        <string value="blue_s" />
+        <string value="green_s" />
+        <string value="gray_s" />
+        <string value="pink_s" />
+        <string value="red_s" />
+        <string value="total_s" />
+        <string value="date_s" />
+        <string value="track_s" />
+        <string value="tracknum_s" />
+        <string value="movienum_s" />
+        <string value="picturenum_s" />
+        <string value="presetnum_s" />
+        <string value="booknum_s" />
+    </resource>
+</ui-rad>

@@ -1,0 +1,14 @@
+﻿<widget name="timeBox" type="widget" adapter="AImageAdapter"
+			icon="widgets/picregion.png" >
+
+    
+	<bgPic>
+	     <property name="name" type="String" value="bg.bmp"  desc="截图的图片名"/>
+		<property name="x" type="U16" value="0"  desc="相对控件矩形框左上角x坐标"/>
+		<property name="y" type="U16" value="0"  desc="相对控件矩形框右上角y坐标"/>
+		<property name="width" type="U16" value="@timeWidth"  desc="图片宽度"/>
+		<property name="height" type="U16" value="@timeHeight"  desc="图片高度"/>
+           <property name="picType"  type="Enum"  value="2" enumKeys="非嵌入式背景图,嵌入式背景图,实时子背景图" enumValues="0,1,2" default="0" desc="图片类型"/>
+	</bgPic>
+		
+</widget>

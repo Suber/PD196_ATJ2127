@@ -1,0 +1,150 @@
+﻿<widget name="parambox" type="widget" adapter="AParamBoxAdapter"
+            icon="widgets/param.png" >
+
+     <categories>
+     <category name = "basic"/>
+     <category name = "title"/>
+     <category name = "number"/>
+     <category name = "unit"/>
+    
+     </categories>
+
+    <properties>
+          
+        <property name="x" type="U16" value="" editable="true" relative ="Left" desc="控制項左上角x座標"/>
+        <property name="y" type="U16" value=""  editable="true" relative ="Top" desc="控制項左上角y座標"/>
+        <property name="width" type="U16" value=""  editable="true" desc="控制項寬度"/>
+        <property name="height" type="U16" value=""  editable="true" desc="控制項高度"/>
+               
+        <property name="visible" type="boolean" value="1" category="basic"  editable="true" desc="是否顯示控制項"/>
+        <property name="showTitle" type="boolean" value="0" category="basic" editable="true" desc="是否顯示標題欄"/>
+        <property name="showNumber" displayName="是否顯示數位" value="1" type="boolean" category="basic" editable="true" desc="是否顯示數位"/>  
+        <property name="showUnit" displayName="是否顯示單位" value="1" type="boolean" category="basic" editable="true" desc="是否顯示單位"/>
+        <property name="orientation" displayName="排列方向" type="Enum" editable="false" category="basic" value="0" enumKeys="橫向,豎向" enumValues="0,1" default="0" desc="參數排列方向"/> 
+        <property name="showTag" type="boolean" value="0" category="basic" editable="true" desc="是否顯示類型圖示"/>
+        <property name="paramAmount" type="Enum"  value="0" category="basic" editable="false" enumKeys="1,2,3" enumValues="0,1,2" desc="參數總數目"/>
+        <property name="current" type="Enum" default="1" value="0" category="basic" editable="true" enumKeys="1,2,3" enumValues="0,1,2" desc="當前選中參數"/>
+   
+        <property name="bgPic" type="Picture" value="$widgets\background\p_def_background.bmp" category="basic" editable="false" desc="背景圖片" AsbgPic="true" />
+        <property name="bgPicX" type="U16" value="0" category="basic" editable="true" relative ="Left" desc="背景圖片左上角x座標"/>
+        <property name="bgPicY" type="U16" value="0" category="basic" editable="true" relative ="Top" desc="背景圖片左上角y座標"/>
+        <property name="bgPicWidth" type="U16" visible="false" value="" editable="false" />
+        <property name="bgPicHeight" type="U16" visible="false" value="" editable="false" />    
+        <property name="signPicInit" type="Picture" value="" category="basic" editable="false" desc="類型圖片的原始圖片，為純色背景" show="showTag = 1"/>
+        <property name="signPicInitBgColor" type="Color" category="basic" value="0" editable="false" desc="類型圖片原始圖片的背景色" show="showTag = 1"/> 
+        <property name="signPic" type="Picture" value="" category="basic" editable="false" desc="類型圖示"  show="showTag = 1"/>
+        <property name="signPicX" type="U16" value="5" category="basic" editable="true" relative ="Left" desc="類型圖示左上角x座標"  show="showTag = 1"/>
+        <property name="signPicY" type="U16" value="5" category="basic" editable="true" relative ="Top" desc="類型圖示左上角y座標"  show="showTag = 1"/>
+        <property name="sinPicWidth" type="U16" visible="false" value="" editable="false" desc=""/>
+        <property name="sinPicHeight" type="U16" visible="false" value="" editable="false" desc=""/>    
+        
+        <property name="partitionPicInit1" type="Picture" value="" category="basic" editable="false" desc="參數分隔符號1的原始圖片，為純色背景"/>
+        <property name="partitionPic1BkColor" type="Color" category="basic" value="0" editable="false" desc="參數分隔符號1的原始圖片的背景色" /> 
+        <property name="partitionPic1" type="Picture" value="" category="basic" editable="false" desc="參數分隔符號1圖片"/>
+        <property name="partitionPic1X" type="U16" value="0" category="basic" editable="true" relative ="Left" desc="參數分隔符號1左上角x座標"/>
+        <property name="partitionPic1Y" type="U16" value="0" category="basic" editable="true" relative ="Top" desc="參數分隔符號1左上角y座標"/>
+        <property name="partitionPic1Width" type="U16" value="0"  editable="false" />
+        <property name="partitionPic1Height" type="U16" value="0" editable="false" />
+
+        <property name="partitionPicInit2" type="Picture" value="" category="basic" editable="false" desc="參數分隔符號2的原始圖片，為純色背景"/>
+        <property name="partitionPic2BkColor" type="Color" category="basic" value="0" editable="false" desc="參數分隔符號2的原始圖片的背景色" /> 
+        <property name="partitionPic2" type="Picture" value="" category="basic" editable="false" desc="參數分隔符號2圖片"/>
+        <property name="partitionPic2X" type="U16" value="0" category="basic" editable="true" relative ="Left" desc="參數分隔符號2左上角x座標"/>
+        <property name="partitionPic2Y" type="U16" value="0" category="basic" editable="true" relative ="Top" desc="參數分隔符號2左上角y座標"/>
+        <property name="partitionPic2Width" type="U16" value="0"  editable="false" />
+        <property name="partitionPic2Height" type="U16" value="0" editable="false" />
+
+        <property name="num1FigureX" type="U16" value="45" category="basic" editable="true" relative ="Left" desc="第一個參數（外形區域） X座標" show="paramAmount > 0"/>
+        <property name="num1FigureY" type="U16" value="46" category="basic" editable="true" relative ="Top" desc="第一個參數（外形區域） Y座標" show="paramAmount > 0"/>
+        <property name="num1FigureWidth" type="U16" value="40"  category="basic"  editable="true" desc="第一個參數（外形區域）寬度" show="paramAmount > 0"/>
+        <property name="num1FigureHeight" type="U16" value="80" category="basic"  editable="true" desc="第一個參數（外形區域）高度" show="paramAmount > 0"/>
+
+ 
+        <property name="num2FigureX" type="U16" value="45" category="basic" editable="true" relative ="Left" desc="第二個參數（外形區域） X座標" show="paramAmount > 0"/>
+        <property name="num2FigureY" type="U16" value="46" category="basic" editable="true" relative ="Top" desc="第二個參數（外形區域） Y座標" show="paramAmount > 0"/>
+        <property name="num2FigureWidth" type="U16" value="40" category="basic"  editable="true" desc="第二個參數（外形區域）寬度"  show="paramAmount > 0"/>
+        <property name="num2FigureHeight" type="U16" value="80" category="basic"  editable="true" desc="第二個參數（外形區域）高度"  show="paramAmount > 0"/>
+
+        <property name="num3FigureX" type="U16" value="45" category="basic" editable="true" relative ="Left" desc="第三個參數（外形區域） X座標" show="paramAmount > 1"/>
+        <property name="num3FigureY" type="U16" value="46" category="basic" editable="true" relative ="Top" desc="第三個參數（外形區域） Y座標" show="paramAmount > 1"/>
+        <property name="num3FigureWidth" type="U16" value="40"  category="basic" editable="true" desc="第三個參數（外形區域）寬度"  show="paramAmount > 1"/>
+        <property name="num3FigureHeight" type="U16" value="80"  category="basic" ditable="true" desc="第三個參數（外形區域）高度"  show="paramAmount > 1"/>
+
+        <property name="titleText" type="MultiLanguage" value="參數設置" category="title" editable="false" desc="標題欄字串內容"  show="showTitle = 1"/>
+        <property name="titleX" type="U16" value="5" category="title" editable="true" relative ="Left" desc="標題欄左上角x座標" show="showTitle = 1"/>
+        <property name="titleY" type="U16" value="4" category="title" editable="true" relative ="Top" desc="標題欄左上角y座標" show="showTitle = 1"/>
+        <property name="titleWidth" type="U16" value="120" category="title" editable="true" desc="標題欄寬度" show="showTitle = 1"/>
+        <property name="titleHeight" type="U16" value="20" category="title" editable="true" desc="標題欄高度" show="showTitle = 1"/>
+        <property name="titleFontColor" type="Color" value="16777215" category="title" editable="true" desc="標題欄字串字體顏色" show="showTitle = 1"/>
+        <property name="titleAlign" type="Enum" value="1" category="title" editable="true" enumKeys="左對齊,居中,右對齊" enumValues="0,1,2" default="1" desc="標題欄字串對齊方式" show="showTitle = 1"/>
+        <property name="titleFontSize" displayName="字體大小" type="Enum" editable="false" category="title" value="1" enumKeys="小字體,中字體,大字體" enumValues="0,1,2" default="0" desc="標題欄字串字體大小" show="showTitle = 1"/>
+        
+               
+        <property name="showSymbol" displayName="是否顯示正號" value="1" type="boolean" category="number" editable="true" desc="是否顯示正號（注：負數必定會顯示負號，正數則可選是否顯示）" show="showNumber = 1"/>
+        <property name="showHigh" displayName="是否顯示前置0" value="1" type="boolean" category="number" editable="true" desc="是否顯示前置0（比如，在數字長度最長為4的情況下，123顯示前置則會顯示為0123）" show="showNumber = 1"/>
+        <property name="numberMode" type="Enum" value="0" category="number" editable="true" enumKeys="字串,數位圖片" enumValues="0,1" default="1" desc="數位顯示模式，可選字串或數位圖片" show="showNumber = 1"/>
+        <property name="numberAlign" type="Enum" value="1" category="number" editable="true" enumKeys="左對齊,居中,右對齊" enumValues="0,1,2" default="1" desc="數位對齊方式" show="showNumber = 1"/>
+        
+        <property name="pic0" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="數位0圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic1" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="數位1圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic2" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="數位2圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic3" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="數位3圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic4" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="數位4圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic5" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="數位5圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic6" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="數位6圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic7" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="數位7圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic8" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="數位8圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="pic9" type="Picture" category="number" editable="false" value="" allowEmpty="false" desc="數位9圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="picPositive" displayName="正號" type="Picture" category="number" value="" editable="false" allowEmpty="false"  desc="數位記號正號圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="picNegative" displayName="負號" type="Picture" category="number" value="" editable="false" allowEmpty="false"  desc="數位記號負號圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="picCover" displayName="空白" type="Picture" category="number" value="" editable="false" allowEmpty="false"  desc="數位間隔或背景圖片" show="numberMode > 0&showNumber = 1"/>
+        <property name="numberPicW" type="U16"  value="0" category="number" editable="false" desc="數位圖片寬度" show="numberMode > 0&showNumber = 1"/>
+        
+        <property name="numX" type="U16" value="46" category="number" editable="true" relative ="Left" desc="多參數時，豎向排列時有效:  參數數位區域 X座標，Y座標同外形區域；    單參數時都有效，都必須由用戶指定" show="showNumber = 1&paramAmount = 0|showNumber = 1&paramAmount > 0&orientation = 1"/>
+        <property name="numY" type="U16" value="62" category="number" editable="true" relative ="Top" desc="多參數時，橫向排列時有效：參數數位區域 Y座標，X座標同外形區域；    單參數時都有效，都必須由用戶指定" show="showNumber = 1&paramAmount = 0|showNumber = 1&paramAmount > 0&orientation = 0"/>
+        <property name="numWidth" type="U16" value="40" category="number" editable="true" desc="多參數時：豎向排列時有效：為參數數位區域 寬度，高度同外形區域;    單參數時都有效，都必須由用戶指定" show="showNumber = 1&paramAmount > 0&orientation = 1|showNumber = 1&paramAmount = 0"/>
+        <property name="numHeight" type="U16" value="20" category="number" editable="true" desc="多參數時，橫向排列時有效：參數數位區域 高度，寬度同外形區域；    單參數時都有效，都必須由用戶指定" show="showNumber = 1&paramAmount > 0&orientation = 0|showNumber = 1&paramAmount = 0"/>      
+
+        <property name="numberFontSize" displayName="字體大小" type="Enum" editable="false" category="number" value="1" enumKeys="小字體,中字體,大字體" enumValues="0,1,2" default="0" desc="字體大小"  show="showNumber = 1&numberMode = 0"/>
+        
+        <property name="number1" type="U16" value="11" category="number" editable="true" desc="數字" show="showNumber = 1"/>
+        <property name="digit1" type="U16" value="2" category="number" editable="true" desc="參數的最長位數" show="showNumber = 1"/>           
+        
+        <property name="number2" type="U16" value="12" category="number" editable="true" desc="數字" show="paramAmount > 0&showNumber = 1"/>
+        <property name="digit2" type="U16" value="2" category="number" editable="true" desc="參數的最長位數" show="paramAmount > 0&showNumber = 1"/>
+
+        <property name="number3" type="U16" value="12" category="number" editable="true" desc="數字" show="paramAmount > 1&showNumber = 1"/>
+        <property name="digit3" type="U16" value="2" category="number" editable="true" desc="參數的最長位數" show="paramAmount > 1&showNumber = 1"/>
+        
+        <property name="itemBackMode" type="Enum" value="2" category="number" editable="true" enumKeys="背景顏色,背景圖片（single）,背景圖片（multy）" enumValues="0,1,2" default="0" desc="數位非選中項背景顯示模式" show="showNumber = 1"/>
+        <property name="itemActBackMode" type="Enum" value="2" category="number" editable="true" enumKeys="背景顏色,背景圖片（single）,背景圖片（multy）" enumValues="0,1,2" default="0" desc="數位選中項背景顯示模式" show="showNumber = 1"/>
+        <property name="itemActBackColor" type="Color" value="108000" category="number" editable="true" desc="啟動項背景顏色" show="itemActBackMode = 0&showNumber = 1"/>
+        <property name="itemBackColor" type="Color" value="508000" category="number" editable="true" desc="非啟動項背景顏色" show="itemBackMode = 0&showNumber = 1"/>
+        <property name="itemBackPic1" type="Picture" value="" category="number" editable="false" desc="數位非啟動項背景圖片" show="itemBackMode > 0&showNumber = 1&paramAmount > 0"/>
+        <property name="itemBackPic2" type="Picture" value="" category="number" editable="false" desc="數位非啟動項背景圖片"  show="itemBackMode > 0&showNumber = 1&paramAmount > 0"/>
+        <property name="itemBackPic3" type="Picture" value="" category="number" editable="false" desc="數位非啟動項背景圖片"  show="itemBackMode > 0&showNumber = 1&paramAmount > 1"/>
+        <property name="itemActBackInitPic" type="Picture" value="" category="number" editable="false" desc="數字啟動項背景圖的原始圖片，為純色背景" show="itemActBackMode > 0&showNumber = 1"/>
+        <property name="itemActBackInitPicBgColor" type="Color" category="number" value="0" editable="false" desc="數字啟動項背景圖原始圖片的背景色" show="itemActBackMode > 0&showNumber = 1"/> 
+        <property name="itemActBackPic1" type="Picture" value="$widgets\parambox\p_def_param_a.bmp" category="number" editable="false" desc="數位啟動項背景圖片" show="itemActBackMode > 0&showNumber = 1"/>
+        <property name="itemActBackPic2" type="Picture" value="" category="number" editable="false" desc="數位啟動項背景圖片" show="itemActBackMode > 0&showNumber = 1&paramAmount > 0"/>
+        <property name="itemActBackPic3" type="Picture" value="" category="number" editable="false" desc="數位啟動項背景圖片" show="itemActBackMode>0&showNumber = 1&paramAmount > 1"/>      
+
+        
+        <property name="itemFontColor" type="Color" value="12632256" category="number" editable="true" desc="數位非啟動項字體顏色" show="numberMode = 0&showNumber = 1"/>
+        <property name="itemActFontColor" type="Color" value="16777215" category="number" editable="true" desc="數位啟動項字體顏色" show="numberMode = 0&showNumber = 1"/>
+
+        <property name="unitX" type="U16" value="45" category="unit" editable="true" relative ="Left" desc="多參數時，豎向排列時有效：參數單位字串 X座標，Y座標同外形區域；    單參數時都有效，都必須由用戶指定" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 1"/> 
+        <property name="unitY" type="U16" value="113" category="unit" editable="true" relative ="Top" desc="多參數時，橫向排列時有效：參數單位字串 Y座標，X座標同外形區域；    單參數時都有效，都必須由用戶指定" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 0"/>
+        <property name="unitWidth" type="U16" value="40" category="unit" editable="true" desc="多參數時，豎向排列時有效：參數單位字串 寬度，高度同外形區域；    單參數時都有效，都必須由用戶指定" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 1"/>        
+        <property name="unitHeight" type="U16" value="20" category="unit" editable="true" desc="多參數時，橫向排列時有效：參數單位字串 高度，寬度同外形區域；    單參數時都有效，都必須由用戶指定" show="showUnit = 1&paramAmount = 0|showUnit = 1&paramAmount > 0&orientation = 0"/>
+        <property name="unitFontColor" type="Color" value="16777215" category="unit" editable="true" desc="單位字串顯示顏色" show="showUnit = 1"/>
+        <property name="unitFontSize" displayName="字體大小" type="Enum" editable="false" category="unit" value="1" enumKeys="小字體,中字體,大字體" enumValues="0,1,2" default="0" desc="字體大小" show="showUnit = 1"/>
+        <property name="unitAlign" type="Enum" value="1" category="unit" editable="true" enumKeys="左對齊,居中,右對齊" enumValues="0,1,2" default="1" desc="單位對齊方式" show="showUnit = 1"/>
+        
+        <property name="unit1" type="MultiLanguage" value="$1" category="unit" editable="false" desc="單位字串" show="showUnit = 1"/>
+        <property name="unit2" type="MultiLanguage" value="$2" category="unit" editable="false" desc="單位字串" show="paramAmount > 0&showUnit = 1"/>
+        <property name="unit3" type="MultiLanguage" value="$3" category="unit" editable="false" desc="單位字串" show="paramAmount > 1&showUnit = 1"/>
+        
+    </properties>
+        
+</widget>
